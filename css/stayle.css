@@ -1,0 +1,20 @@
+.category{
+    transform: translateY(-100%);
+}
+.category-view{
+    transform: translateY(0%);
+    transition: 0.5s;
+}
+.duration{
+    transition: 0.5s;
+}
+.menus{
+    transform: translateX(100%);
+}
+.menus-view{
+    transform: translateX(0%);
+    transition: 0.5s;
+}
+.close-transition{
+    transition: 0.5s;
+}
