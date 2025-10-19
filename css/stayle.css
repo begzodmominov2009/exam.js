@@ -5,16 +5,12 @@
    .category {
        transform: translateY(-100%);
    }
-   
 
+   
    .category-view {
        transform: translateY(0%);
        transition: 0.5s;
    }
-
-
-
-
 
 
    .duration {
