@@ -29,3 +29,12 @@
    .close-transition {
        transition: 0.5s;
    }
+   .category-close{
+    display: none;
+   }
+   .menus-category-hidde{
+    display: none;
+   }
+   .menus-category-hidden{
+    display: flex;
+   }

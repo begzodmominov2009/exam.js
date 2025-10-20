@@ -21,7 +21,20 @@
             <div class="flex items-start cursor-pointer gap-[20px]">
                 <div id="menus-category"
                     class="flex hidden sm:flex w-[140px]  rounded-[5px] h-[40px] justfiy-between pl-[8px] pr-[15px] gap-[20px] items-center bg-[#70C05B]">
-                    <img src="./assets/header/menu.png" alt="menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#ffff">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </svg>
+                    <p class="text-[white]">Каталог</p>
+                </div>
+
+                <div id="menus-category-close"
+                    class="category-close flex hidden sm:flex w-[140px]  rounded-[5px] h-[40px] justfiy-between pl-[8px] pr-[15px] gap-[20px] items-center bg-[#70C05B]">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#ffff">
+                        <path
+                            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                    </svg>
                     <p class="text-[white]">Каталог</p>
                 </div>
                 <div id="search-category" class="flex sm:hidden flex items-center gap-[10px]">
@@ -45,10 +58,12 @@
                     <img src="./assets/header/product.png" alt="product">
                     <p>продукты</p>
                 </div>
-                <div class="flex cursor-pointer items-center flex-col gap-[7px]">
-                    <img src="./assets/header/cart.png" alt="cart">
-                    <p>Корзина</p>
-                </div>
+                <a href="./Pages/cart.html">
+                    <div class="flex cursor-pointer items-center flex-col gap-[7px]">
+                        <img src="./assets/header/cart.png" alt="cart">
+                        <p>Корзина</p>
+                    </div>
+                </a>
             </div>
             <div class="hidden lg:flex flex cursor-pointer items-center gap-[10px]">
                 <img src="./assets/header/avatar (7).png" alt="avatar">
@@ -98,7 +113,7 @@
             <input class="border-[1px] outline-none border-[#70C05B] px-[10px] w-full py-[5px] rounded-[5px]"
                 placeholder="Найти товар" type="search">
         </div>
-        <ul class="flex px-[15px] flex-col py-[25px] gap-[7px]">
+        <ul class="flex px-[15px] flex-col py-[25px] gap-[7px] h-[480px] overflow-y-scroll">
             <li>Молоко, сыр, яйцо</li>
             <hr class="text-[#70C05B]">
             <li>Хлеб</li>
@@ -175,7 +190,7 @@
                             </button>
                             <span
                                 class="absolute top-[9px] sm:top-[130px] xl:top-[90px] 2xl:top-[118px] left-[10px] bg-[#FF6633] w-[46px] sm:w-[56px] h-[25px] sm:h-[32px] text-[14px] sm:text-[16px] flex items-center justify-center rounded-[5px] text-[white]">-50%</span>
-                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] left-[232px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
+                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
                                 src="./assets/header/layk.png" alt="layk">
                         </div>
                     </div>
@@ -202,7 +217,7 @@
                             </button>
                             <span
                                 class="absolute top-[9px] sm:top-[130px] xl:top-[90px] 2xl:top-[118px] left-[10px] bg-[#FF6633] w-[46px] sm:w-[56px] h-[25px] sm:h-[32px] flex items-center justify-center rounded-[5px] text-[14px] sm:text-[16px] text-[white]">-50%</span>
-                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] left-[232px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
+                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
                                 src="./assets/header/layk.png" alt="layk">
                         </div>
                     </div>
@@ -229,7 +244,7 @@
                             </button>
                             <span
                                 class="absolute top-[9px] sm:top-[130px] xl:top-[90px] 2xl:top-[118px] left-[10px] bg-[#FF6633] w-[46px] sm:w-[56px] h-[25px] sm:h-[32px] flex items-center justify-center rounded-[5px] text-[14px] sm:text-[16px] text-[white]">-50%</span>
-                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] left-[232px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
+                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
                                 src="./assets/header/layk.png" alt="layk">
                         </div>
                     </div>
@@ -256,7 +271,7 @@
                             </button>
                             <span
                                 class="absolute top-[9px] sm:top-[130px] xl:top-[90px] 2xl:top-[118px] left-[10px] bg-[#FF6633] w-[46px] sm:w-[56px] h-[25px] sm:h-[32px] flex items-center justify-center rounded-[5px] text-[14px] sm:text-[16px] text-[white]">-50%</span>
-                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] left-[232px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
+                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
                                 src="./assets/header/layk.png" alt="layk">
                         </div>
                     </div>
@@ -293,7 +308,7 @@
                                 class="w-full  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
                                 В корзину
                             </button>
-                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] left-[232px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
+                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
                                 src="./assets/header/layk.png" alt="layk">
                         </div>
                     </div>
@@ -313,7 +328,7 @@
                                 class="w-full  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
                                 В корзину
                             </button>
-                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] left-[232px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
+                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
                                 src="./assets/header/layk.png" alt="layk">
                         </div>
                     </div>
@@ -333,7 +348,7 @@
                                 class="w-full  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
                                 В корзину
                             </button>
-                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] left-[232px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
+                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
                                 src="./assets/header/layk.png" alt="layk">
                         </div>
                     </div>
@@ -353,7 +368,7 @@
                                 class="w-full  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
                                 В корзину
                             </button>
-                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] left-[232px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
+                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
                                 src="./assets/header/layk.png" alt="layk">
                         </div>
                     </div>
@@ -390,7 +405,7 @@
                                 class="w-full  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
                                 В корзину
                             </button>
-                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] left-[232px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
+                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
                                 src="./assets/header/layk.png" alt="layk">
                         </div>
                     </div>
@@ -410,7 +425,7 @@
                                 class="w-full  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
                                 В корзину
                             </button>
-                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] left-[232px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
+                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
                                 src="./assets/header/layk.png" alt="layk">
                         </div>
                     </div>
@@ -430,7 +445,7 @@
                                 class="w-full  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
                                 В корзину
                             </button>
-                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] left-[232px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
+                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
                                 src="./assets/header/layk.png" alt="layk">
                         </div>
                     </div>
@@ -450,7 +465,7 @@
                                 class="w-full  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
                                 В корзину
                             </button>
-                            <img class=" absolute top-[8px]   opacity-0  group-hover:opacity-100 duration-[0.5s] left-[232px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
+                            <img class=" absolute top-[8px]   opacity-0  group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
                                 src="./assets/header/layk.png" alt="layk">
                         </div>
                     </div>
@@ -462,9 +477,9 @@
             <div class="container mx-auto px-[20px] pt-[60px] sm:pt-[120px]">
                 <h1 class="text-[24px] sm:text-[36px] font-bold">Специальные предложения </h1>
                 <div
-                    class="pt-[20px] sm:pt-[40px] flex flex-col gap-[20px] lg:grid grid-cols-2 gap-[20px] 2xl:gap-[180px]">
+                    class="pt-[20px] sm:pt-[40px] flex flex-col gap-[20px] lg:grid grid-cols-2 gap-[20px] 2xl:gap-[100px]">
                     <div
-                        class="bg-[#FCD5BA] max-w-[704px] w-full  overflow-hidden  group h-[200x] flex items-center justify-between rounded-[6px] shadow-md cursor-pointer px-[20px] py-[7px] sm:py-[0px] sm:px-[31.75px]">
+                        class="bg-[#FCD5BA] max-w-[904px] w-full  overflow-hidden  group h-[200x] flex items-center justify-between rounded-[6px] shadow-md cursor-pointer px-[15px] py-[7px] sm:py-[15px] sm:px-[31.75px]">
                         <div>
                             <h3 class="text-[18px] sm:text-[24px] font-bold ">Оформите карту <br> «Северяночка»</h3>
                             <p class="text-[12px] sm:text-[16px] whitespace-nowrap pt-[6px] whitespace-wrap">И получайте
@@ -472,11 +487,11 @@
                                 магазинах и на
                                 сайте</p>
                         </div>
-                        <img class="w-[145px]  scale-[1] group-hover:scale-[1.1] duration-[0.3s]"
+                        <img class="w-[145px] sm:w-[225px]  scale-[1] group-hover:scale-[1.1] duration-[0.3s]"
                             src="./assets/home/about-1.png" alt="img">
                     </div>
                     <div
-                        class="bg-[#E5FFDE] max-w-[704px] overflow-hidden w-full h-[200x] group flex items-center rounded-[6px] shadow-md py-[8px] cursor-pointer justify-between px-[20px] py-[7px] sm:py-[0px] sm:px-[31.75px]">
+                        class="bg-[#E5FFDE] max-w-[904px] overflow-hidden w-full h-[200x] group flex items-center rounded-[6px] shadow-md py-[8px] cursor-pointer justify-between px-[15px] py-[7px] sm:py-[15px] sm:px-[31.75px]">
                         <div>
                             <h3 class="text-[18px] sm:text-[24px] font-bold whitespace-wrap">Покупайте <br> акционные
                                 товары</h3>
@@ -484,7 +499,7 @@
                                 вдвое больше <br> бонусов
                             </p>
                         </div>
-                        <img class="w-[130px]  scale-[1] group-hover:scale-[1.1] duration-[0.3s]"
+                        <img class="w-[110px] sm:w-[165px]  scale-[1] group-hover:scale-[1.1] duration-[0.3s]"
                             src="./assets/home/about-2.png" alt="img">
                     </div>
                 </div>
@@ -512,8 +527,11 @@
                         д.Диюр
                     </a>
                 </div>
-                <div class="pt-[14px] sm:pt-[24px]">
-                    <img class="max-w-full" src="./assets/home/location.png" alt="location">
+                <div class="pt-[14px] sm:pt-[24px] ">
+                    <iframe class="w-full"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13257.889943982373!2d69.23351519078321!3d41.31244540885181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2z0KLQsNGI0LrQtdC90YIsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e1!3m2!1sru!2s!4v1760948743951!5m2!1sru!2s"
+                        height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </section>

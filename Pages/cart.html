@@ -10,7 +10,8 @@
 </head>
 
 <body>
-    <header class="py-[16px] bg-[white] fixed z-[100] w-full shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
+
+    <header class="py-[16px] bg-[white] fixed z-[100]  w-full shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
         <div class="container mx-auto px-[20px] gap-[40px] flex items-center justify-between">
             <div>
                 <a class="flex items-center gap-[11px]" href="../index.html">
@@ -21,7 +22,20 @@
             <div class="flex items-start cursor-pointer gap-[20px]">
                 <div id="menus-category"
                     class="flex hidden sm:flex w-[140px]  rounded-[5px] h-[40px] justfiy-between pl-[8px] pr-[15px] gap-[20px] items-center bg-[#70C05B]">
-                    <img src="../assets/header/menu.png" alt="menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#ffff">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </svg>
+                    <p class="text-[white]">Каталог</p>
+                </div>
+
+                <div id="menus-category-close"
+                    class="category-close flex hidden sm:flex w-[140px]  rounded-[5px] h-[40px] justfiy-between pl-[8px] pr-[15px] gap-[20px] items-center bg-[#70C05B]">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#ffff">
+                        <path
+                            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                    </svg>
                     <p class="text-[white]">Каталог</p>
                 </div>
                 <div id="search-category" class="flex sm:hidden flex items-center gap-[10px]">
@@ -130,15 +144,172 @@
 
     <main>
         <section>
-            <div class="container mx-auto px-[20px]">
+            <div class="container mx-auto px-[20px] pt-[110px] pb-[250px]">
+                <div class="flex items-center gap-[8px]">
+                    <a href="../index.html">
+                        Главная
+                    </a>
+                    <img src="../assets/home/chevron-right.png" alt="arrow">
+                    <a href="./cart.html">
+                        Корзина
+                    </a>
+                </div>
+                <h1 class="text-[64px] font-bold pt-[14px]">Корзина</h1>
+                <div class="flex items-center gap-[48px] pt-[64px]">
+                    <div class="flex items-center gap-[9px]">
+                        <input class="w-[24px] h-[24px]" type="checkbox">
+                        <p class="text-[12px] text-[#606060]">Выделить всё</p>
+                    </div>
+                    <div>
+                        <p class="text-[12px] text-[#FF6633]">Удалить выбранные</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="pt-[24px] flex flex-col gap-[24px]">
+                        <div
+                            class="max-w-[936px] w-full py-[8px] px-[8px]  bg-[white] flex items-center justify-between">
+                            <div class="flex items-start gap-[10px] ">
+                                <input class="w-[16px] h-[16px]" type="checkbox">
+                                <img src="../assets/cart/cart-1.png" alt="img">
+                                <div class="flex flex-col gap-[10px]">
+                                    <p>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+                                    <div class="flex items-center gap-[8px]">
+                                        <p class="text-[12px] font-bold">44,50 ₽</p>
+                                        <p class="text-[#606060] text-[12px]">за шт.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-[24px]">
+                                <div
+                                    class="bg-[#70C05B] cursor-pointer flex items-center gap-[7px] justify-center rounded-[4px] p-[8px] max-w-[100px] w-full">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M4.5 12C4.5 11.7239 4.72386 11.5 5 11.5H19C19.2761 11.5 19.5 11.7239 19.5 12C19.5 12.2761 19.2761 12.5 19 12.5H5C4.72386 12.5 4.5 12.2761 4.5 12Z"
+                                            fill="white" />
+                                    </svg>
+                                    <p class="text-[white]">2</p>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12 4.5C12.2761 4.5 12.5 4.72386 12.5 5V19C12.5 19.2761 12.2761 19.5 12 19.5C11.7239 19.5 11.5 19.2761 11.5 19V5C11.5 4.72386 11.7239 4.5 12 4.5Z"
+                                            fill="white" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M4.5 12C4.5 11.7239 4.72386 11.5 5 11.5H19C19.2761 11.5 19.5 11.7239 19.5 12C19.5 12.2761 19.2761 12.5 19 12.5H5C4.72386 12.5 4.5 12.2761 4.5 12Z"
+                                            fill="white" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-[18px] whitespace-nowrap">89,00 ₽</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="max-w-[936px] w-full py-[8px] px-[8px]  bg-[white] flex items-center justify-between">
+                            <div class="flex items-start gap-[10px] ">
+                                <input class="w-[16px] h-[16px]" type="checkbox">
+                                <img src="../assets/cart/cart-1.png" alt="img">
+                                <div class="flex flex-col gap-[10px]">
+                                    <p>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+                                    <div class="flex items-center gap-[8px]">
+                                        <p class="text-[12px] font-bold">44,50 ₽</p>
+                                        <p class="text-[#606060] text-[12px]">за шт.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-[24px]">
+                                <div
+                                    class="bg-[#70C05B] cursor-pointer flex items-center gap-[7px] justify-center rounded-[4px] p-[8px] max-w-[100px] w-full">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M4.5 12C4.5 11.7239 4.72386 11.5 5 11.5H19C19.2761 11.5 19.5 11.7239 19.5 12C19.5 12.2761 19.2761 12.5 19 12.5H5C4.72386 12.5 4.5 12.2761 4.5 12Z"
+                                            fill="white" />
+                                    </svg>
+                                    <p class="text-[white]">2</p>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12 4.5C12.2761 4.5 12.5 4.72386 12.5 5V19C12.5 19.2761 12.2761 19.5 12 19.5C11.7239 19.5 11.5 19.2761 11.5 19V5C11.5 4.72386 11.7239 4.5 12 4.5Z"
+                                            fill="white" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M4.5 12C4.5 11.7239 4.72386 11.5 5 11.5H19C19.2761 11.5 19.5 11.7239 19.5 12C19.5 12.2761 19.2761 12.5 19 12.5H5C4.72386 12.5 4.5 12.2761 4.5 12Z"
+                                            fill="white" />
+                                    </svg>
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="font-bold text-[18px] whitespace-nowrap">89,00 ₽</p>
+                                    <strike class="text-[#8F8F8F]">89,00 ₽</strike>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="max-w-[936px] w-full py-[8px] px-[8px]  bg-[white] flex items-center justify-between">
+                            <div class="flex items-start gap-[10px] ">
+                                <input class="w-[16px] h-[16px]" type="checkbox">
+                                <img src="../assets/cart/cart-1.png" alt="img">
+                                <div class="flex flex-col gap-[10px]">
+                                    <p>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+                                    <div class="flex items-center gap-[8px]">
+                                        <p class="text-[12px] font-bold">44,50 ₽</p>
+                                        <p class="text-[#606060] text-[12px]">за шт.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-[24px]">
+                                <div
+                                    class="bg-[#70C05B] cursor-pointer flex items-center gap-[7px] justify-center rounded-[4px] p-[8px] max-w-[100px] w-full">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M4.5 12C4.5 11.7239 4.72386 11.5 5 11.5H19C19.2761 11.5 19.5 11.7239 19.5 12C19.5 12.2761 19.2761 12.5 19 12.5H5C4.72386 12.5 4.5 12.2761 4.5 12Z"
+                                            fill="white" />
+                                    </svg>
+                                    <p class="text-[white]">2</p>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12 4.5C12.2761 4.5 12.5 4.72386 12.5 5V19C12.5 19.2761 12.2761 19.5 12 19.5C11.7239 19.5 11.5 19.2761 11.5 19V5C11.5 4.72386 11.7239 4.5 12 4.5Z"
+                                            fill="white" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M4.5 12C4.5 11.7239 4.72386 11.5 5 11.5H19C19.2761 11.5 19.5 11.7239 19.5 12C19.5 12.2761 19.2761 12.5 19 12.5H5C4.72386 12.5 4.5 12.2761 4.5 12Z"
+                                            fill="white" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-[18px] whitespace-nowrap">89,00 ₽</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="max-w-[936px] w-full py-[8px] px-[8px]  bg-[white] flex items-start justify-between">
+                            <div class="flex items-start gap-[10px] ">
+                                <input class="w-[16px] h-[16px]" type="checkbox">
+                                <img src="../assets/cart/cart-1.png" alt="img">
+                                <div class="flex flex-col gap-[10px]">
+                                    <p class="text-[#414141]/40">Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+                                    <div class="flex items-center gap-[8px]">
+                                        <p class="text-[12px] text-[#414141]/40 font-bold">44,50 ₽</p>
+                                        <p class="text-[#414141]/40 text-[12px]">за шт.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <p class="text-[#414141]/40">Нет в наличии</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="max-w-[320px] w-full bg-white">
+
+                    </div>
+                </div>
 
             </div>
         </section>
     </main>
 
 
-    <footer
-        class="bg-[url('/assets/footer/bg.png')] py-[18px] sm:py-[25px]  bg-[#F9F4E2] pb-[100px] sm:pb-[15px] mt-[62px]">
+    <footer class="bg-[url('/assets/footer/bg.png')] py-[18px] sm:py-[25px]  bg-[#F9F4E2] pb-[100px] sm:pb-[15px]">
         <div class="container  mx-auto px-[20px]">
             <div class=" grid grid-cols-1 gap-[30px] lg:flex items-center justify-between">
                 <div class="grid grid-cols-2 gap-[40px]">

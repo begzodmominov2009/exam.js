@@ -3,18 +3,31 @@ let category = document.getElementById("category");
 let search_category = document.getElementById("search-category")
 let menus = document.getElementById("menus")
 let close = document.getElementById("close")
+let menus_category_close = document.getElementById("menus-category-close")
+
 
 menus_category.addEventListener("click", () => {
     category.classList.add("category-view")
+    menus_category.classList.add("menus-category-hidde")
+    menus_category_close.classList.add("menus-category-hidden")
+
 })
-window.addEventListener("scroll" , () => {
+menus_category_close.addEventListener("click", () => {
+    category.classList.remove("category-view")
+    category.classList.add("duration")
+    menus_category_close.classList.remove("menus-category-hidden")
+    menus_category.classList.remove("menus-category-hidde")
+})
+
+
+window.addEventListener("scroll", () => {
     category.classList.remove("category-view")
     category.classList.add("duration")
 })
-search_category.addEventListener("click" , () => {
+search_category.addEventListener("click", () => {
     menus.classList.add("menus-view")
 })
-close.addEventListener("click" , () => {
+close.addEventListener("click", () => {
     menus.classList.remove("menus-view")
     menus.classList.add("close-transition")
 })
