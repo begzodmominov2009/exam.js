@@ -20,10 +20,6 @@ menus_category_close.addEventListener("click", () => {
 })
 
 
-window.addEventListener("scroll", () => {
-    category.classList.remove("category-view")
-    category.classList.add("duration")
-})
 search_category.addEventListener("click", () => {
     menus.classList.add("menus-view")
 })
