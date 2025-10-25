@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <header class="py-[16px] bg-[white] fixed z-[100]  w-full shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
         <div class="container mx-auto px-[20px] gap-[40px] flex items-center justify-between 2xl:px-[127px]">
             <div>
@@ -73,7 +74,7 @@
 
     <div id="category" class="category bg-white fixed z-[10] w-full">
         <div
-            class="container mx-auto font-bold px-[20px] pt-[125px] py-[40px] items-start flex items-center justify-center sm:grid grid-cols-2 md:grid-cols-4 transform translate-y-">
+            class="container mx-auto font-bold px-[20px] 2xl:px-[127px] pt-[125px] py-[40px] items-start flex items-center justify-center sm:grid grid-cols-2 md:grid-cols-4 transform translate-y-">
             <ul class="flex flex-col gap-[24px]">
                 <li>Молоко, сыр, яйцо</li>
                 <li>Хлеб</li>
@@ -141,225 +142,174 @@
         </ul>
     </div>
 
-    <main>
-        <section>
-            <div class="container mx-auto px-[20px] pt-[94px] 2xl:px-[127px]">
+    <main class="">
+        <section class="pt-[70px] sm:pt-[110px] pb-[40px] sm:pb-[80px]">
+            <div class="container mx-auto px-[20px] 2xl:px-[127px]">
+                <div class="flex items-center gap-[8px]">
+                    <a href="../index.html">
+                        Главная
+                    </a>
+                    <img src="../assets/home/chevron-right.png" alt="arrow">
+                    <a href="./category.html">
+                        Каталог
+                    </a>
+                </div>
                 <div>
-                    <h1 class="text-[24px] sm:text-[36px] pt-[0px] sm:pt-[44px] font-bold">Все продукты</h1>
+                    <h1 class=" text-[34px] sm:text-[64px] font-bold">Каталог</h1>
                 </div>
-                <div
-                    class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-[10px] sm:gap-[40px] pt-[20px] sm:pt-[40px]">
-                    <div
-                        class="max-w-[372px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl p-[8px]">
-                        <img class="w-full" src="../assets/home/new-1.png" alt="img">
-                        <div class="flex items-center justify-between pt-[15px]">
-                            <div>
-                                <p class="font-bold text-[14px] sm:text-[18px]">599,99₽</p>
+                <div class="flex flex-col lg:grid grid-cols-2  gap-[20px] lg:gap-[40px] pt-[20px] sm:pt-[40px]">
+                    <div class="flex flex-col gap-[20px] sm:gap-[40px]">
+                        <div
+                            class="max-w-[784px] w-full group relative w-full rounded-[4px] overflow-hidden  h-[140px] sm:h-[200px] cursor-pointer">
+                            <h1
+                                class="text-[white] absolute bottom-[10px] font-bold left-[10px] text-[16px] sm:text-[18px] z-[1]">
+                                Молоко, сыр, яйцо</h1>
+                            <img class="w-full h-full" src="../assets/category/cart-1.png" alt="img">
+                            <div
+                                class="w-full h-full absolute top-0 left-0 bg-linear-to-b from-[green]/1 group-hover:to-[red]/50 duration-[2.6s]  to-[green]/60">
                             </div>
                         </div>
-                        <div class="flex flex-col gap-[5px] sm:gap-[11px] pt-[3px] sm:pt-[8px] ">
-                            <p class="text-[14px] sm:text-[16px] line-clamp-2">Комбайн КЗС-1218 <br> «ДЕСНА-ПОЛЕСЬЕ
-                                GS12»</p>
-                            <img src="../assets/home/rating (2).png" alt="rating">
-                            <button
-                                class="w-full  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
-                                В корзину
-                            </button>
-                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
-                                src="../assets/header/layk.png" alt="layk">
-                        </div>
-                    </div>
-                    <div
-                        class="max-w-[372px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl p-[8px]">
-                        <img class="w-full" src="../assets/home/discount-3.png" alt="img">
-                        <div class="flex items-center justify-between pt-[16px]">
-                            <div>
-                                <p class="font-bold text-[14px] sm:text-[18px]">44,50₽</p>
+                        <div class="flex items-center gap-[20px] sm:gap-[40px]">
+                            <div
+                                class="max-w-[372px] w-full group relative w-full rounded-[4px] overflow-hidden h-[140px] sm:h-[200px] cursor-pointer">
+                                <h1
+                                    class="text-[white] absolute bottom-[10px] font-bold left-[10px] text-[16px] sm:text-[18px] z-[1]">
+                                    Замороженные продукты</h1>
+                                <img class="w-full h-full" src="../assets/category/cart-4.png" alt="img">
+                                <div
+                                    class="w-full h-full absolute top-0 left-0 bg-linear-to-b from-[green]/1 group-hover:to-[red]/50 duration-[2.6s]  to-[green]/70">
+                                </div>
+                            </div>
+                            <div
+                                class="max-w-[372px] w-full group relative w-full rounded-[4px] overflow-hidden h-[140px] sm:h-[200px] cursor-pointer">
+                                <h1
+                                    class="text-[white] absolute bottom-[10px] font-bold left-[10px] text-[16px] sm:text-[18px] z-[1]">
+                                    Напитки</h1>
+                                <img class="w-full h-full" src="../assets/category/cart-5.png" alt="img">
+                                <div
+                                    class="w-full h-full absolute top-0 left-0 bg-linear-to-b from-[green]/1 group-hover:to-[red]/50 duration-[2.6s]  to-[green]/50">
+                                </div>
                             </div>
                         </div>
-                        <div class="flex flex-col gap-[5px] sm:gap-[11px] pt-[3px] sm:pt-[8px] ">
-                            <p class="text-[14px] sm:text-[16px] line-clamp-2">Колбаса сырокопченая МЯСНАЯ <br> ИСТОРИЯ
-                                Сальчичон и Тоскан...</p>
-                            <img src="../assets/home/rating (2).png" alt="rating">
-                            <button
-                                class="w-full  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
-                                В корзину
-                            </button>
-                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
-                                src="../assets/header/layk.png" alt="layk">
-                        </div>
-                    </div>
-                    <div
-                        class="max-w-[372px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl p-[8px]">
-                        <img class="w-full" src="../assets/home/discount-4.png" alt="img">
-                        <div class="flex items-center justify-between pt-[16px]">
-                            <div>
-                                <p class="font-bold text-[14px] sm:text-[18px]">159,99₽</p>
+                        <div class="flex items-center gap-[20px] sm:gap-[40px]">
+                            <div
+                                class="max-w-[372px] w-full group relative w-full rounded-[4px] overflow-hidden h-[140px] sm:h-[200px] cursor-pointer">
+                                <h1
+                                    class="text-[white] absolute bottom-[10px] font-bold left-[10px] text-[16px] sm:text-[18px] z-[1]">
+                                    Бакалея</h1>
+                                <img class="w-full h-full" src="../assets/category/cart-8.png" alt="img">
+                                <div
+                                    class="w-full h-full absolute top-0 left-0 bg-linear-to-b from-[green]/1 group-hover:to-[red]/50 duration-[2.6s]  to-[green]/70">
+                                </div>
+                            </div>
+                            <div
+                                class="max-w-[372px] w-full group relative w-full rounded-[4px] overflow-hidden  h-[140px] sm:h-[200px] cursor-pointer">
+                                <h1
+                                    class="text-[white] absolute bottom-[10px] font-bold left-[10px] text-[16px] sm:text-[18px] z-[1]">
+                                    Здоровое питание</h1>
+                                <img class="w-full h-full" src="../assets/category/cart-9.png" alt="img">
+                                <div
+                                    class="w-full h-full absolute top-0 left-0 bg-linear-to-b from-[green]/1 group-hover:to-[red]/50 duration-[2.6s]  to-[green]/50">
+                                </div>
                             </div>
                         </div>
-                        <div class="flex flex-col gap-[5px] sm:gap-[11px] pt-[3px] sm:pt-[8px] ">
-                            <p class="text-[14px] sm:text-[16px] line-clamp-2">Комбайн КЗС-1218 <br> «ДЕСНА-ПОЛЕСЬЕ
-                                GS12»</p>
-                            <img src="../assets/home/rating (2).png" alt="rating">
-                            <button
-                                class="w-full  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
-                                В корзину
-                            </button>
-                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
-                                src="../assets/header/layk.png" alt="layk">
-                        </div>
-                    </div>
-                    <div
-                        class="max-w-[372px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl p-[8px]">
-                        <img class="w-full" src="../assets/home/discount-2.png" alt="img">
-                        <div class="flex items-center justify-between pt-[16px]">
-                            <div>
-                                <p class="font-bold text-[14px] sm:text-[18px]">44,50₽</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-[5px] sm:gap-[11px] pt-[3px] sm:pt-[8px] ">
-                            <p class="text-[14px] sm:text-[16px] line-clamp-2">Комбайн КЗС-1218 <br> «ДЕСНА-ПОЛЕСЬЕ
-                                GS12»</p>
-                            <img src="../assets/home/rating (2).png" alt="rating">
-                            <button
-                                class="w-full  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
-                                В корзину
-                            </button>
-                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
-                                src="../assets/header/layk.png" alt="layk">
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-[10px] sm:gap-[40px] pt-[20px] sm:pt-[50px]">
-                    <div
-                        class="max-w-[372px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl p-[8px]">
-                        <img class="w-full" src="../assets/home/image (69).png   " alt="img">
-                        <div class="flex items-center justify-between pt-[15px]">
-                            <div>
-                                <p class="font-bold text-[14px] sm:text-[18px]">79,99₽</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-[5px] sm:gap-[11px] pt-[3px] sm:pt-[8px] ">
-                            <p class="text-[14px] sm:text-[16px] line-clamp-2">Комбайн КЗС-1218 <br> «ДЕСНА-ПОЛЕСЬЕ
-                                GS12»</p>
-                            <img src="../assets/home/rating (2).png" alt="rating">
-                            <button
-                                class="w-full  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
-                                В корзину
-                            </button>
-                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
-                                src="../assets/header/layk.png" alt="layk">
-                        </div>
-                    </div>
-                    <div
-                        class="max-w-[372px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl p-[8px]">
-                        <img class="w-full" src="../assets/home/discount-4.png" alt="img">
-                        <div class="flex items-center justify-between pt-[16px]">
-                            <div>
-                                <p class="font-bold text-[14px] sm:text-[18px]">159,99₽</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-[5px] sm:gap-[11px] pt-[3px] sm:pt-[8px] ">
-                            <p class="text-[14px] sm:text-[16px] line-clamp-2">Комбайн КЗС-1218 <br> «ДЕСНА-ПОЛЕСЬЕ
-                                GS12»</p>
-                            <img src="../assets/home/rating (2).png" alt="rating">
-                            <button
-                                class="w-full  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
-                                В корзину
-                            </button>
-                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
-                                src="../assets/header/layk.png" alt="layk">
-                        </div>
-                    </div>
-                    <div
-                        class="max-w-[372px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl p-[8px]">
-                        <img class="w-full" src="../assets/home/new-1.png" alt="img">
-                        <div class="flex items-center justify-between pt-[16px]">
-                            <div>
-                                <p class="font-bold text-[14px] sm:text-[18px]">599,99₽</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-[5px] sm:gap-[11px] pt-[3px] sm:pt-[8px] ">
-                            <p class="text-[14px] sm:text-[16px] line-clamp-2">Комбайн КЗС-1218 <br> «ДЕСНА-ПОЛЕСЬЕ
-                                GS12»</p>
-                            <img src="../assets/home/rating (2).png" alt="rating">
-                            <button
-                                class="w-full  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
-                                В корзину
-                            </button>
-                            <img class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
-                                src="../assets/header/layk.png" alt="layk">
-                        </div>
-                    </div>
-                    <div
-                        class="max-w-[372px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl p-[8px]">
-                        <img class="w-full" src="../assets/home/discount-2.png" alt="img">
-                        <div class="flex items-center justify-between pt-[16px]">
-                            <div>
-                                <p class="font-bold text-[14px] sm:text-[18px]">49,39₽</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-[5px] sm:gap-[11px] pt-[3px] sm:pt-[8px] ">
-                            <p class="text-[14px] sm:text-[16px] line-clamp-2">Комбайн КЗС-1218 <br> «ДЕСНА-ПОЛЕСЬЕ
-                                GS12»</p>
-                            <img src="../assets/home/rating (2).png" alt="rating">
-                            <button
-                                class="w-full  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
-                                В корзину
-                            </button>
-                            <img class=" absolute top-[8px]   opacity-0  group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[5px] rounded-[4px]"
-                                src="../assets/header/layk.png" alt="layk">
-                        </div>
-                    </div>
-                </div>
-                <div class="flex items-center justify-center pt-[64px]">
-                    <div class="flex items-center gap-[5px] sm:gap-[16px]">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M19.3536 14.6464C19.5488 14.8417 19.5488 15.1583 19.3536 15.3536L14.7071 20L19.3536 24.6464C19.5488 24.8417 19.5488 25.1583 19.3536 25.3536C19.1583 25.5488 18.8417 25.5488 18.6464 25.3536L13.6464 20.3536C13.4512 20.1583 13.4512 19.8417 13.6464 19.6464L18.6464 14.6464C18.8417 14.4512 19.1583 14.4512 19.3536 14.6464Z"
-                                fill="#414141" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M26.3536 14.6464C26.5488 14.8417 26.5488 15.1583 26.3536 15.3536L21.7071 20L26.3536 24.6464C26.5488 24.8417 26.5488 25.1583 26.3536 25.3536C26.1583 25.5488 25.8417 25.5488 25.6464 25.3536L20.6464 20.3536C20.4512 20.1583 20.4512 19.8417 20.6464 19.6464L25.6464 14.6464C25.8417 14.4512 26.1583 14.4512 26.3536 14.6464Z"
-                                fill="#414141" />
-                        </svg>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M15.3536 5.64645C15.5488 5.84171 15.5488 6.15829 15.3536 6.35355L9.70711 12L15.3536 17.6464C15.5488 17.8417 15.5488 18.1583 15.3536 18.3536C15.1583 18.5488 14.8417 18.5488 14.6464 18.3536L8.64645 12.3536C8.45118 12.1583 8.45118 11.8417 8.64645 11.6464L14.6464 5.64645C14.8417 5.45118 15.1583 5.45118 15.3536 5.64645Z"
-                                fill="#414141" />
-                        </svg>
-                        <div class="flex items-center gap-[18px] sm:gap-[46px] w-[85px] overflow-x-scroll">
-                            <p>1</p>
-                            <p>2</p>
-                            <p>3</p>
-                            <p>4</p>
-                            <p>5</p>
-                            <p>6</p>
-                            <p>7</p>
-                            <p>8</p>
-                        </div>
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M16.6464 13.6464C16.8417 13.4512 17.1583 13.4512 17.3536 13.6464L23.3536 19.6464C23.5488 19.8417 23.5488 20.1583 23.3536 20.3536L17.3536 26.3536C17.1583 26.5488 16.8417 26.5488 16.6464 26.3536C16.4512 26.1583 16.4512 25.8417 16.6464 25.6464L22.2929 20L16.6464 14.3536C16.4512 14.1583 16.4512 13.8417 16.6464 13.6464Z"
-                                fill="#414141" />
-                        </svg>
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M20.6464 14.6464C20.8417 14.4512 21.1583 14.4512 21.3536 14.6464L26.3536 19.6464C26.5488 19.8417 26.5488 20.1583 26.3536 20.3536L21.3536 25.3536C21.1583 25.5488 20.8417 25.5488 20.6464 25.3536C20.4512 25.1583 20.4512 24.8417 20.6464 24.6464L25.2929 20L20.6464 15.3536C20.4512 15.1583 20.4512 14.8417 20.6464 14.6464Z"
-                                fill="#414141" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M13.6464 14.6464C13.8417 14.4512 14.1583 14.4512 14.3536 14.6464L19.3536 19.6464C19.5488 19.8417 19.5488 20.1583 19.3536 20.3536L14.3536 25.3536C14.1583 25.5488 13.8417 25.5488 13.6464 25.3536C13.4512 25.1583 13.4512 24.8417 13.6464 24.6464L18.2929 20L13.6464 15.3536C13.4512 15.1583 13.4512 14.8417 13.6464 14.6464Z"
-                                fill="#414141" />
-                        </svg>
 
+                        <div
+                            class="max-w-[784px] w-full group relative w-full rounded-[4px] overflow-hidden h-[140px] sm:h-[200px] cursor-pointer">
+                            <h1
+                                class="text-[white] absolute bottom-[10px] font-bold left-[10px] text-[16px] sm:text-[18px] z-[1]">
+                                Мясо, птица, колбаса</h1>
+                            <img class="w-full h-full" src="../assets/category/cart-12.png" alt="img">
+                            <div
+                                class="w-full h-full absolute top-0 left-0 bg-linear-to-b from-[green]/1 group-hover:to-[red]/50 duration-[2.6s]  to-[green]/60">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-[20px] sm:gap-[40px]">
+                        <div class="flex items-center gap-[20px] sm:gap-[40px]">
+                            <div
+                                class="max-w-[372px] w-full group relative w-full rounded-[4px] overflow-hidden h-[140px] sm:h-[200px] cursor-pointer">
+                                <h1
+                                    class="text-[white] absolute bottom-[10px] font-bold left-[10px] text-[16px] sm:text-[18px] z-[1]">
+                                    Хлеб</h1>
+                                <img class="w-full h-full" src="../assets/category/cart-2.png" alt="img">
+                                <div
+                                    class="w-full h-full absolute top-0 left-0 bg-linear-to-b from-[green]/1 group-hover:to-[red]/50 duration-[2.6s]  to-[green]/70">
+                                </div>
+                            </div>
+                            <div
+                                class="max-w-[372px] w-full group relative w-full rounded-[4px] overflow-hidden h-[140px] sm:h-[200px] cursor-pointer">
+                                <h1
+                                    class="text-[white] whitespace-wrap absolute bottom-[10px] font-bold left-[10px] text-[16px] sm:text-[18px] z-[1]">
+                                    Фрукты и овощи</h1>
+                                <img class="w-full h-full" src="../assets/category/cart-3.png" alt="img">
+                                <div
+                                    class="w-full h-full absolute top-0 left-0 bg-linear-to-b from-[green]/1 group-hover:to-[red]/50 duration-[2.6s]  to-[green]/50">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-[20px] sm:gap-[40px]">
+                            <div
+                                class="max-w-[372px] w-full group relative w-full rounded-[4px] overflow-hidden h-[140px] sm:h-[200px] cursor-pointer">
+                                <h1
+                                    class="text-[white] absolute bottom-[10px] font-bold left-[10px] text-[16px] sm:text-[18px] z-[1]">
+                                    Кондитерские изделия</h1>
+                                <img class="w-full h-full" src="../assets/category/cart-6.png" alt="img">
+                                <div
+                                    class="w-full h-full absolute top-0 left-0 bg-linear-to-b from-[green]/1 group-hover:to-[red]/50 duration-[2.6s]  to-[green]/70">
+                                </div>
+                            </div>
+                            <div
+                                class="max-w-[372px] w-full group relative w-full rounded-[4px] overflow-hidden h-[140px] sm:h-[200px] cursor-pointer">
+                                <h1
+                                    class="text-[white] whitespace-wrap absolute bottom-[10px] font-bold left-[10px] text-[16px] sm:text-[18px] z-[1]">
+                                    Чай, кофе</h1>
+                                <img class="w-full h-full" src="../assets/category/cart-7.png" alt="img">
+                                <div
+                                    class="w-full h-full absolute top-0 left-0 bg-linear-to-b from-[green]/1 group-hover:to-[red]/50 duration-[2.6s]  to-[green]/50">
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="max-w-[784px] w-full group relative w-full rounded-[4px] overflow-hidden h-[140px] sm:h-[200px] cursor-pointer">
+                            <h1
+                                class="text-[white] absolute bottom-[10px] font-bold left-[10px] text-[16px] sm:text-[18px] z-[1]">
+                                Зоотовары</h1>
+                            <img class="w-full h-full" src="../assets/category/cart-10.png" alt="img">
+                            <div
+                                class="w-full h-full absolute top-0 left-0 bg-linear-to-b from-[green]/1 group-hover:to-[red]/50 duration-[2.6s]  to-[green]/60">
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-[20px] sm:gap-[40px]">
+                            <div
+                                class="max-w-[372px] w-full group relative w-full rounded-[4px] overflow-hidden h-[140px] sm:h-[200px] cursor-pointer">
+                                <h1
+                                    class="text-[white] absolute bottom-[10px] font-bold left-[10px] text-[16px] sm:text-[18px] z-[1]">
+                                    Детское питание</h1>
+                                <img class="w-full h-full" src="../assets/category/cart-11.png" alt="img">
+                                <div
+                                    class="w-full h-full absolute top-0 left-0 bg-linear-to-b from-[green]/1 group-hover:to-[red]/50 duration-[2.6s]  to-[green]/70">
+                                </div>
+                            </div>
+                            <div
+                                class="max-w-[372px] w-full group relative w-full rounded-[4px] overflow-hidden h-[140px] sm:h-[200px] cursor-pointer">
+                                <h1
+                                    class="text-[white] whitespace-wrap absolute bottom-[10px] font-bold line-clamp-1 left-[10px] text-[14px] sm:text-[18px] z-[1]">
+                                    Непродовольственные товары</h1>
+                                <img class="w-full h-full" src="../assets/category/cart-13.png" alt="img">
+                                <div
+                                    class="w-full h-full absolute top-0 left-0 bg-linear-to-b from-[green]/1 group-hover:to-[red]/50 duration-[2.6s]  to-[green]/50">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer
-        class="bg-[url('/assets/footer/bg.png')] py-[18px] sm:py-[25px]  bg-[#F9F4E2] pb-[100px] sm:pb-[15px] mt-[62px]">
+
+    <footer class="bg-[url('/assets/footer/bg.png')] py-[18px] sm:py-[25px]  bg-[#F9F4E2] pb-[100px] sm:pb-[15px]">
         <div class="container  mx-auto px-[20px] 2xl:px-[127px]">
             <div class=" grid grid-cols-1 gap-[30px] lg:flex items-center justify-between">
                 <div class="grid grid-cols-2 gap-[40px]">
@@ -427,6 +377,7 @@
             <p class="text-[12px]">Заказы</p>
         </div>
         <a href="./cart.html" class="flex items-center flex-col">
+
             <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M5.5 25C5.5 23.6193 6.61929 22.5 8 22.5C9.38071 22.5 10.5 23.6193 10.5 25C10.5 26.3807 9.38071 27.5 8 27.5C6.61929 27.5 5.5 26.3807 5.5 25ZM8 23.5C7.17157 23.5 6.5 24.1716 6.5 25C6.5 25.8284 7.17157 26.5 8 26.5C8.82843 26.5 9.5 25.8284 9.5 25C9.5 24.1716 8.82843 23.5 8 23.5Z"
