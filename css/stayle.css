@@ -38,3 +38,12 @@
    .menus-category-hidden{
     display: flex;
    }
+   .register{
+    opacity: -1;
+   }
+   .register-view{
+    opacity: 1;
+   }
+   .duration{
+    transition: 0.3s;
+   }
