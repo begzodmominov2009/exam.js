@@ -30,7 +30,7 @@ close.addEventListener("click", () => {
     menus.classList.add("close-transition")
 })
 register_head.addEventListener("click", () => {
-    register.classList.add("register-view")
+    register.classList.toggle("register-view")
     register.classList.add("duration")
 })
 register_close.addEventListener("click", () => {
@@ -40,3 +40,4 @@ register_close.addEventListener("click", () => {
 window.addEventListener("scroll", () => {
     register.classList.remove("register-view")
 })
+

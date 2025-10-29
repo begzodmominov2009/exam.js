@@ -1,12 +1,6 @@
 
 let discount_product = document.querySelector(".discount_product")
 let new_products = document.querySelector(".new-products")
-let bought_products = document.querySelector(".bought-products")
-let articles_products = document.querySelector(".articles-products")
-let maps_card = document.querySelector(".maps-card")
-let special_card = document.querySelector(".special-card")
-
-
 
 let sliceLastProducts = products.slice(products.length - 4, products.length)
 let discountProducts = products.filter((el) => el.discount > 0)
@@ -15,7 +9,7 @@ sliceDiscountProducts.map((el) => {
     discount_product.innerHTML += `  
      <div
                         class="max-w-[302px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl">
-                        <a href="./Pages/single.html">
+                        <a href="./single.html">
                             <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[0]} alt="img">
                         </a>
                         <div class="flex items-center justify-between pt-[8px]">
@@ -77,7 +71,7 @@ sliceNoDiscountProducts.map((el) => {
     new_products.innerHTML += `
         <div
                         class="max-w-[302px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl">
-                        <a href="./Pages/single.html">
+                        <a href="./single.html">
                             <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[0]} alt="img">
                         </a>
                         <div class="flex items-center justify-between pt-[8px]">
@@ -129,135 +123,3 @@ sliceNoDiscountProducts.map((el) => {
     
     `
 })
-
-
-let sliceBoughtProducts = products.slice(products.length - 10, products.length)
-noDiscountProducts = products.filter((el) => el.discount === 0)
-sliceNoDiscountProducts = noDiscountProducts.slice(noDiscountProducts[0], noDiscountProducts.length - 10)
-sliceNoDiscountProducts.map((el) => {
-    bought_products.innerHTML += `
-            <div
-                        class="max-w-[302px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl">
-                        <a href="./Pages/single.html">
-                            <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[0]} alt="img">
-                        </a>
-                        <div class="flex items-center justify-between pt-[8px]">
-                            <div>
-                                <p class="font-bold text-[14px] px-[8px] sm:text-[18px]">${el.price}₽</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center justify-between pt-[4px]">
-                            <div>
-                                <p class="text-[12px] px-[8px] sm:text-[14px]">${el.name}</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-[5px] sm:gap-[8px]  pt-[4px] sm:pt-[8px] ">
-                            <p class="text-[12px] sm:text-[16px] px-[8px] line-clamp-2">${el.description}</p>
-                            <div class="px-[0px] sm:px-[8px]">
-                                <svg class="w-[210px] sm:w-[256px] h-[12px] sm:h-[16px]" width="256" height="16" viewBox="0 0 256 16" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M7.10326 1.81698C7.47008 1.07374 8.52992 1.07374 8.89674 1.81699L10.1185 4.29249C10.2641 4.58763 10.5457 4.7922 10.8714 4.83953L13.6033 5.2365C14.4235 5.35568 14.751 6.36365 14.1575 6.94219L12.1807 8.8691C11.945 9.09884 11.8375 9.42984 11.8931 9.75423L12.3598 12.4751C12.4999 13.292 11.6424 13.9149 10.9088 13.5293L8.46534 12.2446C8.17402 12.0915 7.82598 12.0915 7.53466 12.2446L5.09119 13.5293C4.35756 13.9149 3.50013 13.292 3.64024 12.4751L4.1069 9.75423C4.16254 9.42984 4.05499 9.09884 3.81931 8.8691L1.8425 6.94219C1.24898 6.36365 1.57649 5.35568 2.39671 5.2365L5.12859 4.83953C5.4543 4.7922 5.73587 4.58763 5.88153 4.29249L7.10326 1.81698Z"
-                                        fill="#FF6633" />
-                                    <path
-                                        d="M27.1033 1.81698C27.4701 1.07374 28.5299 1.07374 28.8967 1.81699L30.1185 4.29249C30.2641 4.58763 30.5457 4.7922 30.8714 4.83953L33.6033 5.2365C34.4235 5.35568 34.751 6.36365 34.1575 6.94219L32.1807 8.8691C31.945 9.09884 31.8375 9.42984 31.8931 9.75423L32.3598 12.4751C32.4999 13.292 31.6424 13.9149 30.9088 13.5293L28.4653 12.2446C28.174 12.0915 27.826 12.0915 27.5347 12.2446L25.0912 13.5293C24.3576 13.9149 23.5001 13.292 23.6402 12.4751L24.1069 9.75423C24.1625 9.42984 24.055 9.09884 23.8193 8.8691L21.8425 6.94219C21.249 6.36365 21.5765 5.35568 22.3967 5.2365L25.1286 4.83953C25.4543 4.7922 25.7359 4.58763 25.8815 4.29249L27.1033 1.81698Z"
-                                        fill="#FF6633" />
-                                    <path
-                                        d="M47.1033 1.81698C47.4701 1.07374 48.5299 1.07374 48.8967 1.81699L50.1185 4.29249C50.2641 4.58763 50.5457 4.7922 50.8714 4.83953L53.6033 5.2365C54.4235 5.35568 54.751 6.36365 54.1575 6.94219L52.1807 8.8691C51.945 9.09884 51.8375 9.42984 51.8931 9.75423L52.3598 12.4751C52.4999 13.292 51.6424 13.9149 50.9088 13.5293L48.4653 12.2446C48.174 12.0915 47.826 12.0915 47.5347 12.2446L45.0912 13.5293C44.3576 13.9149 43.5001 13.292 43.6402 12.4751L44.1069 9.75423C44.1625 9.42984 44.055 9.09884 43.8193 8.8691L41.8425 6.94219C41.249 6.36365 41.5765 5.35568 42.3967 5.2365L45.1286 4.83953C45.4543 4.7922 45.7359 4.58763 45.8815 4.29249L47.1033 1.81698Z"
-                                        fill="#BFBFBF" />
-                                    <path
-                                        d="M67.1033 1.81698C67.4701 1.07374 68.5299 1.07374 68.8967 1.81699L70.1185 4.29249C70.2641 4.58763 70.5457 4.7922 70.8714 4.83953L73.6033 5.2365C74.4235 5.35568 74.751 6.36365 74.1575 6.94219L72.1807 8.8691C71.945 9.09884 71.8375 9.42984 71.8931 9.75423L72.3598 12.4751C72.4999 13.292 71.6424 13.9149 70.9088 13.5293L68.4653 12.2446C68.174 12.0915 67.826 12.0915 67.5347 12.2446L65.0912 13.5293C64.3576 13.9149 63.5001 13.292 63.6402 12.4751L64.1069 9.75423C64.1625 9.42984 64.055 9.09884 63.8193 8.8691L61.8425 6.94219C61.249 6.36365 61.5765 5.35568 62.3967 5.2365L65.1286 4.83953C65.4543 4.7922 65.7359 4.58763 65.8815 4.29249L67.1033 1.81698Z"
-                                        fill="#BFBFBF" />
-                                    <path
-                                        d="M87.1033 1.81698C87.4701 1.07374 88.5299 1.07374 88.8967 1.81699L90.1185 4.29249C90.2641 4.58763 90.5457 4.7922 90.8714 4.83953L93.6033 5.2365C94.4235 5.35568 94.751 6.36365 94.1575 6.94219L92.1807 8.8691C91.945 9.09884 91.8375 9.42984 91.8931 9.75423L92.3598 12.4751C92.4999 13.292 91.6424 13.9149 90.9088 13.5293L88.4653 12.2446C88.174 12.0915 87.826 12.0915 87.5347 12.2446L85.0912 13.5293C84.3576 13.9149 83.5001 13.292 83.6402 12.4751L84.1069 9.75423C84.1625 9.42984 84.055 9.09884 83.8193 8.8691L81.8425 6.94219C81.249 6.36365 81.5765 5.35568 82.3967 5.2365L85.1286 4.83953C85.4543 4.7922 85.7359 4.58763 85.8815 4.29249L87.1033 1.81698Z"
-                                        fill="#BFBFBF" />
-                                </svg>
-                            </div>
-                            <div class="px-[8px]">
-                                <button
-                                    class="w-full mb-[8px] mt-[5px]  rounded-[4px] text-[#70C05B] px-[8px] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
-                                    В корзину
-                                </button>
-                            </div>
-                            <svg class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[2px] rounded-[4px] width="
-                                24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M12.7046 4.25644C13.8299 3.13067 15.3564 2.49817 16.9482 2.49817C18.5399 2.49817 20.0664 3.13063 21.1916 4.25636C22.3174 5.38164 22.95 6.90829 22.95 8.49999C22.95 10.0917 22.3175 11.6183 21.1917 12.7435C21.1917 12.7436 21.1917 12.7435 21.1917 12.7435L12.3517 21.5835C12.1565 21.7788 11.8399 21.7788 11.6446 21.5835L2.80461 12.7435C0.460963 10.3999 0.460963 6.60009 2.80461 4.25644C5.14826 1.91279 8.94807 1.91279 11.2917 4.25644L11.9982 4.96289L12.7046 4.25644C12.7046 4.25641 12.7046 4.25647 12.7046 4.25644ZM16.9482 3.49817C15.6217 3.49817 14.3496 4.02528 13.4118 4.96346L12.3517 6.02355C12.258 6.11732 12.1308 6.16999 11.9982 6.16999C11.8656 6.16999 11.7384 6.11732 11.6446 6.02355L10.5846 4.96355C8.63149 3.01042 5.46484 3.01042 3.51172 4.96355C1.55859 6.91667 1.55859 10.0833 3.51172 12.0364L11.9982 20.5229L20.4846 12.0364C21.4228 11.0987 21.95 9.82648 21.95 8.49999C21.95 7.17351 21.4229 5.90138 20.4847 4.96363C19.5469 4.02544 18.2747 3.49817 16.9482 3.49817Z"
-                                    fill="#414141" />
-                            </svg>
-                        </div>
-                    </div>
-    
-    `
-})
-
-
-
-descriptionProducts.map((el) => {
-    articles_products.innerHTML += `
-    <div
-                        class="max-w-[470px] w-full bg-[white] cursor-pointer shadow-2xl rounded-[8px] overflow-hidden">
-                        <img class="w-full" src=${el.url} alt="img">
-                        <div class="px-[10px] pb-[20px] pt-[10px]">
-                            <p class="text-[#8F8F8F] text-[12px]">${el.data}</p>
-                            <p class="font-bold text-[16px] sm:text-[18px]">${el.title}</p>
-                            <p class="pt-[10px] text-[14px] sm:text-[16px] text-[#333333] pb-[17px]">${el.description}</p>
-                            <a class="bg-[#E5FFDE] rounded-[4px]  hover:text-[white] duration-[0.3s] text-[#70C05B] px-[35px] group hover:bg-[#70C05B] p-[10px]"
-                                href="./Pages/Vacancies.html">
-                                Подробнее
-                            </a>
-                        </div>
-                    </div>
-
-    `
-})
-
-specialCard.map((el) => {
-    special_card.innerHTML += `
-    <div
-                     class="bg-[#FCD5BA] max-w-[904px] w-full  overflow-hidden  group h-[200x] flex items-center justify-between rounded-[6px] shadow-md cursor-pointer px-[15px] py-[7px] sm:py-[15px] sm:px-[31.75px]">
-                        <div>
-                            <h3 class="text-[18px] sm:text-[24px] font-bold whi">${el.title}</h3>
-                            <p class="text-[12px] sm:text-[16px] whitespace-wrap pt-[6px] whitespace-wrap">${el.description}</p>
-                        </div>
-                        <img class="w-[145px] sm:w-[225px]  scale-[1] group-hover:scale-[1.1] duration-[0.3s]"
-                            src=${el.url} alt="img">
-                    </div>
-    `
-})
-
-maps.map((el) => {
-    maps_card.innerHTML += `
-      <div class="flex items-center gap-[18px] sm:gap-[24px] pt-[20px] sm:pt-[30px]">
-                    <a class="bg-[#F3F2F1] group hover:bg-[#70C05B] hover:text-[white] duration-[0.3s] p-[8px] rounded-[4px] text-[12px]"
-                        href="./Pages/contact.html">
-                        ${el.description_1}
-                    </a>
-                    <a class="bg-[#F3F2F1] group hover:bg-[#70C05B] hover:text-[white] duration-[0.3s] p-[8px] rounded-[4px] text-[12px]"
-                        href="./Pages/contact.html">
-                        ${el.description_2}
-                    </a>
-                    <a class="bg-[#F3F2F1] group hover:bg-[#70C05B] hover:text-[white] duration-[0.3s] p-[8px] rounded-[4px] text-[12px]"
-                        href="./Pages/contact.html">
-                        ${el.description_3}
-                    </a>
-                    <a class="bg-[#F3F2F1] group hover:bg-[#70C05B] hover:text-[white] duration-[0.3s] p-[8px] rounded-[4px] text-[12px]"
-                        href="./Pages/contact.html">
-                        ${el.description_4}
-                    </a>
-                </div>
-                <div class="pt-[14px] sm:pt-[24px] ">
-                      <img class="w-full" src=${el.url} alt="img">
-                </div>
-
-    `
-})
-
-
-
-
-
-
-
-
-
