@@ -7,6 +7,7 @@ let menus_category_close = document.getElementById("menus-category-close")
 let register_head = document.getElementById("register-head")
 let register = document.getElementById("register")
 let register_close = document.getElementById("register-close")
+let loading = document.getElementById("loading")
 
 
 menus_category.addEventListener("click", () => {
@@ -40,4 +41,11 @@ register_close.addEventListener("click", () => {
 window.addEventListener("scroll", () => {
     register.classList.remove("register-view")
 })
+
+window.addEventListener("load" , () => {
+    loading.classList.add("hidden")
+})
+
+
+
 

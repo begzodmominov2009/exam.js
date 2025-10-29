@@ -20,7 +20,7 @@ sliceDiscountProducts.map((el) => {
                         </a>
                         <div class="flex items-center justify-between pt-[8px]">
                             <div>
-                                <p class="font-bold text-[14px] px-[8px] sm:text-[18px]">${el.price}₽</p>
+                                <p class="font-bold text-[14px] px-[8px] sm:text-[18px]">${el.price}</p>
                             </div>
                         </div>
                         <div class="flex items-center justify-between pt-[4px]">
