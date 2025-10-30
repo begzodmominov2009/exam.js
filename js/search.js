@@ -9,7 +9,7 @@ function searchProducts(content, data) {
     data.map((el) => {
         content.innerHTML += `
         <div
-                        class="max-w-[130px] rounded-[4px] w-full cursor-pointer bg-[#F9F4E2] relative group overflow-hidden shadow-2xl">
+                        class="max-w-[130px] rounded-[4px] w-full cursor-pointer bg-[white]/70 relative group overflow-hidden">
                         <a href="./single.html">
                             <img class="w-full h-[80px] sm:h-[202px]" src=${el.images[0]} alt="img">
                         </a>
@@ -143,7 +143,6 @@ searchPhone.addEventListener("input", function (e) {
     let searchProductPhone = products.filter((el) =>
         el.name.toUpperCase().includes(searchValuePhone.toUpperCase())
     );
-
     // 🔹 Agar foydalanuvchi nimadir yozgan bo‘lsa
     if (searchValuePhone) {
         // Asosiy product listni yashirish
@@ -155,7 +154,7 @@ searchPhone.addEventListener("input", function (e) {
             searchCardPhone.innerHTML = "";
             searchProductPhone.map((el) => {
                 searchCardPhone.innerHTML += `
-                    <div class="flex items-center px-[15px] z-500 gap-[15px] border-[1px] rounded-[8px]">
+                    <div class="flex items-center px-[15px] py-[5px] z-500 gap-[15px] border-[1px] border-[#BFBFBF] rounded-[8px]">
                         <img class="max-w-[55px] w-full h-[35px] rounded-[5px]" src=${el.images[0]} alt="img">
                         <div class="flex flex-col justify-between">
                             <h1>${el.name}</h1>

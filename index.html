@@ -58,11 +58,7 @@
                     <p class="text-[white]">Каталог</p>
                 </div>
                 <div class="flex sm:hidden gap-[7px] items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                        fill="#414141">
-                        <path
-                            d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z" />
-                    </svg>
+
                     <a href="Pages/search.html">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
                             fill="#414141">
@@ -72,12 +68,14 @@
                     </a>
                 </div>
                 <div class="hidden md:flex">
-                    <div class="w-[460px] relative">
+                    <div class="relative w-[460px]">
                         <input id="search-input"
-                            class="w-full h-[40px] rounded-[4px] border-[1px] border-[#70C05B0] px-[20px] outline-none"
+                            class="border-[1px] bg-white border-[#BFBFBF] w-full py-[6px] rounded-[8px] pl-[34px] pr-[10px] cursor-pointer outline-none"
                             placeholder="Найти товар" type="search">
-                        <div id="search-cards" class="w-full flex flex-col gap-[10px] hidden max-h-[250px] overflow-y-scroll px-[10px] absolute rounded-b-[4px] top-[40px] py-[15px] bg-[white]">
-                          
+                        <img class="absolute top-2 left-2" src="../assets/header/search2.svg" alt="search">
+                        <div id="search-cards"
+                            class="w-full flex border-[1px] border-[#BFBFBF] rounded-[10px] flex-col gap-[10px] hidden max-h-[500px] overflow-y-scroll px-[10px] absolute rounded-b-[4px] top-[50px] py-[15px] bg-[white]">
+
                         </div>
                     </div>
 
@@ -434,7 +432,7 @@
     </footer>
 
     <div
-        class="flex sm:hidden bg-[white] flex fixed h-[10vw] w-[100vw] bottom-[0px] justify-between items-center flex py-[30px] px-[15px] z-[900]">
+        class="flex sm:hidden bg-[white] flex fixed h-[10vw] w-[100vw] bottom-[0px] justify-between items-center flex py-[30px] px-[20px] z-[900]">
         <a class="flex flex-col items-center" href="../index.html">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -469,6 +467,15 @@
                 <p class="text-[11px]">Заказы</p>
             </a>
             <a href="./Pages/cart.html" class="flex items-center flex-col">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12.7046 4.25644C13.8299 3.13067 15.3564 2.49817 16.9482 2.49817C18.5399 2.49817 20.0664 3.13063 21.1916 4.25636C22.3174 5.38164 22.95 6.90829 22.95 8.49999C22.95 10.0917 22.3175 11.6183 21.1917 12.7435C21.1917 12.7436 21.1917 12.7435 21.1917 12.7435L12.3517 21.5835C12.1565 21.7788 11.8399 21.7788 11.6446 21.5835L2.80461 12.7435C0.460963 10.3999 0.460963 6.60009 2.80461 4.25644C5.14826 1.91279 8.94807 1.91279 11.2917 4.25644L11.9982 4.96289L12.7046 4.25644C12.7046 4.25641 12.7046 4.25647 12.7046 4.25644ZM16.9482 3.49817C15.6217 3.49817 14.3496 4.02528 13.4118 4.96346L12.3517 6.02355C12.258 6.11732 12.1308 6.16999 11.9982 6.16999C11.8656 6.16999 11.7384 6.11732 11.6446 6.02355L10.5846 4.96355C8.63149 3.01042 5.46484 3.01042 3.51172 4.96355C1.55859 6.91667 1.55859 10.0833 3.51172 12.0364L11.9982 20.5229L20.4846 12.0364C21.4228 11.0987 21.95 9.82648 21.95 8.49999C21.95 7.17351 21.4229 5.90138 20.4847 4.96363C19.5469 4.02544 18.2747 3.49817 16.9482 3.49817Z"
+                        fill="#414141" />
+                </svg>
+
+                <p class="text-[11px]">Избранное</p>
+            </a>
+            <a href="./Pages/cart.html" class="flex items-center flex-col">
 
                 <svg width="20" height="24" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -492,9 +499,9 @@
             </a>
     </div>
     <script src="./products-data/products-data.js"></script>
+    <script src="./js/main_2.js"></script>
     <script src="./js/loading.js"></script>
     <script src="./js/search-input.js"></script>
-    <script src="./js/main_2.js"></script>
     <script src="./js/main.js"></script>
 </body>
 

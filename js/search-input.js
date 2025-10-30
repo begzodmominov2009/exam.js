@@ -14,7 +14,7 @@ search_input.addEventListener("input", function (e) {
     searchProduct.length > 0 ?
         searchProduct.map((el) => {
             searchCards.innerHTML += `
-        <div class="flex items-center px-[15px] gap-[15px] border-[1px] rounded-[8px]">
+        <div class="flex items-center px-[15px] gap-[15px] border-[1px] border-[#BFBFBF] py-[5px] rounded-[8px]">
             <img class="max-w-[55px] w-full h-[35px] rounded-[5px]" src=${el.images[0]} alt="img">
                 <div class="flex flex-col justify-between">
                     <h1 class="">${el.name}</h1>
