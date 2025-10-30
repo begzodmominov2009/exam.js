@@ -58,16 +58,17 @@
                 </div>
                 <div class="flex sm:hidden gap-[7px] items-center">
                     <a href="./search.html">
-                        <img src="./assets/header/search2.svg" alt="search">
+                        <img src="../assets/header/search2.svg" alt="search">
                     </a>
                 </div>
                 <div class="hidden md:flex">
-                    <div class="w-[460px] relative">
+                    <div class="relative w-[460px]">
                         <input id="search-input"
-                            class="w-full h-[40px] rounded-[4px] border-[1px] border-[#70C05B0] px-[20px] outline-none"
+                            class="border-[1px] bg-white border-[#BFBFBF] w-full py-[6px] rounded-[8px] pl-[34px] pr-[10px] cursor-pointer outline-none"
                             placeholder="Найти товар" type="search">
+                        <img class="absolute top-2 left-2" src="../assets/header/search2.svg" alt="search">
                         <div id="search-cards"
-                            class="w-full flex flex-col gap-[10px] hidden max-h-[250px] overflow-y-scroll px-[10px] absolute rounded-b-[4px] top-[40px] py-[15px] bg-[white]">
+                            class="w-full flex border-[1px] border-[#BFBFBF] rounded-[10px] flex-col gap-[10px] hidden max-h-[500px] overflow-y-scroll px-[10px] absolute rounded-b-[4px] top-[50px] py-[15px] bg-[white]">
 
                         </div>
                     </div>
@@ -546,9 +547,11 @@
             </a>
     </div>
 
+    <script src="../products-data/products-data.js"></script>
     <script src="../js/main_2.js"></script>
     <script src="../js/loading.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/search-input.js"></script>
 </body>
 
 </html>

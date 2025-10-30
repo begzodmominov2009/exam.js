@@ -15,8 +15,11 @@ function searchProducts(content, data) {
                         </a>
                         <div class="flex items-center justify-between pt-[4px]">
                             <div class="flex items-center justify-between w-full">
-                                <p class="font-bold text-[12px] px-[8px] sm:text-[18px]">${el.price}₽</p>
-                                 <p class="font-bold text-[12px] px-[8px] sm:text-[18px]">${el.price - el.price * el.discount / 100}₽</p>
+                                <p class="font-bold text-[14px] px-[8px] sm:text-[18px]">${el.price - el.price * el.discount / 100}₽</p>
+                                ${
+                                    el.discount > 0 ? ( `<strike class="text-[14px] text-[#BFBFBF] px-[8px] sm:text-[18px]">${el.price}₽</strike>`)
+                                 : ("")
+                                }
                             </div>
                         </div>
                             <div class="flex items-center justify-between pt-[0px]">
@@ -25,7 +28,7 @@ function searchProducts(content, data) {
                             </div>
                         </div>
                         <div class="flex flex-col gap-[5px] sm:gap-[8px] pt-[2px]  sm:pt-[8px]">
-                        <p class="text-[10px] sm:text-[16px] px-[8px] line-clamp-2">${el.description}</p>
+                        <p class="text-[10px] text-[#595858] sm:text-[16px] px-[8px] line-clamp-2">${el.description}</p>
                           ${el.rating === 5 ? `
                           <div class="flex gap-[4px] px-[8px] pt-[-0px]">
                             <img class="w-[9px] h-[9px]" src="../assets/images/stars/to'liq.svg" alt="star" />
@@ -116,14 +119,14 @@ function searchProducts(content, data) {
                             <img class="w-[9px] h-[9px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
                            `: ""
-            }
+                              }
                             <div class="px-[0px] sm:px-[8px]">
                             ${el.discount ? (
-                `  <span
+                            `  <span
                                 class="absolute top-[6px] sm:top-[130px] xl:top-[150px] left-[6px] bg-[#FF6633] w-[28px] sm:w-[56px] h-[19px] sm:h-[32px] text-[10px] sm:text-[16px] flex items-center justify-center rounded-[5px] text-[white]">-${el.discount}%</span>`
-            ) : (
-                "")
-            }
+                             ) : (
+                            "")
+                            }
                             <svg class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[2px] rounded-[4px] width="
                                 24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"

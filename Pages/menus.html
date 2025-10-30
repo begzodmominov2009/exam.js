@@ -47,7 +47,6 @@
                     </svg>
                     <p class="text-[white]">Каталог</p>
                 </div>
-
                 <div id="menus-category-close"
                     class="category-close flex hidden sm:flex w-[140px]  rounded-[5px] h-[40px] justfiy-between pl-[8px] pr-[15px] gap-[20px] items-center bg-[#70C05B]">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
@@ -59,12 +58,21 @@
                 </div>
                 <div class="flex sm:hidden gap-[7px] items-center">
                     <a href="./search.html">
-                        <img src="./assets/header/search2.svg" alt="search">
+                        <img src="../assets/header/search2.svg" alt="search">
                     </a>
                 </div>
-                <div class="hidden md:flex w-[460px]">
-                    <input class="w-full h-[40px] rounded-[6px] border-[1px] border-[#70C05B0] px-[20px] outline-none"
-                        placeholder="Найти товар" type="search">
+                <div class="hidden md:flex">
+                    <div class="relative w-[460px]">
+                        <input id="search-input"
+                            class="border-[1px] bg-white border-[#BFBFBF] w-full py-[6px] rounded-[8px] pl-[34px] pr-[10px] cursor-pointer outline-none"
+                            placeholder="Найти товар" type="search">
+                        <img class="absolute top-2 left-2" src="../assets/header/search2.svg" alt="search">
+                        <div id="search-cards"
+                            class="w-full flex border-[1px] border-[#BFBFBF] rounded-[10px] flex-col gap-[10px] hidden max-h-[500px] overflow-y-scroll px-[10px] absolute rounded-b-[4px] top-[50px] py-[15px] bg-[white]">
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div class="hidden xl:flex flex items-center gap-[24px] text-[12px]">
@@ -415,7 +423,9 @@
             </a>
     </div>
 
+    <script src="../products-data/products-data.js"></script>
     <script src="../js/main_2.js"></script>
+    <script src="../js/search-input.js"></script>
     <script src="../js/loading.js"></script>
     <script src="../js/main.js"></script>
 </body>

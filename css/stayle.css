@@ -10,6 +10,7 @@
    .category-view {
        transform: translateY(0%);
        transition: 0.5s;
+       color: #595858;
    }
 
 

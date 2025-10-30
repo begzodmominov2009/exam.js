@@ -12,17 +12,20 @@ function allProducts(content, data) {
                         </a>
                         <div class="flex items-center justify-between pt-[8px]">
                             <div class="flex items-center justify-between w-full">
-                                <p class="font-bold text-[14px] px-[8px] sm:text-[18px]">${el.price}₽</p>
-                                 <p class="font-bold text-[14px] px-[8px] sm:text-[18px]">${el.price - el.price * el.discount / 100}₽</p>
+                              <p class="font-bold text-[14px] px-[8px] sm:text-[18px]">${el.price - el.price * el.discount / 100}₽</p>
+                                ${
+                                    el.discount > 0 ? ( `<strike class="text-[14px] text-[#BFBFBF] px-[8px] sm:text-[18px]">${el.price}₽</strike>`)
+                                 : ("")
+                                }
                             </div>
                         </div>
                             <div class="flex items-center justify-between pt-[4px]">
                             <div>
-                                <p class="text-[12px] px-[8px] sm:text-[14px]">${el.name}</p>
+                                <p class="text-[14px] px-[8px] sm:text-[18px]">${el.name}</p>
                             </div>
                         </div>
                         <div class="flex flex-col gap-[5px] sm:gap-[8px]  pt-[4px] sm:pt-[8px] ">
-                        <p class="text-[12px] sm:text-[16px] px-[8px] line-clamp-2">${el.description}</p>
+                        <p class="text-[12px] text-[#595858] sm:text-[16px] px-[8px] line-clamp-2">${el.description}</p>
                           ${el.rating === 5 ? `
                           <div class="flex gap-[4px] px-[8px] pt-[4px]">
                             <img src="../assets/images/stars/to'liq.svg" alt="star" />
@@ -114,7 +117,6 @@ function allProducts(content, data) {
                            </div>
                            `:""
                         }
-                            <div class="px-[0px] sm:px-[8px]">
                             <div class="px-[8px]">
                                 <button
                                     class="w-full mb-[8px] mt-[2px]  rounded-[4px] text-[#70C05B] px-[8px] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
