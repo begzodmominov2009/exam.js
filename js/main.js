@@ -35,7 +35,7 @@ function homeProducts(content, data) {
                             <div class="flex items-center justify-between w-full">
                                 <p class="font-bold text-[14px] px-[8px] sm:text-[18px]">${el.price - el.price * el.discount / 100}₽</p>
                                 ${
-                                    el.discount > 0 ? ( `<strike class="text-[14px] text-[#BFBFBF] px-[8px] sm:text-[18px]">${el.price}₽</strike>`)
+                                    el.discount > 0 ? ( `<strike class="text-[12px] text-[#BFBFBF] px-[8px] sm:text-[18px]">${el.price}₽</strike>`)
                                  : ("")
                                 }
                             </div>

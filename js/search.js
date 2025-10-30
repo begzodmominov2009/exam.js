@@ -15,9 +15,9 @@ function searchProducts(content, data) {
                         </a>
                         <div class="flex items-center justify-between pt-[4px]">
                             <div class="flex items-center justify-between w-full">
-                                <p class="font-bold text-[14px] px-[8px] sm:text-[18px]">${el.price - el.price * el.discount / 100}₽</p>
+                                <p class="font-bold text-[11px] px-[8px]">${el.price - el.price * el.discount / 100}₽</p>
                                 ${
-                                    el.discount > 0 ? ( `<strike class="text-[14px] text-[#BFBFBF] px-[8px] sm:text-[18px]">${el.price}₽</strike>`)
+                                    el.discount > 0 ? ( `<strike class="text-[10px] text-[#BFBFBF] px-[8px]">${el.price}₽</strike>`)
                                  : ("")
                                 }
                             </div>
@@ -27,7 +27,7 @@ function searchProducts(content, data) {
                                 <p class="text-[11px] px-[8px] sm:text-[14px]">${el.name}</p>
                             </div>
                         </div>
-                        <div class="flex flex-col gap-[5px] sm:gap-[8px] pt-[2px]  sm:pt-[8px]">
+                        <div class="flex flex-col gap-[2.5px] sm:gap-[8px] pt-[2px]  sm:pt-[8px]">
                         <p class="text-[10px] text-[#595858] sm:text-[16px] px-[8px] line-clamp-2">${el.description}</p>
                           ${el.rating === 5 ? `
                           <div class="flex gap-[4px] px-[8px] pt-[-0px]">
