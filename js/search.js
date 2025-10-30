@@ -16,8 +16,8 @@ function searchProducts(content, data) {
                         <div class="flex items-center justify-between pt-[4px]">
                             <div class="flex items-center justify-between w-full">
                                 <p class="font-bold text-[11px] px-[8px]">${el.price - el.price * el.discount / 100}₽</p>
-                                ${
-                                    el.discount > 0 ? ( `<strike class="text-[10px] text-[#BFBFBF] px-[8px]">${el.price}₽</strike>`)
+                             ${
+                                    el.discount > 0 ? ( `<strike class="text-[10px] bg-[#FF6633] text-[#ffff] mr-[8px] rounded-[4px]  inline-blok px-[8px] sm:text-[14px]">${el.price}₽</strike>`)
                                  : ("")
                                 }
                             </div>
