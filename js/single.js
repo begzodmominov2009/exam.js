@@ -33,96 +33,96 @@ function showProducts(content, data) {
                                 <p class="text-[14px] px-[8px] sm:text-[18px]">${el.name}</p>
                             </div>
                         </div>
-                        <div class="flex flex-col gap-[5px] sm:gap-[8px]  pt-[4px] sm:pt-[8px] ">
+                        <div class="flex flex-col gap-[2.5px] sm:gap-[8px]  pt-[4px] sm:pt-[8px] ">
                         <p class="text-[12px] text-[#595858] sm:text-[16px] px-[8px] line-clamp-2">${el.description}</p>
                           ${el.rating === 5 ? `
-                          <div class="flex gap-[4px] px-[8px] pt-[4px]">
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
+                               <div class="flex gap-[4px] px-[8px] pt-[2px] sm:pt-[4px]">
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
                            </div>
                            ` : el.rating === 4.5 ? `
-                             <div class="flex gap-[4px] px-[8px] pt-[4px]">
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/yarm.svg" alt="star" />
+                             <div class="flex gap-[4px] px-[8px] pt-[2px] sm:pt-[4px]">
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/yarm.svg" alt="star" />
                            </div>
                            `: el.rating === 4 ? `
-                             <div class="flex gap-[4px] px-[8px] pt-[4px]">
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
+                             <div class="flex gap-[4px] px-[8px] pt-[2px] sm:pt-[4px]">
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
                            
                            `: el.rating === 3.5 ? `
-                              <div class="flex gap-[4px] px-[8px] pt-[4px]">
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/yarm.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
+                              <div class="flex gap-[4px] px-[8px] pt-[2px] sm:pt-[4px]">
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/yarm.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
                            `: el.rating === 3 ? `
-                             <div class="flex gap-[4px] px-[8px] pt-[4px]">
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
+                             <div class="flex gap-[4px] px-[8px] pt-[2px] sm:pt-[4px]">
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
                            `: el.rating === 2.5 ? `
                             <div class="flex gap-[4px] px-[8px] pt-[4px]">
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/yarm.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/yarm.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
                            `: el.rating === 2 ? `
                            <div class="flex gap-[4px] px-[8px] pt-[4px]">
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
                            `: el.rating === 1.5 ? `
                             <div class="flex gap-[4px] px-[8px] pt-[4px]">
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/yarm.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/yarm.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
                            `: el.rating === 1 ? `
                             <div class="flex gap-[4px] px-[8px] pt-[4px]">
-                            <img src="../assets/images/stars/to'liq.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
                            `: el.rating === 0.5 ? `
                            <div class="flex gap-[4px] px-[8px] pt-[4px]">
-                            <img src="../assets/images/stars/yarm.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/yarm.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
                            `: el.rating === 0 ? `
                             <div class="flex gap-[4px] px-[8px] pt-[4px]">
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
-                            <img src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
+                            <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
                            `:""
                              }

@@ -560,7 +560,7 @@ const products = [
   },
   {
     id: 36,
-    name: "Chocolate Chip Cookies",
+    name: "Chocolate Chip",
     category: "Dessert",
     description:
       "Chocolate Chip Cookies are a type of cookie made from flour, sugar, butter, and chocolate chips.",
