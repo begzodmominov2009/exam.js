@@ -7,6 +7,13 @@
     <title>Home</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./css/stayle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -60,7 +67,7 @@
                 <div class="flex sm:hidden gap-[7px] items-center">
 
                     <a href="Pages/search.html">
-                       <img src="./assets/header/search2.svg" alt="search">
+                        <img src="./assets/header/search2.svg" alt="search">
                     </a>
                 </div>
                 <div class="hidden md:flex">
@@ -68,7 +75,7 @@
                         <input id="search-input"
                             class="border-[1px] bg-white border-[#BFBFBF] w-full py-[6px] rounded-[8px] pl-[34px] pr-[10px] cursor-pointer outline-none"
                             placeholder="Найти товар" type="search">
-                        <img class="absolute top-2 left-2" src="../assets/header/search2.svg" alt="search">
+                        <img class="absolute top-2 left-2" src="./assets/header/search2.svg" alt="search">
                         <div id="search-cards"
                             class="w-full flex border-[1px] border-[#BFBFBF] rounded-[10px] flex-col gap-[10px] hidden max-h-[500px] overflow-y-scroll px-[10px] absolute rounded-b-[4px] top-[50px] py-[15px] bg-[white]">
 
@@ -251,16 +258,29 @@
     </div>
 
     <main>
-        <section class="bg-[url('../assets/header/home-bg.png')] h-[140px] sm:h-auto pt-[90px]">
-            <div class="container mx-auto px-[20px] 2xl:px-[127px]">
-                <div class="flex items-center gap-[8px] md:gap-[18px] justify-center">
-                    <img class="hidden sm:flex" src="./assets/header/img (22).png" alt="img">
-                    <h1
-                        class="text-[18px] sm:text-[26px] md:text-[32px] lg:text-[40px] 2xl:text-[48px] whitespace-nowrap font-bold">
-                        Доставка бесплатно от 1000 ₽</h1>
+
+        <div class="owl-carousel owl-theme relative">
+            <section class="bg-[url('../assets/home/hero-bg.png')]  h-auto pt-[90px]">
+                <div class="container mx-auto px-[20px] 2xl:px-[127px]">
+                    <div class="flex items-center gap-[8px] md:gap-[18px] justify-center">
+                        <img class="max-w-[120px] sm:max-w-[180px] md:max-w-[220px] 2xl:max-w-[260px]"
+                            src="./assets/home/special_2.png" alt="img">
+                        <h1 class="text-[18px] sm:text-[26px] md:text-[32px] lg:text-[34px] 2xl:text-[48px]  font-bold">
+                            Покупайте <span class="text-[red]">акционные</span> товары</h1>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            <section class="bg-[url('../assets/header/home-bg.png')]  h-auto pt-[90px]">
+                <div class="container mx-auto px-[20px] 2xl:px-[127px]">
+                    <div class="flex items-center gap-[8px] md:gap-[18px] justify-center">
+                        <img class="max-w-[210px] sm:max-w-[270px] md:max-w-[310px] 2xl:max-w-[350px]"
+                            src="./assets/header/hero-img.png" alt="img">
+                        <h1 class="text-[18px] sm:text-[26px] md:text-[32px] lg:text-[40px] 2xl:text-[48px]  font-bold">
+                            Доставка бесплатно от <span class="text-[#FF6633]">1000 ₽</span></h1>
+                    </div>
+                </div>
+            </section>
+        </div>
 
         <section>
             <div class="container mx-auto px-[20px] pt-[30px] sm:pt-[80px] 2xl:px-[127px]">
@@ -494,8 +514,16 @@
                 <img class="w-[28px] h-[28px]" src="./assets/header/avatar (8).png" alt="avatar">
             </a>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./products-data/products-data.js"></script>
     <script src="./js/main_2.js"></script>
+    <script src="./js/carusel.js"></script>
     <script src="./js/loading.js"></script>
     <script src="./js/search-input.js"></script>
     <script src="./js/main.js"></script>

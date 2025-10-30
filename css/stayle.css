@@ -54,8 +54,4 @@
     .searching-close{
         transform: translateX(2000%);
     }
-    .wow{
-        display: flex;
-        align-items: center;
-        gap: 7px;
-    }
+
