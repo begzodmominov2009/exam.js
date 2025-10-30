@@ -1,4 +1,4 @@
-let all_products_new = document.querySelector(".all-products-new")
+let all_products_discount = document.querySelector(".all-products-discount")
 
 
 

@@ -1,4 +1,7 @@
+let searchPhone = document.getElementById("search-phone")
+let searchCardPhone = document.getElementById("search-cards-phone")
 let search_products = document.querySelector(".search-products")
+
 
 
 
@@ -113,14 +116,14 @@ function searchProducts(content, data) {
                             <img class="w-[9px] h-[9px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
                            `: ""
-                           }
+            }
                             <div class="px-[0px] sm:px-[8px]">
                             ${el.discount ? (
-                           `  <span
+                `  <span
                                 class="absolute top-[6px] sm:top-[130px] xl:top-[150px] left-[6px] bg-[#FF6633] w-[28px] sm:w-[56px] h-[19px] sm:h-[32px] text-[10px] sm:text-[16px] flex items-center justify-center rounded-[5px] text-[white]">-${el.discount}%</span>`
-                            ) : (
-                            "")
-                             }
+            ) : (
+                "")
+            }
                             <svg class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[2px] rounded-[4px] width="
                                 24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -133,5 +136,46 @@ function searchProducts(content, data) {
     `
     })
 }
-
 searchProducts(search_products, products)
+
+searchPhone.addEventListener("input", function (e) {
+    let searchValuePhone = e.target.value.trim();
+    let searchProductPhone = products.filter((el) =>
+        el.name.toUpperCase().includes(searchValuePhone.toUpperCase())
+    );
+
+    // 🔹 Agar foydalanuvchi nimadir yozgan bo‘lsa
+    if (searchValuePhone) {
+        // Asosiy product listni yashirish
+        search_products.innerHTML = ""; // <-- shu joy muhim
+        searchCardPhone.classList.remove("hidden");
+
+        // Natijalarni chiqarish
+        if (searchProductPhone.length > 0) {
+            searchCardPhone.innerHTML = "";
+            searchProductPhone.map((el) => {
+                searchCardPhone.innerHTML += `
+                    <div class="flex items-center px-[15px] z-500 gap-[15px] border-[1px] rounded-[8px]">
+                        <img class="max-w-[55px] w-full h-[35px] rounded-[5px]" src=${el.images[0]} alt="img">
+                        <div class="flex flex-col justify-between">
+                            <h1>${el.name}</h1>
+                            <p class="text-[14px] text-[#BFBFBF] line-clamp-1">${el.description}</p>
+                        </div>
+                    </div>`;
+            });
+        } else {
+            searchCardPhone.innerHTML = `<div class="text-center py-[10px] text-[14px]">Bunday mahsulot topilmadi 😕</div>`;
+        }
+    }
+    // 🔹 Agar input bo‘sh qolsa
+    else {
+        searchCardPhone.classList.add("hidden");
+        searchCardPhone.innerHTML = "";
+
+        // Asosiy product listni qayta ko‘rsatamiz
+        search_products.innerHTML = "";
+        searchProducts(search_products, products);
+    }
+});
+
+

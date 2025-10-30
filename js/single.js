@@ -131,11 +131,11 @@ function showProducts(content, data) {
                                 </button>
                             </div>
                             ${el.discount ? (
-                `  <span
+                              `  <span
                                 class="absolute top-[9px] sm:top-[130px] xl:top-[150px] left-[10px] bg-[#FF6633] w-[46px] sm:w-[56px] h-[25px] sm:h-[32px] text-[14px] sm:text-[16px] flex items-center justify-center rounded-[5px] text-[white]">-${el.discount}%</span>`
-            ) : (
-                "")
-            }
+                                ) : (
+                              "")
+                              }
                             <svg class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[2px] rounded-[4px] width="
                                 24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"

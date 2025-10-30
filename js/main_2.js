@@ -9,6 +9,21 @@ let register = document.getElementById("register")
 let register_close = document.getElementById("register-close")
 let loading = document.getElementById("loading")
 
+register_head.addEventListener("click", () => {
+    register.classList.toggle("register-view")
+    register.classList.add("duration")
+})
+register_close.addEventListener("click", () => {
+    register.classList.remove("register-view")
+    register.classList.add("duration")
+})
+window.addEventListener("scroll", () => {
+    register.classList.remove("register-view")
+})
+search_category.addEventListener("click", () => {
+    menus.classList.add("menus-view")
+})
+
 
 menus_category.addEventListener("click", () => {
     category.classList.add("category-view")
@@ -23,28 +38,14 @@ menus_category_close.addEventListener("click", () => {
     menus_category.classList.remove("menus-category-hidde")
 })
 
-search_category.addEventListener("click", () => {
-    menus.classList.add("menus-view")
-})
+
 close.addEventListener("click", () => {
     menus.classList.remove("menus-view")
     menus.classList.add("close-transition")
 })
-register_head.addEventListener("click", () => {
-    register.classList.toggle("register-view")
-    register.classList.add("duration")
-})
-register_close.addEventListener("click", () => {
-    register.classList.remove("register-view")
-    register.classList.add("duration")
-})
-window.addEventListener("scroll", () => {
-    register.classList.remove("register-view")
-})
 
-window.addEventListener("load" , () => {
-    loading.classList.add("hidden")
-})
+
+
 
 
 
