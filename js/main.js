@@ -5,6 +5,10 @@ let bought_products = document.querySelector(".bought-products")
 let articles_products = document.querySelector(".articles-products")
 let maps_card = document.querySelector(".maps-card")
 let special_card = document.querySelector(".special-card")
+let carts = JSON.parse(localStorage.getItem("carts") || "[]");
+localStorage.setItem("carts", JSON.stringify(carts));
+let badge = document.getElementById("badge")
+badge.textContent = carts.length
 
 
 
@@ -24,9 +28,10 @@ let bughtDiscountProducts = products.filter((el) => el.discount === 0)
 let sliceBughtDiscountProducts = bughtDiscountProducts.slice(bughtDiscountProducts[0], bughtDiscountProducts.length - 10)
 
 function homeProducts(content, data) {
+    content.innerHTML = ""
     data.map((el) => {
         content.innerHTML += `
-        <div
+                     <div
                         class="max-w-[302px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl">
                         <a href="./Pages/single.html">
                             <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[0]} alt="img">
@@ -34,10 +39,9 @@ function homeProducts(content, data) {
                         <div class="flex items-center justify-between pt-[8px]">
                             <div class="flex items-center justify-between w-full">
                                 <p class="font-bold text-[14px] px-[8px] sm:text-[18px]">${el.price - el.price * el.discount / 100}₽</p>
-                                ${
-                                    el.discount > 0 ? ( `<strike class="text-[12px] bg-[#FF6633] text-[#ffff] mr-[8px] rounded-[4px]  inline-blok px-[8px] sm:text-[14px]">${el.price}₽</strike>`)
-                                 : ("")
-                                }
+                                ${el.discount > 0 ? (`<strike class="text-[12px] bg-[#FF6633] text-[#ffff] mr-[8px] rounded-[4px]  inline-blok px-[7px] sm:px-[8px] sm:text-[14px]">${el.price}₽</strike>`)
+                : ("")
+            }
                             </div>
                         </div>
                             <div class="flex items-center justify-between pt-[4px]">
@@ -137,12 +141,26 @@ function homeProducts(content, data) {
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
                            `: ""
-                        }
-                            <div class="px-[8px]">
-                                <button
+                                }
+                                <div class="px-[8px]">
+                                ${carts.find((cart) => cart.id === el.id) ? ` <div
+                                 class="w-full grid grid-cols-3 gap- mb-[8px] mt-[2px]  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
+                                   <button
+                                   onClick="decraese(${el.id})"
+                                    class="w-full cursor-pointer rounded-[6px] bg-[transparent] text-[red] border-[1px] border-[red ] text-[18px] flex items-center justify-center">-</button>
+                                    <span class="w-full bg-[white] text-[black] text-[18px] flex items-center justify-center">
+                                   ${carts.find((cart) => cart.id === el.id).number
+                                    }
+                                   </span>
+                                   <button
+                                   onClick={increase(${el.id})}       
+                                   class="w-full cursor-pointer bg-[green] rounded-[6px] text-[white] text-[18px] flex items-center justify-center">+</button>
+                                </div>` : `<button
+                                onClick="addToCart(${el.id})"
                                     class="w-full mb-[8px] mt-[2px]  rounded-[4px] text-[#70C05B] px-[8px] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
                                     В корзину
-                                </button>
+                                </button>`
+            }        
                             </div>
                             <svg class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[2px] rounded-[4px] width="
                                 24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -221,6 +239,51 @@ maps.map((el) => {
 
     `
 })
+
+function addToCart(id) {
+    let item = products.find((el) => el.id === id)
+    if(carts.length < 0){
+        localStorage.setItem(carts)
+    }else{
+        localStorage.removeItem(carts)
+    }
+    item.number = 1;
+    carts.push(item)
+    badge.textContent = carts.length
+    localStorage.setItem("carts", JSON.stringify(carts));
+    homeProducts(discount_product, sliceDiscountProducts)
+    homeProducts(new_products, sliceNoDiscountProducts)
+    homeProducts(bought_products, sliceBughtDiscountProducts)
+    console.log(carts);
+}
+function increase(id) {
+    carts = carts.map((el) => {
+        if (el.id === id) {
+            el.number += 1
+        }
+        return el
+    })
+    localStorage.setItem("carts", JSON.stringify(carts));
+    homeProducts(discount_product, sliceDiscountProducts)
+    homeProducts(new_products, sliceNoDiscountProducts)
+    homeProducts(bought_products, sliceBughtDiscountProducts)
+}
+function decraese(id) {
+    let item = carts.find((el) => el.id === id)
+    carts = carts.map((el) => {
+        if (el.id === id) {
+            el.number -= 1
+        }
+        return el
+    })
+    if (item.number < 1) {
+        carts = carts.filter((el) => el.id !== id)
+    }
+    localStorage.setItem("carts", JSON.stringify(carts));
+    homeProducts(discount_product, sliceDiscountProducts)
+    homeProducts(new_products, sliceNoDiscountProducts)
+    homeProducts(bought_products, sliceBughtDiscountProducts)
+}
 
 
 
