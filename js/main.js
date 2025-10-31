@@ -144,7 +144,7 @@ function homeProducts(content, data) {
                                 }
                                 <div class="px-[8px]">
                                 ${carts.find((cart) => cart.id === el.id) ? ` <div
-                                 class="w-full grid grid-cols-3 gap- mb-[8px] mt-[2px]  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
+                                   class="w-full grid grid-cols-3 gap- mb-[8px] mt-[2px]  rounded-[4px] text-[#70C05B] hover:text-[white] duration-[0.5s] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
                                    <button
                                    onClick="decraese(${el.id})"
                                     class="w-full cursor-pointer rounded-[6px] bg-[transparent] text-[red] border-[1px] border-[red ] text-[18px] flex items-center justify-center">-</button>
@@ -155,8 +155,8 @@ function homeProducts(content, data) {
                                    <button
                                    onClick={increase(${el.id})}       
                                    class="w-full cursor-pointer bg-[green] rounded-[6px] text-[white] text-[18px] flex items-center justify-center">+</button>
-                                </div>` : `<button
-                                onClick="addToCart(${el.id})"
+                                  </div>` : `<button
+                                  onClick="addToCart(${el.id})"
                                     class="w-full mb-[8px] mt-[2px]  rounded-[4px] text-[#70C05B] px-[8px] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
                                     В корзину
                                 </button>`
