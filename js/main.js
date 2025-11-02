@@ -150,12 +150,12 @@ function homeProducts(content, data) {
                 ` <div class="w-full grid grid-cols-3 mb-[8px] mt-[2px] bg-[#d3d3d3]/30 cursor-pointer h-[35px] sm:h-[40px]">
                    <button
                    onClick="decraese(${el.id})"
-                   class="w-full cursor-pointer rounded-tl-[4px] rounded-bl-[4px] bg-[#FF6633] flex items-center justify-center"><img class="" src="../assets/header/minus.svg" alt="minus" /></button>
-                   <span class="w-full text-[black] text-[18px] flex items-center justify-center">
+                   class="w-full cursor-pointer rounded-tl-[4px] rounded-bl-[4px] bg-[#FF6633] flex items-center justify-center"><img class="w-[18px] sm:w-[22px] h-[18px] sm:h-[22px]" src="../assets/header/minus.svg" alt="minus" /></button>
+                   <span class="w-full text-[black] text-[14px] sm:text-[18px] flex items-center justify-center">
                    ${carts.find((cart) => cart.id === el.id).number}
                    </span>
                    <button onClick={increase(${el.id})}       
-                   class="w-full cursor-pointer rounded-br-[4px] rounded-tr-[4px] bg-[#FF6633] flex items-center justify-center"><img class="" src="../assets/header/plus.svg" alt="minus" /></button>
+                   class="w-full cursor-pointer rounded-br-[4px] rounded-tr-[4px] bg-[#FF6633] flex items-center justify-center"><img class="w-[14px] sm:w-[18px] h-[14px] sm:h-[18px]" src="../assets/header/plus.svg" alt="minus" /></button>
                    </div>` :
                 `<button onClick="addToCart(${el.id})"
                     class="w-full mb-[8px] mt-[2px]  rounded-[4px] text-[#70C05B] px-[8px] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
