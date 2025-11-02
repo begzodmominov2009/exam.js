@@ -1,5 +1,11 @@
 let discount_product = document.querySelector(".discount_product")
 let new_products = document.querySelector(".new-products")
+let carts = JSON.parse(localStorage.getItem("carts") || "[]");
+localStorage.setItem("carts", JSON.stringify(carts));
+let badge_single = document.getElementById("badge-single");
+let badge_single_2 = document.getElementById("badge-single-2")
+badge_single.textContent = carts.length;
+badge_single_2.textContent = carts.length
 
 
 let sliceLastProducts = products.slice(products.length - 4, products.length)
@@ -13,9 +19,10 @@ let sliceNoDiscountProducts = noDiscountProducts.slice(noDiscountProducts.length
 
 
 function ViewProducts(content, data) {
+    content.innerHTML = "";
     data.map((el) => {
         content.innerHTML += `
-        <div
+                  <div
                         class="max-w-[302px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl">
                         <a href="./single.html">
                             <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[0]} alt="img">
@@ -23,10 +30,9 @@ function ViewProducts(content, data) {
                         <div class="flex items-center justify-between pt-[8px]">
                             <div class="flex items-center justify-between w-full">
                            <p class="font-bold text-[14px] px-[8px] sm:text-[18px]">${el.price - el.price * el.discount / 100}₽</p>
-                              ${
-                                    el.discount > 0 ? ( `<strike class="text-[12px] bg-[#FF6633] text-[#ffff] mr-[8px] rounded-[4px]  inline-blok px-[8px] sm:text-[14px]">${el.price}₽</strike>`)
-                                 : ("")
-                                }
+                            ${el.discount > 0 ? (`<strike class="text-[12px] bg-[#FF6633] text-[#ffff] mr-[8px] rounded-[4px]  inline-blok px-[8px] sm:text-[14px]">${el.price}₽</strike>`)
+                : ("")
+            }
                             </div>
                         </div>
                             <div class="flex items-center justify-between pt-[4px]">
@@ -126,12 +132,26 @@ function ViewProducts(content, data) {
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
                            `: ""
-                            }
-                            <div class="px-[8px]">
-                                <button
+            }
+                           <div class="px-[8px]">
+                           ${carts.find((cart) => cart.id === el.id) ? `<div
+                                   class="w-full grid grid-cols-3 mb-[8px] mt-[2px] bg-[#d3d3d3]/30 cursor-pointer h-[35px] sm:h-[40px]">
+                                   <button
+                                   onClick="decraeseSingle(${el.id})"
+                                    class="w-full cursor-pointer  rounded-tl-[4px] rounded-bl-[4px] bg-[#FF6633] flex items-center justify-center"><img class="w-[16px] sm:w-[24px] h-[16px] sm:h-[24px]" src="../assets/header/minus.svg" alt="minus" /></button>
+                                    <span class="w-full     text-[black] text-[18px] flex items-center justify-center">
+                                        ${carts.find((cart) => cart.id === el.id).number}
+                                   </span>
+                                   <button      
+                                   onClick="increaseSingle(${el.id})" 
+                                   class="w-full cursor-pointer rounded-br-[4px] rounded-tr-[4px] bg-[#FF6633] flex items-center justify-center"><img class="w-[13px] sm:w-[18px] h-[13px] sm:h-[18px]" src="../assets/header/plus.svg" alt="minus" /></button>
+                                 </div>`
+                : `<button
+                                onClick="addToCartSingle(${el.id})"
                                     class="w-full mb-[8px] mt-[2px]  rounded-[4px] text-[#70C05B] px-[8px] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
                                     В корзину
-                                </button>
+                                </button>`
+            }         
                             </div>
                             <svg class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[2px] rounded-[4px] width="
                                 24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -147,3 +167,47 @@ function ViewProducts(content, data) {
 }
 ViewProducts(discount_product, sliceDiscountProducts)
 ViewProducts(new_products, sliceNoDiscountProducts)
+
+
+function addToCartSingle(id) {
+    let item = products.find((el) => el.id === id)
+    item.number = 1;
+    carts.push(item)
+    badge_single.textContent = carts.length
+    badge_single_2.textContent = carts.length
+    localStorage.setItem("carts", JSON.stringify(carts));
+    ViewProducts(discount_product, sliceDiscountProducts)
+    ViewProducts(new_products, sliceNoDiscountProducts)
+}
+
+function increaseSingle(id) {
+    carts = carts.map((el) => {
+        if (el.id === id) {
+            el.number += 1;
+        }
+        return el
+    })
+    badge_single.textContent = carts.length
+    badge_single_2.textContent = carts.length
+    localStorage.setItem("carts", JSON.stringify(carts));
+    ViewProducts(discount_product, sliceDiscountProducts)
+    ViewProducts(new_products, sliceNoDiscountProducts)
+}
+
+function decraeseSingle(id) {
+    let item = carts.find((el) => el.id === id)
+    carts = carts.map((el) => {
+        if (el.id === id) {
+            el.number -= 1;
+        }
+        return el
+    })
+    if (item.number < 1) {
+        carts = carts.filter((el) => el.id !== id)
+    }
+    badge_single.textContent = carts.length
+    badge_single_2.textContent = carts.length
+    localStorage.setItem("carts", JSON.stringify(carts));
+    ViewProducts(discount_product, sliceDiscountProducts)
+    ViewProducts(new_products, sliceNoDiscountProducts)
+}
