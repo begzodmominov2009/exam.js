@@ -2,9 +2,13 @@ let like = JSON.parse(localStorage.getItem("like") || "[]");
 let carts = JSON.parse(localStorage.getItem("carts") || "[]");
 let likeProducts = document.querySelector(".like-products");
 let like_badge_2 = document.getElementById("like-badge-2")
+let like_badge_3 = document.getElementById("like-badge-3")
 like_badge_2.textContent = like.length;
+like_badge_3.textContent = like.length;
 let badge_1 = document.getElementById("badge-1")
+let badge_12 = document.getElementById("badge-12")
 badge_1.textContent = carts.length
+badge_12.textContent = carts.length
 
 function showLikeProducts(content, data) {
     content.innerHTML = "";
@@ -173,6 +177,7 @@ showLikeProducts(likeProducts, like);
 function removeTolikes(id) {
     like = like.filter((el) => el.id !== id)
     like_badge_2.textContent = like.length
+    like_badge_3.textContent = like.length
     localStorage.setItem("like", JSON.stringify(like));
     showLikeProducts(likeProducts, like);
 }
@@ -182,6 +187,7 @@ function addToCart(id) {
     item.number = 1;
     carts.push(item)
     badge_1.textContent = carts.length
+    badge_12.textContent = carts.length
     localStorage.setItem("carts", JSON.stringify(carts));
     showLikeProducts(likeProducts, like);
 
@@ -194,6 +200,7 @@ function increase(id) {
         return el
     })
     badge_1.textContent = carts.length
+    badge_12.textContent = carts.length
     localStorage.setItem("carts", JSON.stringify(carts));
     showLikeProducts(likeProducts, like);
 }
@@ -209,6 +216,7 @@ function decraese(id) {
         carts = carts.filter((el) => el.id !== id)
     }
     badge_1.textContent = carts.length
+    badge_12.textContent = carts.length
     localStorage.setItem("carts", JSON.stringify(carts));
     showLikeProducts(likeProducts, like);
 }
