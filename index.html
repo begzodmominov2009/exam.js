@@ -18,7 +18,7 @@
 
 <body>
 
-     <div id="loading" class="fixed z-1500 w-full h-full bg-[white] flex items-center justify-center    ">
+    <!-- <div id="loading" class="fixed z-1500 w-full h-full bg-[white] flex items-center justify-center    ">
         <div class="relative">
             <img src="./assets/loading/loading.svg" alt="loading">
             <div>
@@ -26,7 +26,7 @@
             </div>
         </div>
 
-    </div>
+    </div> -->
 
     <header class="py-[16px] bg-[white] fixed z-[100] w-full shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
         <div class="container mx-auto px-[20px] gap-[40px] 2xl:px-[127px] flex items-center justify-between">
@@ -78,21 +78,18 @@
                         <img class="absolute top-2 left-2" src="./assets/header/search2.svg" alt="search">
                         <div id="search-cards"
                             class="w-full flex border-[1px] border-[#BFBFBF] rounded-[10px] flex-col gap-[10px] hidden max-h-[500px] overflow-y-scroll px-[10px] absolute rounded-b-[4px] top-[50px] py-[15px] bg-[white]">
-
                         </div>
                     </div>
 
                 </div>
             </div>
-            <div class="hidden xl:flex flex items-center gap-[24px] text-[12px]">
-                <div class="flex cursor-pointer items-center flex-col gap-[7px]">
-                    <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M11.6577 1.75827C12.783 0.632497 14.3095 0 15.9013 0C17.493 0 19.0195 0.632466 20.1448 1.75819C21.2705 2.88347 21.9031 4.41012 21.9031 6.00183C21.9031 7.59357 21.2706 9.12009 20.1448 10.2454C20.1448 10.2454 20.1449 10.2454 20.1448 10.2454L11.3048 19.0854C11.1096 19.2806 10.793 19.2806 10.5977 19.0854L1.75774 10.2454C-0.585912 7.90173 -0.585912 4.10192 1.75774 1.75827C4.10139 -0.585378 7.90119 -0.585378 10.2448 1.75827L10.9513 2.46472L11.6577 1.75827C11.6578 1.75824 11.6577 1.7583 11.6577 1.75827ZM15.9013 1C14.5748 1 13.3027 1.52711 12.3649 2.4653L11.3048 3.52538C11.2111 3.61915 11.0839 3.67183 10.9513 3.67183C10.8187 3.67183 10.6915 3.61915 10.5977 3.52538L9.53774 2.46538C7.58461 0.512254 4.41797 0.512254 2.46484 2.46538C0.511719 4.4185 0.511719 7.58515 2.46484 9.53827L10.9513 18.0247L19.4377 9.53827C20.3759 8.60052 20.9031 7.32831 20.9031 6.00183C20.9031 4.67534 20.376 3.40321 19.4378 2.46546C18.5001 1.52727 17.2278 1 15.9013 1Z"
-                            fill="#414141" />
-                    </svg>
+            <div class="hidden xl:flex  flex items-center gap-[24px] text-[12px]">
+                <a href="./Pages/like.html" class="flex relative cursor-pointer items-center flex-col gap-[7px]">
+                    <img src="./assets/images/layk/heart-1.svg" alt="heart">
+                    <span id="like-badge"
+                        class="absolute top-[-5px] left-[35px] w-[11.28px] h-[11px] bg-[#FF6633] text-white rounded-[4px] flex items-center justify-center px-[4px] py-[2px] text-[9px]">0</span>
                     <p>Избранное</p>
-                </div>
+                </a>
                 <a href="Pages/category.html" class="flex cursor-pointer items-center flex-col gap-[7px]">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -458,15 +455,12 @@
 
                 <p class="text-[11px]">Заказы</p>
             </a>
-            <a href="./Pages/cart.html" class="flex items-center flex-col">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M12.7046 4.25644C13.8299 3.13067 15.3564 2.49817 16.9482 2.49817C18.5399 2.49817 20.0664 3.13063 21.1916 4.25636C22.3174 5.38164 22.95 6.90829 22.95 8.49999C22.95 10.0917 22.3175 11.6183 21.1917 12.7435C21.1917 12.7436 21.1917 12.7435 21.1917 12.7435L12.3517 21.5835C12.1565 21.7788 11.8399 21.7788 11.6446 21.5835L2.80461 12.7435C0.460963 10.3999 0.460963 6.60009 2.80461 4.25644C5.14826 1.91279 8.94807 1.91279 11.2917 4.25644L11.9982 4.96289L12.7046 4.25644C12.7046 4.25641 12.7046 4.25647 12.7046 4.25644ZM16.9482 3.49817C15.6217 3.49817 14.3496 4.02528 13.4118 4.96346L12.3517 6.02355C12.258 6.11732 12.1308 6.16999 11.9982 6.16999C11.8656 6.16999 11.7384 6.11732 11.6446 6.02355L10.5846 4.96355C8.63149 3.01042 5.46484 3.01042 3.51172 4.96355C1.55859 6.91667 1.55859 10.0833 3.51172 12.0364L11.9982 20.5229L20.4846 12.0364C21.4228 11.0987 21.95 9.82648 21.95 8.49999C21.95 7.17351 21.4229 5.90138 20.4847 4.96363C19.5469 4.02544 18.2747 3.49817 16.9482 3.49817Z"
-                        fill="#414141" />
-                </svg>
-
-                <p class="text-[11px]">Избранное</p>
-            </a>
+             <a href="./Pages/like.html" class="flex cursor-pointer relative items-center flex-col gap-[0px]">
+                    <img class="w-[20px] h-[20px]" src="./assets/images/layk/heart-1.svg" alt="heart">
+                    <span id="like-badge-2"
+                        class="absolute top-[-5px] left-[35px] w-[11.28px] h-[11px] bg-[#FF6633] text-white rounded-[4px] flex items-center justify-center px-[4px] py-[2px] text-[9px]">0</span>
+                    <p class="text-[11px]">Избранное</p>
+                </a>
             <a href="./Pages/cart.html" class="flex items-center flex-col">
                 <div class="flex cursor-pointer relative items-center flex-col gap-[0px]">
                     <img class="w-[20px] h-[20px]" src="./assets/header/shopping-cart.svg" alt="shopping-cart">

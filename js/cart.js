@@ -1,13 +1,33 @@
 let carts = JSON.parse(localStorage.getItem("carts") || "[]");
+let like = JSON.parse(localStorage.getItem("like") || "[]");
 let cartMap = document.querySelector(".cart-map")
 let badge_111 = document.getElementById("badge-111")
 let badge_11 = document.getElementById("badge-11")
+let like_badge_2 = document.getElementById("like-badge-2")
+let like_badge_21 = document.getElementById("like-badge-21")
 badge_11.textContent = carts.length;
 badge_111.textContent = carts.length
+like_badge_2.textContent = like.length
+like_badge_21.textContent = like.length
+
 
 
 
 function showCart(content, data) {
+    content.innerHTML = ""
+    content.innerHTML = "";
+    if (data.length === 0) {
+        content.innerHTML = `
+                <div class="flex items-center justify-center max-w-[450px] w-full pl-[0px] sm:pl-[200px]">
+                <div class="flex flex-col items-center text-center">
+                <img class="w-[120px] sm:w-auto h-[120px] sm:h-auto" src="../assets/single/rasm.png" alt="img">
+                <p class="text-[14px] sm:text-[18px]">В корзине пока нет товаров
+                Начните с подборок на главной странице или найдите нужный товар через поиск</p>
+                </div>
+            </div>
+        `;
+        return;
+    }
     data.map((el) => {
         content.innerHTML += `
                     <div

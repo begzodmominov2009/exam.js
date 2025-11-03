@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vacancies</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="../css/stayle.css">
 </head>
@@ -19,6 +19,7 @@
         </div>
 
     </div>
+
 
     <header class="py-[16px] bg-[white] fixed z-[100] w-full shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
         <div class="container mx-auto px-[20px] gap-[40px] 2xl:px-[127px] flex items-center justify-between">
@@ -57,6 +58,7 @@
                     <p class="text-[white]">Каталог</p>
                 </div>
                 <div class="flex sm:hidden gap-[7px] items-center">
+
                     <a href="./search.html">
                         <img src="../assets/header/search2.svg" alt="search">
                     </a>
@@ -69,20 +71,19 @@
                         <img class="absolute top-2 left-2" src="../assets/header/search2.svg" alt="search">
                         <div id="search-cards"
                             class="w-full flex border-[1px] border-[#BFBFBF] rounded-[10px] flex-col gap-[10px] hidden max-h-[500px] overflow-y-scroll px-[10px] absolute rounded-b-[4px] top-[50px] py-[15px] bg-[white]">
-
                         </div>
                     </div>
 
                 </div>
             </div>
-            <div class="hidden xl:flex flex items-center gap-[24px] text-[12px]">
-                <a href="./like.html" class="flex relative cursor-pointer items-center flex-col gap-[7px]">
+            <div class="hidden xl:flex relative flex items-center gap-[24px] text-[12px]">
+                <a href="./like.html" class="flex cursor-pointer items-center flex-col gap-[7px]">
                     <img src="../assets/images/layk/heart-1.svg" alt="heart">
-                    <span id="like-badge-5"
+                    <span id="like-badge-2"
                         class="absolute top-[-5px] left-[35px] w-[11.28px] h-[11px] bg-[#FF6633] text-white rounded-[4px] flex items-center justify-center px-[4px] py-[2px] text-[9px]">0</span>
-                    <p class="">Избранное</p>
+                    <p>Избранное</p>
                 </a>
-                <a href="./products.html" class="flex cursor-pointer items-center flex-col gap-[7px]">
+                <a href="./category.html" class="flex cursor-pointer items-center flex-col gap-[7px]">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M11.3325 1.89776C11.3324 1.89785 11.3327 1.89767 11.3325 1.89776L3.33366 5.89721L3.33255 5.89776C2.82288 6.15102 2.50045 6.67089 2.50005 7.24V16.7635C2.49608 17.3334 2.81541 17.8563 3.32416 18.113C3.32387 18.1129 3.32445 18.1132 3.32416 18.113L11.3237 22.1128C11.7462 22.3242 12.2438 22.3243 12.6663 22.1129L20.6664 18.1128L20.6675 18.1122C21.1773 17.8589 21.4997 17.3389 21.5 16.7697V7.24026C21.4997 6.67105 21.1773 6.15106 20.6675 5.89776L20.6664 5.89721L12.6675 1.89776C12.6674 1.89767 12.6677 1.89786 12.6675 1.89776C12.2474 1.6892 11.7527 1.68919 11.3325 1.89776ZM10.8875 1.00223C11.5883 0.654 12.4118 0.654 13.1125 1.00223L13.1137 1.00278L21.1125 5.00223C21.1124 5.00215 21.1127 5.00231 21.1125 5.00223C21.9618 5.42448 22.4995 6.29123 22.5 7.23973V16.77C22.4995 17.7184 21.9624 18.5852 21.1132 19.0074C21.113 19.0075 21.1134 19.0073 21.1132 19.0074L13.1138 23.0071C13.1138 23.0072 13.1138 23.0071 13.1138 23.0071C12.4097 23.3594 11.5806 23.3595 10.8764 23.0072C10.8764 23.0072 10.8765 23.0072 10.8764 23.0072L2.87644 19.0072L2.87506 19.0065C2.02685 18.5791 1.49413 17.708 1.50005 16.7584V7.24C1.50055 6.29154 2.03772 5.4248 2.88695 5.00253C2.88675 5.00263 2.88715 5.00243 2.88695 5.00253L10.8864 1.00278L10.8875 1.00223Z"
@@ -101,10 +102,10 @@
                 </a>
                 <a href="./cart.html">
                     <div class="flex cursor-pointer relative items-center flex-col gap-[7px]">
-                        <img class="w-[24px] h-[24px]" src="../assets/header/shopping-cart.svg" alt="avatar">
-                        <span id="badge-single"
+                        <img src="../assets/header/shopping-cart.svg" alt="shopping-cart">
+                        <span id="badge-1"
                             class="absolute top-[-5px] left-[30px] w-[11.28px] h-[11px] bg-[#FF6633] text-white rounded-[4px] flex items-center justify-center px-[4px] py-[2px] text-[9px]">0</span>
-                        <p class="text-[11px]">Корзина</p>
+                        <p>Корзина</p>
                     </div>
                 </a>
             </div>
@@ -120,7 +121,7 @@
         </div>
     </header>
 
-    <div id="category" class="category bg-white fixed z-[10] w-full">
+    <div id="category" class="category  bg-white fixed z-[10] w-full">
         <div
             class="container mx-auto font-bold px-[20px] 2xl:px-[127px] pt-[125px] py-[40px] items-start flex items-center justify-center sm:grid grid-cols-2 md:grid-cols-4 transform translate-y-">
             <ul class="flex flex-col gap-[24px]">
@@ -147,7 +148,7 @@
         </div>
     </div>
 
-    <div id="menus" class="menus fixed top-0 z-[100] pt-[10px] bg-[white] left-0  w-full h-full">
+    <div id="menus" class="menus  fixed top-0 z-[100] pt-[10px] bg-[white] left-0  w-full h-full">
         <div id="close" class="flex items-center gap-[5px] pl-[10px]">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14.5 7L9.5 12L14.5 17" stroke="#313436" stroke-width="2" stroke-linecap="round"
@@ -190,7 +191,6 @@
         </ul>
     </div>
 
-
     <div id="register" class="register bg-[#FCD5BACC]/80 h-full w-full z-[0] fixed flex items-center justify-center">
         <div
             class="max-w-[420px] rounded-[5px] h-auto w-full pb-[40px] bg-[white] relative flex items-center justify-center flex-col pt-[72px]">
@@ -223,31 +223,34 @@
     </div>
 
     <main>
-        <section>
-            <div class="container mx-auto px-[20px] pt-[94px] 2xl:px-[127px]">
-                <div class="flex items-center justify-between">
-                    <h1 class="font-bold text-[24px] sm:text-[36px]">Акции</h1>
+        <section class="pt-[70px] sm:pt-[110px] pb-[40px] sm:pb-[80px]">
+            <div class="container mx-auto px-[20px] 2xl:px-[127px]">
+                <div class="flex items-center  gap-[8px]">
+                    <a href="../index.html">
+                        Главная
+                    </a>
+                    <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M0.146447 0.146447C0.341709 -0.0488155 0.658291 -0.0488155 0.853553 0.146447L6.85355 6.14645C7.04882 6.34171 7.04882 6.65829 6.85355 6.85355L0.853553 12.8536C0.658291 13.0488 0.341709 13.0488 0.146447 12.8536C-0.0488155 12.6583 -0.0488155 12.3417 0.146447 12.1464L5.79289 6.5L0.146447 0.853553C-0.0488155 0.658291 -0.0488155 0.341709 0.146447 0.146447Z"
+                            fill="#606060" />
+                    </svg>
+                    <a href="./like.html">
+                        Избранное
+                    </a>
+                </div>
+                <div>
+                    <h1 class="text-[34px] sm:text-[64px] font-bold">Избранное</h1>
                 </div>
                 <div
-                    class="discount_product grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-[10px] sm:gap-[40px] pt-[20px] sm:pt-[40px]">
+                    class="like-products  grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-[10px] sm:gap-[40px] pt-[20px] sm:pt-[40px]">
 
                 </div>
             </div>
         </section>
-
-        <section>
-            <div class="container mx-auto px-[20px] pt-[40px] sm:pt-[120px] 2xl:px-[127px] pb-[40px] sm:pb-[80px]">
-                <div class="flex items-center justify-between">
-                    <h1 class="font-bold text-[24px] sm:text-[36px]">Новинки</h1>
-                </div>
-                <div
-                    class="new-products grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-[10px] sm:gap-[40px] pt-[20px] sm:pt-[40px]">
-
-                </div>
-            </div>
-        </section>
-
     </main>
+
+
+
 
     <footer
         class="bg-[url('/assets/header/pattern2.png')] py-[18px] sm:py-[25px]  bg-[#F9F4E2] pb-[100px] sm:pb-[15px]">
@@ -309,7 +312,6 @@
         </div>
     </footer>
 
-
     <div
         class="flex sm:hidden bg-[white] flex fixed h-[10vw] w-[100vw] bottom-[0px] justify-between items-center flex py-[30px] px-[20px] z-[900]">
         <a class="flex flex-col items-center" href="../index.html">
@@ -345,16 +347,16 @@
 
                 <p class="text-[11px]">Заказы</p>
             </a>
-            <a href="./like.html" class="flex relative cursor-pointer items-center flex-col gap-[0px]">
+            <a href="./like.html" class="flex cursor-pointer relative items-center flex-col gap-[0px]">
                 <img class="w-[20px] h-[20px]" src="../assets/images/layk/heart-1.svg" alt="heart">
-                <span id="like-badge-55"
+                <span id="like-badge-2"
                     class="absolute top-[-5px] left-[35px] w-[11.28px] h-[11px] bg-[#FF6633] text-white rounded-[4px] flex items-center justify-center px-[4px] py-[2px] text-[9px]">0</span>
                 <p class="text-[11px]">Избранное</p>
             </a>
-            <a href="./cart.html" class="flex items-center flex-col gap-[1px]">
+            <a href="./cart.html" class="flex items-center flex-col">
                 <div class="flex cursor-pointer relative items-center flex-col gap-[0px]">
-                    <img class="w-[20px] h-[20px]" src="../assets/header/shopping-cart.svg" alt="avatar">
-                    <span id="badge-single-2"
+                    <img class="w-[20px] h-[20px]" src="../assets/header/shopping-cart.svg" alt="shopping-cart">
+                    <span id="badge-2"
                         class="absolute top-[-5px] left-[30px] w-[11.28px] h-[11px] bg-[#FF6633] text-white rounded-[4px] flex items-center justify-center px-[4px] py-[2px] text-[9px]">0</span>
                     <p class="text-[11px]">Корзина</p>
                 </div>
@@ -364,14 +366,13 @@
             </a>
     </div>
 
-
-
     <script src="../products-data/products-data.js"></script>
-    <script src="../js/all.js"></script>
-    <script src="../js/loading.js"></script>
-    <script src="../js/search-input.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="../js/like.js"></script>
+    <script src="../js/cart.js"></script>
     <script src="../js/main_2.js"></script>
+    <script src="../js/loading.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/search-input.js"></script>
 </body>
 
 </html>

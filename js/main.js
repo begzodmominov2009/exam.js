@@ -11,6 +11,12 @@ let badge = document.getElementById("badge")
 let badge_2 = document.getElementById("badge-2")
 badge.textContent = carts.length
 badge_2.textContent = carts.length
+let like = JSON.parse(localStorage.getItem("like") || "[]");
+localStorage.setItem("like", JSON.stringify(like));
+let like_badge = document.getElementById("like-badge")
+let like_badge_2 = document.getElementById("like-badge-2")
+like_badge.textContent = like.length
+like_badge_2.textContent = like.length
 
 
 
@@ -163,12 +169,15 @@ function homeProducts(content, data) {
                     </button>`
             }        
                     </div>
-                    <svg class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[2px] rounded-[4px] width="
-                    24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M12.7046 4.25644C13.8299 3.13067 15.3564 2.49817 16.9482 2.49817C18.5399 2.49817 20.0664 3.13063 21.1916 4.25636C22.3174 5.38164 22.95 6.90829 22.95 8.49999C22.95 10.0917 22.3175 11.6183 21.1917 12.7435C21.1917 12.7436 21.1917 12.7435 21.1917 12.7435L12.3517 21.5835C12.1565 21.7788 11.8399 21.7788 11.6446 21.5835L2.80461 12.7435C0.460963 10.3999 0.460963 6.60009 2.80461 4.25644C5.14826 1.91279 8.94807 1.91279 11.2917 4.25644L11.9982 4.96289L12.7046 4.25644C12.7046 4.25641 12.7046 4.25647 12.7046 4.25644ZM16.9482 3.49817C15.6217 3.49817 14.3496 4.02528 13.4118 4.96346L12.3517 6.02355C12.258 6.11732 12.1308 6.16999 11.9982 6.16999C11.8656 6.16999 11.7384 6.11732 11.6446 6.02355L10.5846 4.96355C8.63149 3.01042 5.46484 3.01042 3.51172 4.96355C1.55859 6.91667 1.55859 10.0833 3.51172 12.0364L11.9982 20.5229L20.4846 12.0364C21.4228 11.0987 21.95 9.82648 21.95 8.49999C21.95 7.17351 21.4229 5.90138 20.4847 4.96363C19.5469 4.02544 18.2747 3.49817 16.9482 3.49817Z"
-                    fill="#414141" />
-                    </svg>
+                    ${like.find((item) => item.id === el.id)
+                ? `<svg 
+                       onClick="removeTolike(${el.id})" 
+                    class="absolute top-[6px] sm:top-[8px] opacity-none sm:opacity-0 group-hover:opacity-100  duration-[0.5s] right-[5px] sm:right-[15px] bg-[#FF6633] p-[3px] rounded-[50%] sm:rounded-[4px]" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff">
+                    <path d="M440-501Zm0 381L313-234q-72-65-123.5-116t-85-96q-33.5-45-49-87T40-621q0-94 63-156.5T260-840q52 0 99 22t81 62q34-40 81-62t99-22q84 0 153 59t69 160q0 14-2 29.5t-6 31.5h-85q5-18 8-34t3-30q0-75-50-105.5T620-760q-51 0-88 27.5T463-660h-46q-31-45-70.5-72.5T260-760q-57 0-98.5 39.5T120-621q0 33 14 67t50 78.5q36 44.5 98 104T440-228q26-23 61-53t56-50l9 9 19.5 19.5L605-283l9 9q-22 20-56 49.5T498-172l-58 52Zm160-280v-80h320v80H600Z"/>
+                    </svg>` : `<svg
+                    onClick="addToLike(${el.id})"
+                    class="absolute top-[6px] sm:top-[8px] opacity-none lg:opacity-0 group-hover:opacity-100  duration-[0.5s] right-[5px] sm:right-[15px] bg-[#F3F2F1] p-[3px] rounded-[50%] sm:rounded-[4px]" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f#1f1f1f#1f1f1f"><path d="M440-501Zm0 381L313-234q-72-65-123.5-116t-85-96q-33.5-45-49-87T40-621q0-94 63-156.5T260-840q52 0 99 22t81 62q34-40 81-62t99-22q81 0 136 45.5T831-680h-85q-18-40-53-60t-73-20q-51 0-88 27.5T463-660h-46q-31-45-70.5-72.5T260-760q-57 0-98.5 39.5T120-621q0 33 14 67t50 78.5q36 44.5 98 104T440-228q26-23 61-53t56-50l9 9 19.5 19.5L605-283l9 9q-22 20-56 49.5T498-172l-58 52Zm280-160v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"/></svg>`
+            }
                     </div>
                 </div>
     
@@ -284,7 +293,26 @@ function decraese(id) {
     homeProducts(new_products, sliceNoDiscountProducts)
     homeProducts(bought_products, sliceBughtDiscountProducts)
 }
+function addToLike(id) {
+    let likeitem = products.find((el) => el.id === id)
+    like.push(likeitem)
+    like_badge.textContent = like.length
+    like_badge_2.textContent = like.length
+    localStorage.setItem("like", JSON.stringify(like));
+    homeProducts(discount_product, sliceDiscountProducts)
+    homeProducts(new_products, sliceNoDiscountProducts)
+    homeProducts(bought_products, sliceBughtDiscountProducts)
+}
 
+function removeTolike(id) {
+    like = like.filter((el) => el.id !== id)
+    like_badge.textContent = like.length
+    localStorage.setItem("like", JSON.stringify(like));
+    like_badge_2.textContent = like.length
+    homeProducts(discount_product, sliceDiscountProducts)
+    homeProducts(new_products, sliceNoDiscountProducts)
+    homeProducts(bought_products, sliceBughtDiscountProducts)
+}
 
 
 
