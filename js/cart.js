@@ -28,20 +28,21 @@ function showCart(content, data) {
     content.innerHTML = ""
     if (data.length === 0) {
         content.innerHTML = `
-                <div class="flex items-center justify-center max-w-[450px] w-full pl-[0px] sm:pl-[200px]">
-                <div class="flex flex-col items-center text-center">
-                <img class="w-[120px] sm:w-auto h-[120px] sm:h-auto" src="../assets/single/rasm.png" alt="img">
-                <p class="text-[14px] sm:text-[18px]">В корзине пока нет товаров
-                Начните с подборок на главной странице или найдите нужный товар через поиск</p>
-                </div>
-            </div>
-        `;
+                 <div class="flex items-center justify-center max-w-[450px] w-full pl-[0px] sm:pl-[200px]">
+                            <div class="flex flex-col items-center text-center">
+                                <img class="w-38 h-55  sm:w-auto h-[120px] sm:h-auto" src="../assets/single/mushuk.png"
+                                    alt="img">
+                                <p class="text-[14px] sm:text-[18px]">В корзине пока нет товаров
+                                    Начните с подборок на главной странице или найдите нужный товар через поиск</p>
+                            </div>
+                        </div>
+        `
         return;
     }
     data.map((el) => {
         content.innerHTML += `
                          <div
-                            class="max-w-[1506px] w-full py-[8px] px-[8px]  bg-[white] flex items-center justify-between">
+                            class="max-w-[1506px] w-full py-[8px] px-[8px]  bg-[white] grid grid-cols-1 sm:flex items-center justify-between">
                             <div class="flex items-start gap-[5px] sm:gap-[10px] ">
                                 <input onClick="checkedInput(this, ${el.id})" class="w-[16px] cursor-pointer h-[16px]" type="checkbox">
                                 <img class="max-w-[80px] h-[60px]" src=${el.images[0]} alt="img">
@@ -53,7 +54,7 @@ function showCart(content, data) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="grid grid-cols-1 sm:flex flex-col items-center gap-[15px] sm:gap-[5px]">
+                            <div class="flex justify-end items-center  sm:flex-col items-center gap-[15px] sm:gap-[5px]">
                                   <div>
                                     <p
                                         class="font-bold text-[12px] sm:text-[18px] pl-[7px] sm:pl-[0px] whitespace-nowrap">
@@ -70,7 +71,7 @@ function showCart(content, data) {
                                             fill="white" />
                                     </svg></button>
                                     <span class="text-[white] text-[14px] sm:text-[16px]">${carts.find((item) => item.id === el.id).number
-            }</span>
+                                 }</span>
                                 <button
                                 onClick="increase(${el.id})"
                                  class="cursor-pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -152,12 +153,13 @@ allChecked.addEventListener("click", () => {
     allCheckedProducts = []
 
     localStorage.setItem("carts", JSON.stringify(carts));
-    showCart(cartMap, carts)
     countPrices()
     badge_11.textContent = carts.length
     badge_111.textContent = carts.length
+    showCart(cartMap, carts)
 
 })
+
 
 
 

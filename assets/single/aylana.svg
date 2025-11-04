@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+
+  <!-- Rasmni markazga joylab, butunlay aylantirish uchun <g> ichida -->
+  <g transform="translate(120,120)">
+    <image href="https://raw.githubusercontent.com/begzodmominov2009/exam.js/main/assets/single/rasm.png" x="-90" y="-90" width="180" height="180" preserveAspectRatio="xMidYMid slice"></image>
+
+    <!-- Butun guruhni aylantiradigan animatsiya -->
+    <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="5s" repeatCount="indefinite"></animateTransform>
+  </g>
+
+</svg>
