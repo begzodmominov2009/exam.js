@@ -5,6 +5,17 @@ let badge_111 = document.getElementById("badge-111")
 let badge_11 = document.getElementById("badge-11")
 let like_badge_2 = document.getElementById("like-badge-2")
 let like_badge_21 = document.getElementById("like-badge-21")
+let allPrice = document.getElementById("all-price")
+let allDiscount = document.getElementById("all-discount")
+let allPaind = document.getElementById("all-paind")
+let sumPrice = 0;
+let dicountPrice = 0;
+let PaidPrice = 0;
+let allCheckedProducts = []
+let allChecked = document.getElementById("all-checked")
+allPrice.textContent = sumPrice;
+allDiscount.textContent = dicountPrice;
+allPaind.textContent = PaidPrice;
 badge_11.textContent = carts.length;
 badge_111.textContent = carts.length
 like_badge_2.textContent = like.length
@@ -15,7 +26,6 @@ like_badge_21.textContent = like.length
 
 function showCart(content, data) {
     content.innerHTML = ""
-    content.innerHTML = "";
     if (data.length === 0) {
         content.innerHTML = `
                 <div class="flex items-center justify-center max-w-[450px] w-full pl-[0px] sm:pl-[200px]">
@@ -30,10 +40,10 @@ function showCart(content, data) {
     }
     data.map((el) => {
         content.innerHTML += `
-                    <div
+                         <div
                             class="max-w-[1506px] w-full py-[8px] px-[8px]  bg-[white] flex items-center justify-between">
                             <div class="flex items-start gap-[5px] sm:gap-[10px] ">
-                                <input class="w-[16px] h-[16px]" type="checkbox">
+                                <input onClick="checkedInput(this, ${el.id})" class="w-[16px] cursor-pointer h-[16px]" type="checkbox">
                                 <img class="max-w-[80px] h-[60px]" src=${el.images[0]} alt="img">
                                 <div class="flex flex-col gap-[5px]">
                                     <p class="line-clamp-2 sm:line-clamp-1 text-[12px] sm:text-[16px]">${el.description}»</p>
@@ -47,11 +57,12 @@ function showCart(content, data) {
                                   <div>
                                     <p
                                         class="font-bold text-[12px] sm:text-[18px] pl-[7px] sm:pl-[0px] whitespace-nowrap">
-                                        ${el.price * el.number - el.price * el.discount / 100}₽</p>
+                                        ${el.price * el.number - el.price * el.discount / 100 * el.number}₽</p>
                                 </div>
                                 <div
                                     class="bg-[#70C05B] cursor-pointer max-w-[80px] flex items-center gap-[7px] justify-center rounded-[4px] p-[4px] sm:p-[8px] w-[70px] sm:w-[140px] w-full">
                                    <button
+                                   onClick="decraese(${el.id})"
                                    class="cursor-pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -61,6 +72,7 @@ function showCart(content, data) {
                                     <span class="text-[white] text-[14px] sm:text-[16px]">${carts.find((item) => item.id === el.id).number
             }</span>
                                 <button
+                                onClick="increase(${el.id})"
                                  class="cursor-pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -73,10 +85,80 @@ function showCart(content, data) {
                                 </div>
                             </div>
                         </div>
-    `
+`
     })
 }
 showCart(cartMap, carts)
+
+
+function increase(id) {
+    carts = carts.map((el) => {
+        if (el.id === id) {
+            el.number += 1
+        }
+        return el
+    })
+    countPrices()
+    badge_11.textContent = carts.length
+    badge_111.textContent = carts.length
+    localStorage.setItem("carts", JSON.stringify(carts));
+    showCart(cartMap, carts)
+}
+function decraese(id) {
+    let item = carts.find((el) => el.id === id)
+    carts = carts.map((el) => {
+        if (el.id === id) {
+            el.number -= 1
+        }
+        return el
+    })
+    if (item.number < 1) {
+        carts = carts.filter((el) => el.id !== id)
+    }
+    countPrices()
+    badge_11.textContent = carts.length
+    badge_111.textContent = carts.length
+    localStorage.setItem("carts", JSON.stringify(carts));
+    showCart(cartMap, carts)
+}
+
+function countPrices() {
+    sumPrice = 0;
+    dicountPrice = 0;
+    PaidPrice = 0;
+    carts.map((el) => {
+        sumPrice += el.price * el.number;
+        dicountPrice += el.price * el.discount * el.number / 100;
+        PaidPrice = sumPrice - dicountPrice;
+    })
+    allPrice.textContent = Math.round(sumPrice)
+    allDiscount.textContent = Math.round(dicountPrice)
+    allPaind.textContent = Math.round(PaidPrice)
+    showCart(cartMap, carts)
+}
+countPrices()
+
+function checkedInput(obj, id) {
+    let item = carts.find((el) => el.id === id)
+    if (obj.checked === true) {
+        allCheckedProducts.push(id)
+    } else {
+        allCheckedProducts = allCheckedProducts.filter((el) => el !== id)
+    }
+}
+
+allChecked.addEventListener("click", () => {
+    carts = carts.filter((el) => !allCheckedProducts.includes(el.id))
+    allCheckedProducts = []
+
+    localStorage.setItem("carts", JSON.stringify(carts));
+    showCart(cartMap, carts)
+    countPrices()
+    badge_11.textContent = carts.length
+    badge_111.textContent = carts.length
+
+})
+
 
 
 

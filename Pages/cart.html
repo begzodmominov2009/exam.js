@@ -241,11 +241,11 @@
                 <h1 class="text-[30px] sm:text-[64px] font-bold pt-[7px] sm:pt-[14px]">Корзина</h1>
                 <div class="flex items-center gap-[48px] pt-[20px] sm:pt-[64px]">
                     <div class="flex items-center gap-[9px]">
-                        <input class="w-[18px] sm:w-[24px] h-[14px]  sm:h-[24px]" type="checkbox">
-                        <p class="text-[12px] text-[#606060]">Выделить всё</p>
+                        <input id="all-input" class="w-[18px] sm:w-[24px] h-[14px]  sm:h-[24px]" type="checkbox">
+                        <label for="all-input" class="text-[12px] text-[#606060]">Выделить всё</label>
                     </div>
                     <div>
-                        <p class="text-[12px] text-[#FF6633]">Удалить выбранные</p>
+                        <p id="all-checked" class="text-[12px] cursor-pointer text-[#FF6633]">Удалить выбранные</p>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 xl:flex items-start justify-between gap-[25px]">
@@ -266,17 +266,17 @@
                         <div class="flex flex-col gap-[10px] pt-[14px] sm:pt-[24px] pb-[14px] sm:pb-[24px]">
                             <div class="flex items-center justify-between">
                                 <p class="text-[#8F8F8F] text-[14px] sm:text-[16px]">3 товара</p>
-                                <p class="font-bold text-[14px] sm:text-[16px]">258,10 ₽ </p>
+                                <p  class="font-bold text-[14px] sm:text-[16px]"><span id="all-price">258,10</span>₽</p>
                             </div>
                             <div class="flex items-center justify-between">
                                 <p class="text-[#8F8F8F] text-[14px] sm:text-[16px]">Скидка</p>
-                                <p class="text-[#FF6633] text-[14px] sm:text-[16px] font-bold">-8,01 ₽ </p>
+                                <p  class="text-[#FF6633] text-[14px] sm:text-[16px] font-bold"><span id="all-discount">-8,01</span>₽</p>
                             </div>
                         </div>
                         <hr class="text-[#F3F2F1]">
                         <div class="flex items-center justify-between pt-[14px] sm:pt-[24px]">
                             <p class="text-[#8F8F8F] text-[14px] sm:text-[16px]">Итог</p>
-                            <h1 class="text-[18px] sm:text-[24px] font-bold">250,09 ₽ </h1>
+                            <h1  class="text-[18px] sm:text-[24px] font-bold"><span id="all-paind">250,09 </span>₽ </h1>
                         </div>
                         <div class="flex items-center justify-center gap-[5px] pt-[4px] sm:pt-[8px]">
                             <img src="../assets/single/smile.png" alt="smile">
