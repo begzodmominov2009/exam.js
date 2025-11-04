@@ -16,7 +16,8 @@ function showLikeProducts(content, data) {
         content.innerHTML = `
                 <div class="flex items-center justify-center">
                 <div class="text-center">
-                <img class="w-full h-[140px] sm:h-[202px]" src="../assets/single/rasm.png" alt="img">
+                <img class="w-38 h-55  sm:w-auto h-[120px] sm:h-auto" src="../assets/single/mushuk.png"
+                alt="img">                
                 <p>Здесь сохраним ваши любимые товары
                Нажмите ♥ в товарах, которые обычно заказываете или хотите купить позже</p>
                 </div>
