@@ -71,7 +71,7 @@ function showCart(content, data) {
                                             fill="white" />
                                     </svg></button>
                                     <span class="text-[white] text-[14px] sm:text-[16px]">${carts.find((item) => item.id === el.id).number
-                                 }</span>
+            }</span>
                                 <button
                                 onClick="increase(${el.id})"
                                  class="cursor-pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -132,6 +132,7 @@ function countPrices() {
         dicountPrice += el.price * el.discount * el.number / 100;
         PaidPrice = sumPrice - dicountPrice;
     })
+    localStorage.setItem("carts", JSON.stringify(carts));
     allPrice.textContent = Math.round(sumPrice)
     allDiscount.textContent = Math.round(dicountPrice)
     allPaind.textContent = Math.round(PaidPrice)
