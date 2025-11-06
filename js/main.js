@@ -40,12 +40,22 @@ function homeProducts(content, data) {
     data.map((el) => {
         content.innerHTML += `
             <div class="max-w-[302px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl">
-              <div id="carousel"class="flex gap-2 overflow-x-scroll sm:overflow-none scroll-smooth no-scrollbar touch-pan-x cursor-grab active:cursor-grabbing">
-              <img src=${el.images[0]} class="w-full h-[160px] sm:h-[200px] object-cover rounded-lg flex-shrink-0 pointer-events-none">
-              <img src=${el.images[1]} class="w-full h-[160px] sm:h-[200px] object-cover rounded-lg flex-shrink-0 pointer-events-none">
-              <img src=${el.images[2]} class="w-full h-[160px] sm:h-[200px] object-cover rounded-lg flex-shrink-0 pointer-events-none">
-              <img src=${el.images[3]} class="w-full h-[160px] sm:h-[200px] object-cover rounded-lg flex-shrink-0 pointer-events-none">
-              </div>
+            <div class="owl-carousel owl-theme relative">
+             <a href="./Pages/single.html?id=${el.id}">
+                 <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[0]} alt="img">
+               </a>
+                <a href="./Pages/single.html?id=${el.id}">
+                 <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[1]} alt="img">
+               </a>
+                <a href="./Pages/single.html?id=${el.id}">
+                 <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[2]} alt="img">
+               </a>
+                <a href="./Pages/single.html?id=${el.id}">
+                 <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[3]} alt="img">
+               </a>
+            </div>
+              
+
                <div class="flex items-center justify-between pt-[8px]">
                <div class="flex items-center justify-between w-full">
                <p class="font-bold text-[14px] px-[8px] sm:text-[18px]">${el.price - el.price * el.discount / 100}₽</p>
@@ -212,7 +222,7 @@ descriptionProducts.map((el) => {
 
 specialCard.map((el) => {
     special_card.innerHTML += `
-                    <div
+    <div
                      class="bg-[#FCD5BA] max-w-[904px] w-full  overflow-hidden  group h-[200x] flex items-center justify-between rounded-[6px] shadow-md cursor-pointer px-[15px] py-[7px] sm:py-[15px] sm:px-[31.75px]">
                         <div>
                             <h3 class="text-[18px] sm:text-[24px] font-bold whi">${el.title}</h3>
@@ -314,15 +324,27 @@ function removeTolike(id) {
     homeProducts(new_products, sliceNoDiscountProducts)
     homeProducts(bought_products, sliceBughtDiscountProducts)
 }
-const carousel = document.getElementById("carousel");
+$(document).ready(function () {
+    $(".owl-carousel").owlCarousel();
+});
 
-carousel.addEventListener("scroll", () => {
-  if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 5) {
-    carousel.scrollTo({
-      left: 0,
-      behavior: "smooth"
-    });
-  }
+$(".owl-carousel").owlCarousel({
+    loop: false,
+    margin: 10,
+    nav: false,
+    dots: false,
+    autoplay: false,
+    responsive: {
+        0: {
+            items: 1,
+        },
+        600: {
+            items: 1,
+        },
+        1000: {
+            items: 1,
+        },
+    },
 });
 
 
