@@ -8,6 +8,40 @@ let register_head = document.getElementById("register-head")
 let register = document.getElementById("register")
 let register_close = document.getElementById("register-close")
 let loading = document.getElementById("loading")
+let profile = document.getElementById("profile")
+let formModal = document.getElementById("form-modal")
+let innerModal = document.getElementById("inner-modal")
+let form = document.getElementById("form")
+let profileImg = document.getElementById("profile-img")
+let profileTitle = document.getElementById("profile-title")
+let profileObj = JSON.parse(localStorage.getItem("profile") || "{}")
+let deletProfile = document.getElementById("delet-profile")
+
+profileImg.src = profileObj.urlPhoto;
+profileTitle.textContent = profileObj.name
+
+
+profile.addEventListener("click", () => {
+    formModal.classList.remove("hidden")
+})
+formModal.addEventListener("click", () => {
+    formModal.classList.add("hidden")
+})
+innerModal.addEventListener("click", (e) => {
+    e.stopPropagation();
+})
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    profileObj.urlPhoto = e.target[0].value;
+    profileObj.name = e.target[1].value;
+    profileObj.phone = e.target[2].value;
+    profileImg.src = e.target[0].value;
+    profileTitle.textContent = e.target[1].value
+    console.log(profileObj);
+    localStorage.setItem("profile", JSON.stringify(profileObj))
+    formModal.classList.add("hidden")
+})
 
 
 menus_category.addEventListener("click", () => {
@@ -28,17 +62,7 @@ close.addEventListener("click", () => {
     menus.classList.remove("menus-view")
     menus.classList.add("close-transition")
 })
-register_head.addEventListener("click", () => {
-    register.classList.toggle("register-view")
-    register.classList.add("duration")
-})
-register_close.addEventListener("click", () => {
-    register.classList.remove("register-view")
-    register.classList.add("duration")
-})
-window.addEventListener("scroll", () => {
-    register.classList.remove("register-view")
-})
+
 
 
 

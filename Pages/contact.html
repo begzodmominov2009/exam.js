@@ -110,9 +110,9 @@
                     </div>
                 </a>
             </div>
-            <div id="register-head" class="hidden lg:flex flex items-center cursor-pointer gap-[10px]">
-                <img src="../assets/header/avatar (8).png" alt="avatar">
-                <p>Алексей</p>
+            <div id="profile" class="hidden lg:flex flex items-center cursor-pointer gap-[5px]">
+                <img id="profile-img" class="w-[40px] h-[40px]" src="./assets/single/Profile-PNG-File.png" alt="avatar">
+                <p id="profile-title">Профиль</p>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M5.64645 8.64645C5.84171 8.45118 6.15829 8.45118 6.35355 8.64645L12 14.2929L17.6464 8.64645C17.8417 8.45118 18.1583 8.45118 18.3536 8.64645C18.5488 8.84171 18.5488 9.15829 18.3536 9.35355L12.3536 15.3536C12.1583 15.5488 11.8417 15.5488 11.6464 15.3536L5.64645 9.35355C5.45118 9.15829 5.45118 8.84171 5.64645 8.64645Z"
@@ -193,9 +193,8 @@
     </div>
 
 
-    <div id="register" class="register bg-[#FCD5BACC]/80 h-full w-full z-[0] fixed flex items-center justify-center">
-        <div
-            class="max-w-[420px] rounded-[5px] h-auto w-full pb-[40px] bg-[white] relative flex items-center justify-center flex-col pt-[72px]">
+    <div id="form-modal" class="hidden bg-[#FCD5BACC]/80 h-full w-full z-[2000] fixed flex items-center justify-center">
+        <div class="max-w-[420px] rounded-[5px] w-full pb-[40px] bg-[white] relative px-[20px] pt-[72px]">
             <svg id="register-close" class="cursor-pointer absolute right-0 top-0 bg-[#F3F2F1] rounded-[4px] "
                 width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -205,22 +204,42 @@
                     d="M5.64645 5.64645C5.84171 5.45118 6.15829 5.45118 6.35355 5.64645L18.3536 17.6464C18.5488 17.8417 18.5488 18.1583 18.3536 18.3536C18.1583 18.5488 17.8417 18.5488 17.6464 18.3536L5.64645 6.35355C5.45118 6.15829 5.45118 5.84171 5.64645 5.64645Z"
                     fill="#414141" />
             </svg>
-            <h1 class="font-bold text-[24px]">Вход</h1>
-            <div class="pt-[32px]">
-                <label class="text-[#8F8F8F] text-[18px]">Телефон</label> <br>
-                <input class="border-[1px] border-[#70C05B] pl-[16px] py-[12px] rounded-[4px] text-[18px] outline-none"
-                    type="tel" placeholder="+998" name="" id="">
+            <h1 class="font-bold text-center text-[24px]">Вход</h1>
+            <div id="inner-modal" class="pt-[32px]">
+                <form id="form" class="flex flex-col gap-[10px]">
+                    <input required
+                        class="border-[1px] border-[#70C05B] pl-[16px] w-full py-[12px] rounded-[4px] text-[18px] outline-none"
+                        type="text" placeholder="ссылка на фото">
+                    <input required
+                        class="border-[1px] border-[#70C05B] pl-[16px] w-full py-[12px] rounded-[4px] text-[18px] outline-none"
+                        type="text" placeholder="введите своё имя">
+                    <input required
+                        class="border-[1px] border-[#70C05B] pl-[16px] w-full py-[12px] rounded-[4px] text-[18px] outline-none"
+                        type="tel" placeholder="+998" name="" id="">
+                    <button type="submit"
+                        class="text-[24px] bg-[#FCD5BA] flex items-center justify-center cursor-pointer mt-[32px] rounded-[5px] py-[10px] text-[#FF6633]">
+                        <p class="">Вход</p>
+                    </button>
+                </form>
             </div>
-            <div class="bg-[#FCD5BA] cursor-pointer px-[83px] mt-[32px] rounded-[5px] py-[10px]">
-                <p class="text-[24px] text-[#FF6633]">Вход</p>
-            </div>
-            <div class="pt-[36px]">
+            <div class="pt-[36px] flex items-center justify-center">
                 <a href=""
-                    class="cursor-pointer max-w-[121px] px-[8px] text-[12px] rounded-[4px] text-[#70C05B] py-[4px] w-full border-[1px]">Регистрация</a>
+                    class="cursor-pointer flex items-center justify-center max-w-[121px] px-[8px] text-[12px] rounded-[4px] text-[#70C05B] py-[4px] w-full border-[1px]">Регистрация</a>
                 <a href=""
                     class="max-w-[121px] cursor-pointer px-[8px] text-[12px] rounded-[4px] py-[4px] w-full">Забыли
                     пароль?</a>
             </div>
+            <!-- <div class="flex items-center justify-center">
+                <button id="delet-profile"
+                    class="flex items-center gap-[5px] border-[1px] border-[red] w-[230px] flex items-center justify-center py-[5px] px-[2px] rounded-[4px] mt-[15px]">
+                    <p>Удалить аккаунт</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#1f1f1f#1f1f1f#1f1f1f">
+                        <path
+                            d="M640-520v-80h240v80H640Zm-280 40q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm80-80h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0-80Zm0 400Z" />
+                    </svg>
+                </button>
+            </div> -->
         </div>
     </div>
 

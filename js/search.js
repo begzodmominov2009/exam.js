@@ -10,7 +10,7 @@ function searchProducts(content, data) {
         content.innerHTML += `
         <div
                         class="max-w-[130px] rounded-[4px] w-full cursor-pointer bg-[white]/70 relative group overflow-hidden">
-                        <a href="./single.html">
+                        <a href="./single.html?id=${el.id}">
                             <img class="w-full h-[80px] sm:h-[202px]" src=${el.images[0]} alt="img">
                         </a>
                         <div class="flex items-center justify-between pt-[4px]">
@@ -146,13 +146,10 @@ searchPhone.addEventListener("input", function (e) {
     let searchProductPhone = products.filter((el) =>
         el.name.toUpperCase().includes(searchValuePhone.toUpperCase())
     );
-    // 🔹 Agar foydalanuvchi nimadir yozgan bo‘lsa
     if (searchValuePhone) {
-        // Asosiy product listni yashirish
-        search_products.innerHTML = ""; // <-- shu joy muhim
+        search_products.innerHTML = ""; 
         searchCardPhone.classList.remove("hidden");
 
-        // Natijalarni chiqarish
         if (searchProductPhone.length > 0) {
             searchCardPhone.innerHTML = "";
             searchProductPhone.map((el) => {
@@ -169,12 +166,10 @@ searchPhone.addEventListener("input", function (e) {
             searchCardPhone.innerHTML = `<div class="text-center py-[10px] text-[14px]">Bunday mahsulot topilmadi 😕</div>`;
         }
     }
-    // 🔹 Agar input bo‘sh qolsa
     else {
         searchCardPhone.classList.add("hidden");
         searchCardPhone.innerHTML = "";
 
-        // Asosiy product listni qayta ko‘rsatamiz
         search_products.innerHTML = "";
         searchProducts(search_products, products);
     }

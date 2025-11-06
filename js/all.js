@@ -30,7 +30,7 @@ function ViewProducts(content, data) {
         content.innerHTML += `
                   <div
                         class="max-w-[302px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl">
-                        <a href="./single.html">
+                        <a href="./single.html?id=${el.id}">
                             <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[0]} alt="img">
                         </a>
                         <div class="flex items-center justify-between pt-[8px]">

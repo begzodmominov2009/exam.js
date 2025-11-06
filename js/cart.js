@@ -8,6 +8,8 @@ let like_badge_21 = document.getElementById("like-badge-21")
 let allPrice = document.getElementById("all-price")
 let allDiscount = document.getElementById("all-discount")
 let allPaind = document.getElementById("all-paind")
+let allInput = document.getElementById("all-input")
+let inputCheck = document.getElementsByClassName("input-check")
 let sumPrice = 0;
 let dicountPrice = 0;
 let PaidPrice = 0;
@@ -44,7 +46,7 @@ function showCart(content, data) {
                          <div
                             class="max-w-[1506px] w-full py-[8px] px-[8px]  bg-[white] grid grid-cols-1 sm:flex items-center justify-between">
                             <div class="flex items-start gap-[5px] sm:gap-[10px] ">
-                                <input onClick="checkedInput(this, ${el.id})" class="w-[16px] cursor-pointer h-[16px]" type="checkbox">
+                                <input onClick="checkedInput(this, ${el.id})" class="input-check w-[16px] cursor-pointer h-[16px]" type="checkbox">
                                 <img class="max-w-[80px] h-[60px]" src=${el.images[0]} alt="img">
                                 <div class="flex flex-col gap-[5px]">
                                     <p class="line-clamp-2 sm:line-clamp-1 text-[12px] sm:text-[16px]">${el.description}»</p>
@@ -152,13 +154,29 @@ function checkedInput(obj, id) {
 allChecked.addEventListener("click", () => {
     carts = carts.filter((el) => !allCheckedProducts.includes(el.id))
     allCheckedProducts = []
-
     localStorage.setItem("carts", JSON.stringify(carts));
     countPrices()
     badge_11.textContent = carts.length
     badge_111.textContent = carts.length
     showCart(cartMap, carts)
 
+})
+
+allInput.addEventListener("click" , function() {
+    if(allCheckedProducts.length === carts.length){
+        allCheckedProducts = [];
+        for(let el of inputCheck){
+            el.checked = false;
+        }
+    } else {
+        for(let el of inputCheck){
+        el.checked = true;
+    }
+    carts.map((el) => {
+        allCheckedProducts.push(el.id)
+    })
+    }
+    
 })
 
 
