@@ -21,6 +21,7 @@ item.map((el) => {
                             <div class="cursor-pointer group">
                                 <img class="hover:scale-110 object-cover duration-400 w-[90px] h-[90px]" src=${el.images[0]}
                                     alt="item">
+                                    
                             </div>
                             <div class="cursor-pointer group">
                                 <img class="hover:scale-110 object-cover duration-400 w-[90px] h-[90px]" src=${el.images[1]}
@@ -41,19 +42,19 @@ item.map((el) => {
                         </div>
                         <div id="changes-img2"
                             class="flex sm:hidden items-center justify-between gap-[12px] overflow-x-scroll whitespace-nowrap">
-                            <div class="cursor-pointer group max-w-[90px]  w-full">
+                            <div class="cursor-pointer group max-w-[90px] h-[90px]  w-full">
                                 <img class="hover:scale-110 duration-400 w-full" src=${el.images[0]}
                                     alt="item">
                             </div>
-                            <div class="cursor-pointer group max-w-[90px]  w-full">
+                            <div class="cursor-pointer group max-w-[90px] h-[90px]  w-full">
                                 <img class="hover:scale-110 duration-400 w-full" src=${el.images[1]}
                                     alt="item">
                             </div>
-                            <div class="cursor-pointer group max-w-[90px]  w-full">
+                            <div class="cursor-pointer group max-w-[90px] h-[90px]  w-full">
                                 <img class="hover:scale-110 duration-400 w-full" src=${el.images[2]}
                                     alt="item">
                             </div>
-                            <div class="cursor-pointer group max-w-[90px]  w-full">
+                            <div class="cursor-pointer group max-w-[90px] h-[90px]  w-full">
                                 <img class="hover:scale-110 duration-400 w-full" src=${el.images[3]}
                                     alt="item">
                             </div>

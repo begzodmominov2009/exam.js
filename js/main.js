@@ -40,9 +40,22 @@ function homeProducts(content, data) {
     data.map((el) => {
         content.innerHTML += `
             <div class="max-w-[302px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl">
-               <a href="./Pages/single.html?id=${el.id}">
-               <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[0]} alt="img">
+            <div class="owl-carousel owl-theme relative">
+             <a href="./Pages/single.html?id=${el.id}">
+                 <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[0]} alt="img">
                </a>
+                <a href="./Pages/single.html?id=${el.id}">
+                 <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[1]} alt="img">
+               </a>
+                <a href="./Pages/single.html?id=${el.id}">
+                 <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[2]} alt="img">
+               </a>
+                <a href="./Pages/single.html?id=${el.id}">
+                 <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[3]} alt="img">
+               </a>
+            </div>
+              
+
                <div class="flex items-center justify-between pt-[8px]">
                <div class="flex items-center justify-between w-full">
                <p class="font-bold text-[14px] px-[8px] sm:text-[18px]">${el.price - el.price * el.discount / 100}₽</p>
@@ -311,6 +324,29 @@ function removeTolike(id) {
     homeProducts(new_products, sliceNoDiscountProducts)
     homeProducts(bought_products, sliceBughtDiscountProducts)
 }
+$(document).ready(function () {
+    $(".owl-carousel").owlCarousel();
+});
+
+$(".owl-carousel").owlCarousel({
+    loop: false,
+    margin: 10,
+    nav: false,
+    dots: false,
+    autoplay: false,
+    responsive: {
+        0: {
+            items: 1,
+        },
+        600: {
+            items: 1,
+        },
+        1000: {
+            items: 1,
+        },
+    },
+});
+
 
 
 
