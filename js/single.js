@@ -13,10 +13,14 @@ let like_badge_14 = document.getElementById("like-badge-14")
 like_badge_14.textContent = like.length
 badge_2.textContent = carts.length
 
-
-
-item.map((el) => {
-    singleMaps.innerHTML += `
+function allSingle() {
+    singleMaps.innerHTML = ""
+    checkSingle.innerHTML = ""
+    miniDesc.innerHTML = ""
+    singleDesc.innerHTML = ""
+    singleRating.innerHTML = ""
+    item.map((el) => {
+        singleMaps.innerHTML += `
     <div id="changes-img" class="hidden sm:flex flex flex-col gap-[15px]">
                             <div class="cursor-pointer group">
                                 <img class="hover:scale-110 object-cover duration-400 w-[90px] h-[90px]" src=${el.images[0]}
@@ -61,7 +65,7 @@ item.map((el) => {
 
                         </div>
   `
-    checkSingle.innerHTML += `
+        checkSingle.innerHTML += `
        <div class=" flex items-end justify-between">
                             <div class="flex flex-col">
                                 <p class="text-[18px] sm:text-[24px]">${el.price}₽</p>
@@ -88,24 +92,27 @@ item.map((el) => {
                             </div>
                         </div>
                         <div class="flex items-center justify-center pt-[16px]">
-                            <button
-                                class="flex items-center gap-[14px] border border-[#70C05B] max-w-[207px] sm:max-w-[277px] rounded-[4px] 
-                          group hover:bg-[#FF6633] hover:border-none cursor-pointer transition duration-300 w-full py-[9px] justify-center">
-                                <svg class="w-5 sm:w-8 h-5 sm:h-8 fill-[#70C05B] group-hover:fill-white transition duration-300"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M7.33325 28C7.33325 26.1591 8.82564 24.6667 10.6666 24.6667C12.5075 24.6667 13.9999 26.1591 13.9999 28C13.9999 29.841 12.5075 31.3333 10.6666 31.3333C8.82564 31.3333 7.33325 29.841 7.33325 28ZM10.6666 26C9.56202 26 8.66659 26.8954 8.66659 28C8.66659 29.1046 9.56202 30 10.6666 30C11.7712 30 12.6666 29.1046 12.6666 28C12.6666 26.8954 11.7712 26 10.6666 26Z" />
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M23.3333 28C23.3333 26.1591 24.8256 24.6667 26.6666 24.6667C28.5075 24.6667 29.9999 26.1591 29.9999 28C29.9999 29.841 28.5075 31.3333 26.6666 31.3333C24.8256 31.3333 23.3333 29.841 23.3333 28ZM26.6666 26C25.562 26 24.6666 26.8954 24.6666 28C24.6666 29.1046 25.562 30 26.6666 30C27.7712 30 28.6666 29.1046 28.6666 28C28.6666 26.8954 27.7712 26 26.6666 26Z" />
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M1.33341 0.666672C0.965225 0.666672 0.666748 0.965149 0.666748 1.33334C0.666748 1.70153 0.965225 2.00001 1.33341 2.00001H6.10743C7.11719 7.72197 8.13785 13.4191 8.99916 19.1611C9.24392 20.7929 10.6456 22 12.2956 22H25.813C27.4019 22 28.77 20.8785 29.0816 19.3204L31.0005 9.72557C31.2481 8.48799 30.3015 7.33334 29.0394 7.33334H9.54737C9.14342 7.33334 8.77071 7.45202 8.45923 7.65458L7.32327 1.21748C7.26705 0.89891 6.99024 0.666672 6.66675 0.666672H1.33341ZM8.88808 9.43223C8.82762 9.02916 9.13979 8.66667 9.54737 8.66667H29.0394C29.4601 8.66667 29.7756 9.05155 29.6931 9.46408L27.7741 19.0589C27.5872 19.9938 26.7663 20.6667 25.813 20.6667H12.2956C11.3056 20.6667 10.4646 19.9424 10.3177 18.9634L8.88808 9.43223Z" />
-                                </svg>
-
-                                <p
-                                    class="text-[18px] sm:text-[24px] text-[#70C05B] group-hover:text-white transition duration-300">
-                                    В корзину
-                                </p>
-                            </button>
+                           ${carts.find((cart) => cart.id === el.id) ?
+                ` <div class="w-full  max-w-[207px] sm:max-w-[277] max-w-[207px] sm:max-w-[277px]  grid grid-cols-3 mb-[8px] mt-[2px] bg-[#d3d3d3]/30 cursor-pointer h-[35px] sm:h-[40px]">
+                   <button
+                   onClick="decraese(${el.id})"
+                   class="w-full  cursor-pointer rounded-tl-[4px] rounded-bl-[4px] bg-[#FF6633] flex items-center justify-center"><img class="w-[18px] sm:w-[22px] h-[18px] sm:h-[22px]" src="../assets/header/minus.svg" alt="minus" /></button>
+                   <span class="w-full text-[black] text-[14px] sm:text-[18px] flex items-center justify-center">
+                   ${carts.find((cart) => cart.id === el.id).number}
+                   </span>
+                   <button onClick={increase(${el.id})}       
+                   class=" w-full  cursor-pointer rounded-br-[4px] rounded-tr-[4px] bg-[#FF6633] flex items-center justify-center"><img class="w-[14px] sm:w-[18px] h-[14px] sm:h-[18px]" src="../assets/header/plus.svg" alt="minus" /></button>
+                   </div>` :
+                `<button onClick="addToCart(${el.id})"
+                    class="flex items-center justify-center gap-[14px] border border-[#70C05B] max-w-[207px] sm:max-w-[277] max-w-[207px] sm:max-w-[277px] w-full mb-[8px] mt-[2px]  rounded-[4px] text-[#70C05B] px-[8px] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
+                    <svg class="group-hover:fill=[white] width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 21C5.5 19.6193 6.61929 18.5 8 18.5C9.38071 18.5 10.5 19.6193 10.5 21C10.5 22.3807 9.38071 23.5 8 23.5C6.61929 23.5 5.5 22.3807 5.5 21ZM8 19.5C7.17157 19.5 6.5 20.1716 6.5 21C6.5 21.8284 7.17157 22.5 8 22.5C8.82843 22.5 9.5 21.8284 9.5 21C9.5 20.1716 8.82843 19.5 8 19.5Z" fill="#414141"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.5 21C17.5 19.6193 18.6193 18.5 20 18.5C21.3807 18.5 22.5 19.6193 22.5 21C22.5 22.3807 21.3807 23.5 20 23.5C18.6193 23.5 17.5 22.3807 17.5 21ZM20 19.5C19.1716 19.5 18.5 20.1716 18.5 21C18.5 21.8284 19.1716 22.5 20 22.5C20.8284 22.5 21.5 21.8284 21.5 21C21.5 20.1716 20.8284 19.5 20 19.5Z" fill="#414141"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1 0.5C0.723858 0.5 0.5 0.723858 0.5 1C0.5 1.27614 0.723858 1.5 1 1.5H4.58051C5.33783 5.79147 6.10333 10.0643 6.74931 14.3709C6.93288 15.5947 7.98416 16.5 9.22165 16.5H19.3597C20.5514 16.5 21.5774 15.6588 21.8111 14.4903L23.2503 7.29417C23.436 6.36599 22.726 5.5 21.7795 5.5H7.16046C6.8575 5.5 6.57797 5.58901 6.34436 5.74093L5.49239 0.913107C5.45023 0.674179 5.24262 0.5 5 0.5H1ZM6.666 7.07417C6.62065 6.77187 6.85478 6.5 7.16046 6.5H21.7795C22.095 6.5 22.3316 6.78866 22.2698 7.09806L20.8305 14.2942C20.6903 14.9953 20.0747 15.5 19.3597 15.5H9.22165C8.47916 15.5 7.84839 14.9568 7.73825 14.2225L6.666 7.07417Z" fill="#414141"/>
+                    </svg>
+                    В корзину
+                    </button>`
+            }      
                         </div>
                         <div class="pt-[28px] flex flex-col gap-[2px] sm:gap-[10px] pb-[16px]">
                             <div
@@ -125,16 +132,16 @@ item.map((el) => {
                             </div>
                         </div>
     `
-    miniDesc.innerHTML += `
+        miniDesc.innerHTML += `
      <a class="whitespace-nowrap" href="./single.html">
                             <p class="text-[#8F8F8F] text-[12px]">${el.description}</p>
                         </a>
     `
-    singleDesc.innerHTML += `
+        singleDesc.innerHTML += `
     <h1 class="text-[20px] font-bold py-[18px] sm:py-[24px] leading-150%">${el.description}</h1>
     `
-    singleRating.innerHTML += `
-                      <div>
+        singleRating.innerHTML += `
+                    <div>
                         <p class="text-[14px]">арт. ${el.art}</p>
                     </div>
                     <div class="flex items-center gap-[4px]">
@@ -228,7 +235,7 @@ item.map((el) => {
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
                    `: ""
-        }
+            }
                     <p class="text-[14px]">3 отзыва</p>
                     </div>
                     <div class="flex items-center gap-[8px]">
@@ -251,18 +258,22 @@ item.map((el) => {
                         </svg>
                         <p class="text-[12px]">Поделиться</p>
                     </div>
-                    <div class="flex items-center gap-[8px]">
+                    <div class="flex items-center gap-[8px] cursor-pointer">
                        ${like.find((item) => item.id === el.id) ? `<svg onClick="removeTolikes(${el.id})" 
                     class="bg-[#FF6633] p-[3px] rounded-[50%] sm:rounded-[4px]" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff">
                     <path d="M440-501Zm0 381L313-234q-72-65-123.5-116t-85-96q-33.5-45-49-87T40-621q0-94 63-156.5T260-840q52 0 99 22t81 62q34-40 81-62t99-22q84 0 153 59t69 160q0 14-2 29.5t-6 31.5h-85q5-18 8-34t3-30q0-75-50-105.5T620-760q-51 0-88 27.5T463-660h-46q-31-45-70.5-72.5T260-760q-57 0-98.5 39.5T120-621q0 33 14 67t50 78.5q36 44.5 98 104T440-228q26-23 61-53t56-50l9 9 19.5 19.5L605-283l9 9q-22 20-56 49.5T498-172l-58 52Zm160-280v-80h320v80H600Z"/>
                     </svg>` : `<svg
                     onClick="addToLikes(${el.id})"
                     class=" bg-[#F3F2F1] p-[3px] rounded-[50%] sm:rounded-[4px]" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f#1f1f1f#1f1f1f"><path d="M440-501Zm0 381L313-234q-72-65-123.5-116t-85-96q-33.5-45-49-87T40-621q0-94 63-156.5T260-840q52 0 99 22t81 62q34-40 81-62t99-22q81 0 136 45.5T831-680h-85q-18-40-53-60t-73-20q-51 0-88 27.5T463-660h-46q-31-45-70.5-72.5T260-760q-57 0-98.5 39.5T120-621q0 33 14 67t50 78.5q36 44.5 98 104T440-228q26-23 61-53t56-50l9 9 19.5 19.5L605-283l9 9q-22 20-56 49.5T498-172l-58 52Zm280-160v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"/></svg>`
-                     }
+            }
                         <p class="text-[12px]">В избраное</p>
                     </div>
     `
-})
+    })
+}
+allSingle()
+
+
 let changesImg = document.getElementById("changes-img")
 let mainImg = document.getElementById("main-img")
 let changesImg2 = document.getElementById("changes-img2")
@@ -273,6 +284,57 @@ changesImg.addEventListener("click", (e) => {
 changesImg2.addEventListener("click", (e) => {
     mainImg.src = e.target.src
 })
+
+function addToCart(id) {
+    let item = products.find((el) => el.id === id)
+    item.number = 1;
+    carts.push(item)
+    badge_2.textContent = carts.length
+    localStorage.setItem("carts", JSON.stringify(carts));
+    allSingle()
+
+}
+function increase(id) {
+    carts = carts.map((el) => {
+        if (el.id === id) {
+            el.number += 1
+        }
+        return el
+    })
+    badge_2.textContent = carts.length
+    localStorage.setItem("carts", JSON.stringify(carts));
+    allSingle()
+}
+function decraese(id) {
+    let item = carts.find((el) => el.id === id)
+    carts = carts.map((el) => {
+        if (el.id === id) {
+            el.number -= 1
+        }
+        return el
+    })
+    if (item.number < 1) {
+        carts = carts.filter((el) => el.id !== id)
+    }
+    badge_2.textContent = carts.length
+    localStorage.setItem("carts", JSON.stringify(carts));
+    allSingle()
+}
+
+function addToLikes(id) {
+    let likeitem = products.find((el) => el.id === id)
+    like.push(likeitem)
+    like_badge_14.textContent = like.length
+    localStorage.setItem("like", JSON.stringify(like));
+    allSingle()
+}
+
+function removeTolikes(id) {
+    like = like.filter((el) => el.id !== id)
+    like_badge_14.textContent = like.length
+    localStorage.setItem("like", JSON.stringify(like));
+    allSingle()
+}
 
 
 

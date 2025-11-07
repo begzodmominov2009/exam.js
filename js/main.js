@@ -53,15 +53,13 @@ function homeProducts(content, data) {
                 <a href="./Pages/single.html?id=${el.id}">
                  <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[3]} alt="img">
                </a>
-            </div>
-              
-
-               <div class="flex items-center justify-between pt-[8px]">
+             </div>
+             <div class="flex items-center justify-between pt-[8px]">
                <div class="flex items-center justify-between w-full">
                <p class="font-bold text-[14px] px-[8px] sm:text-[18px]">${el.price - el.price * el.discount / 100}₽</p>
                 ${el.discount > 0 ? (`<strike class="text-[12px] bg-[#FF6633] text-[#ffff] mr-[8px] rounded-[4px]  inline-blok px-[7px] sm:px-[8px] sm:text-[14px]">${el.price}₽</strike>`)
                 : ("")
-            }
+                }
                 </div>
                 </div>
                 <div class="flex items-center justify-between pt-[4px]">
@@ -161,8 +159,8 @@ function homeProducts(content, data) {
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
                    `: ""
-            }
-                <div class="px-[8px]">
+                }
+             <div class="px-[8px]">
                 ${carts.find((cart) => cart.id === el.id) ?
                 ` <div class="w-full grid grid-cols-3 mb-[8px] mt-[2px] bg-[#d3d3d3]/30 cursor-pointer h-[35px] sm:h-[40px]">
                    <button
@@ -174,21 +172,21 @@ function homeProducts(content, data) {
                    <button onClick={increase(${el.id})}       
                    class="w-full cursor-pointer rounded-br-[4px] rounded-tr-[4px] bg-[#FF6633] flex items-center justify-center"><img class="w-[14px] sm:w-[18px] h-[14px] sm:h-[18px]" src="../assets/header/plus.svg" alt="minus" /></button>
                    </div>` :
-                `<button onClick="addToCart(${el.id})"
+                   `<button onClick="addToCart(${el.id})"
                     class="w-full mb-[8px] mt-[2px]  rounded-[4px] text-[#70C05B] px-[8px] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
                     В корзину
                     </button>`
-            }        
+                    }        
                     </div>
                     ${like.find((item) => item.id === el.id)
-                ? `<svg 
+                  ? `<svg 
                        onClick="removeTolike(${el.id})" 
                     class="absolute top-[6px] z-200 sm:top-[8px] duration-[0.5s] right-[5px] sm:right-[15px] bg-[#FF6633] p-[3px] rounded-[50%] sm:rounded-[4px]" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff">
                     <path d="M440-501Zm0 381L313-234q-72-65-123.5-116t-85-96q-33.5-45-49-87T40-621q0-94 63-156.5T260-840q52 0 99 22t81 62q34-40 81-62t99-22q84 0 153 59t69 160q0 14-2 29.5t-6 31.5h-85q5-18 8-34t3-30q0-75-50-105.5T620-760q-51 0-88 27.5T463-660h-46q-31-45-70.5-72.5T260-760q-57 0-98.5 39.5T120-621q0 33 14 67t50 78.5q36 44.5 98 104T440-228q26-23 61-53t56-50l9 9 19.5 19.5L605-283l9 9q-22 20-56 49.5T498-172l-58 52Zm160-280v-80h320v80H600Z"/>
                     </svg>` : `<svg
                     onClick="addToLike(${el.id})"
                     class="absolute top-[6px] z-200 sm:top-[8px]  duration-[0.5s] right-[5px] sm:right-[15px] bg-[#F3F2F1] p-[3px] rounded-[50%] sm:rounded-[4px]" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f#1f1f1f#1f1f1f"><path d="M440-501Zm0 381L313-234q-72-65-123.5-116t-85-96q-33.5-45-49-87T40-621q0-94 63-156.5T260-840q52 0 99 22t81 62q34-40 81-62t99-22q81 0 136 45.5T831-680h-85q-18-40-53-60t-73-20q-51 0-88 27.5T463-660h-46q-31-45-70.5-72.5T260-760q-57 0-98.5 39.5T120-621q0 33 14 67t50 78.5q36 44.5 98 104T440-228q26-23 61-53t56-50l9 9 19.5 19.5L605-283l9 9q-22 20-56 49.5T498-172l-58 52Zm280-160v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"/></svg>`
-            }
+                    }
                     </div>
                 </div>
     
@@ -271,6 +269,7 @@ function addToCart(id) {
     homeProducts(discount_product, sliceDiscountProducts)
     homeProducts(new_products, sliceNoDiscountProducts)
     homeProducts(bought_products, sliceBughtDiscountProducts)
+    carousel()
 }
 function increase(id) {
     carts = carts.map((el) => {
@@ -285,6 +284,7 @@ function increase(id) {
     homeProducts(discount_product, sliceDiscountProducts)
     homeProducts(new_products, sliceNoDiscountProducts)
     homeProducts(bought_products, sliceBughtDiscountProducts)
+    carousel()
 }
 function decraese(id) {
     let item = carts.find((el) => el.id === id)
@@ -303,6 +303,7 @@ function decraese(id) {
     homeProducts(discount_product, sliceDiscountProducts)
     homeProducts(new_products, sliceNoDiscountProducts)
     homeProducts(bought_products, sliceBughtDiscountProducts)
+    carousel()
 }
 function addToLike(id) {
     let likeitem = products.find((el) => el.id === id)
@@ -313,6 +314,7 @@ function addToLike(id) {
     homeProducts(discount_product, sliceDiscountProducts)
     homeProducts(new_products, sliceNoDiscountProducts)
     homeProducts(bought_products, sliceBughtDiscountProducts)
+    carousel()
 }
 
 function removeTolike(id) {
@@ -323,8 +325,12 @@ function removeTolike(id) {
     homeProducts(discount_product, sliceDiscountProducts)
     homeProducts(new_products, sliceNoDiscountProducts)
     homeProducts(bought_products, sliceBughtDiscountProducts)
+    carousel()
 }
-$(document).ready(function () {
+
+
+function carousel(){
+    $(document).ready(function () {
     $(".owl-carousel").owlCarousel();
 });
 
@@ -346,7 +352,9 @@ $(".owl-carousel").owlCarousel({
         },
     },
 });
+}
 
+carousel()
 
 
 
