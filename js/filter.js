@@ -1,11 +1,18 @@
-let bought_filter_products = document.querySelector(".bought-filter-products")
-let new_filter_products = document.querySelector(".new-filter-products")
+let filterCards = document.querySelector(".filter-cards")
+let brand = document.getElementById("brand")
+let click = document.getElementById("click")
+let sort = document.getElementById("sort")
+click.addEventListener("click", () => {
+    sort.classList.toggle("translate-y-[0%]")
+})
 
+let uniqueBrands = [...new Set(products.map((el) => el.brand))];
+uniqueBrands.forEach((el) => {
+    brand.innerHTML += `
+    <option class="cursor-pointer">${el.brand}</option>  
+    `
+})
 
-let sliceBoughtProductsFilter = products.slice(products.length - 3, products.length)
-
-
-let sliceNewProductsFilter = products.slice(products.length - 6, products.length - 3)
 
 
 function filterProducts(content, data) {
@@ -19,10 +26,9 @@ function filterProducts(content, data) {
                         <div class="flex items-center justify-between pt-[8px]">
                             <div class="flex items-center justify-between w-full">
                             <p class="font-bold text-[14px] px-[8px] sm:text-[18px]">${el.price - el.price * el.discount / 100}₽</p>
-                             ${
-                                    el.discount > 0 ? ( `<strike class="text-[12px] bg-[#FF6633] text-[#ffff] mr-[8px] rounded-[4px]  inline-blok px-[8px] sm:text-[14px]">${el.price}₽</strike>`)
-                                 : ("")
-                                }
+                             ${el.discount > 0 ? (`<strike class="text-[12px] bg-[#FF6633] text-[#ffff] mr-[8px] rounded-[4px]  inline-blok px-[8px] sm:text-[14px]">${el.price}₽</strike>`)
+                : ("")
+            }
                             </div>
                         </div>
                             <div class="flex items-center justify-between pt-[4px]">
@@ -122,7 +128,7 @@ function filterProducts(content, data) {
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
                            `: ""
-                            }
+            }
                             <div class="px-[8px]">
                                 <button
                                     class="w-full mb-[8px] mt-[2px]  rounded-[4px] text-[#70C05B] px-[8px] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
@@ -141,5 +147,4 @@ function filterProducts(content, data) {
     `
     })
 }
-filterProducts(bought_filter_products, sliceBoughtProductsFilter)
-filterProducts(new_filter_products, sliceNewProductsFilter)
+filterProducts(filterCards, products)

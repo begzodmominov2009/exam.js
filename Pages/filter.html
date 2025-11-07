@@ -217,7 +217,8 @@
     </div>
 
 
-    <div id="register" class="register bg-[#FCD5BACC]/80 h-full w-full z-[0] fixed flex items-center justify-center">
+    <div id="register"
+        class="register hidden bg-[#FCD5BACC]/80 h-full w-full z-[0] fixed flex items-center justify-center">
         <div
             class="max-w-[420px] rounded-[5px] h-auto w-full pb-[40px] bg-[white] relative flex items-center justify-center flex-col pt-[72px]">
             <svg id="register-close" class="cursor-pointer absolute right-0 top-0 bg-[#F3F2F1] rounded-[4px] "
@@ -249,7 +250,7 @@
     </div>
 
     <main>
-        <section>
+        <!-- <section>
             <div class="container mx-auto px-[20px] pt-[85px] sm:pt-[110px] pb-[40px] sm:pb-[80px] 2xl:px-[127px]">
                 <div class="flex items-center  gap-[8px]">
                     <a href="../index.html">
@@ -269,53 +270,39 @@
                 </div>
             </div>
 
-        </section>
+        </section> -->
 
         <section>
             <div
-                class="container mx-auto px-[20px] pb-[40px] sm:pb-[80px] 2xl:px-[127px]  flex items-start justify-between gap-[40px]">
-                <div class="max-w-[302px] w-full">
-                    <div class="bg-[#F3F2F1] py-[10px] px-[10px] rounded-[5px] cursor-pointer">
-                        <h1 class="font-bold">Фильтр</h1>
+                class="container mx-auto pt-[200px] px-[20px] pb-[40px] sm:pb-[80px] 2xl:px-[127px]  flex items-start justify-between gap-[40px]">
+                <div
+                    class="max-w-[302px] max-h-[450px] overflow-y-scroll overflow-hidden w-full fixed bg-[white]  w-[30%]">
+                    <div id="click"
+                        class="bg-[#F3F2F1] flex items-center justify-center py-[10px] px-[10px] rounded-[5px] cursor-pointer">
+                        <!-- <img src="../assets/home/filter.svg" alt="filter"> -->
+                        <h1 class="font-bold text-[20px]">Фильтр</h1>
                     </div>
-                    <div class="flex items-center justify-between pt-[40px]">
-                        <h1>Цена</h1>
-                        <span class="bg-[#F3F2F1] cursor-pointer p-[8px] rounded-[4px] text-[12px]">Очистить</span>
-                    </div>
-                    <div class="flex items-center justify-between gap-[7px] pt-[13px]">
-                        <span
-                            class="max-w-[144px] cursor-pointer bg-[transparent] group hover:bg-[white] duration-200 w-full py-[8px] px-[16px] border-[#BFBFBF] border-[1px] rounded-[4px]">
-                            <p>1</p>
-                        </span>
-                        <div>
-                            <svg width="15" height="1" viewBox="0 0 15 1" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0 0.5C0 0.223858 0.223858 0 0.5 0H14.5C14.7761 0 15 0.223858 15 0.5C15 0.776142 14.7761 1 14.5 1H0.5C0.223858 1 0 0.776142 0 0.5Z"
-                                    fill="#414141" />
-                            </svg>
+                    <div id="sort" class="translate-y-[-170%] px-[10px] py-[7px]">
+                        <label class="text-[18px] font-bold">Цена</label> <br>
+                        <div class="flex items-center gap-[20px] mt-[8px]">
+                            <input class="border-[1px] px-[10px] text-[14px] py-[5px] outline-none w-full rounded-[5px]"
+                                type="number" placeholder="то 3000">
+                            <input class="border-[1px] px-[10px] text-[14px] py-[5px] outline-none w-full rounded-[5px]"
+                                type="number" placeholder="до 30000">
                         </div>
-                        <span
-                            class="max-w-[144px] cursor-pointer bg-[transparent] group hover:bg-[white] duration-200 w-full py-[8px] px-[16px] border-[#BFBFBF] border-[1px] rounded-[4px]">
-                            <p>100</p>
-                        </span>
+                        <label class="block mt-[10px] mb-2 text-[18px] font-bold">Бренд продукта</label>
+                        <select id="brand" class="border border-gray-300 outline-none pr-[5px] cursor-pointer rounded-lg p-2 w-64 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                         
+                        </select>
+                   
                     </div>
-                    <div class="flex items-center pt-[13px] justify-center">
-                        <span class="w-[25px] h-[25px] rounded-[100%] px-[10px] bg-[#70C05B]"></span>
-                        <span class="w-[172px] py-[4px] bg-[#70C05B] inline-block"></span>
-                        <span class="w-[25px] h-[25px] rounded-[100%] px-[10px] bg-[#70C05B]"></span>
+                    <div class="ml-[35%] w-[65%]">
+                        <div
+                            class="filter-cards grid grid-cols-2 md:grid-cols-3 gap-[10px] sm:gap-[40px] pt-[20px] sm:pt-[40px]">
+
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div class="bought-filter-products grid grid-cols-2 md:grid-cols-3 gap-[10px] sm:gap-[40px]">
-
-                    </div>
-                    <div
-                        class="new-filter-products grid grid-cols-2 md:grid-cols-3 gap-[10px] sm:gap-[40px] pt-[20px] sm:pt-[40px]">
-
-                    </div>
-                </div>
-            </div>
 
         </section>
     </main>

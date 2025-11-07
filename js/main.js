@@ -220,7 +220,7 @@ descriptionProducts.map((el) => {
 
 specialCard.map((el) => {
     special_card.innerHTML += `
-    <div
+                <div
                      class="bg-[#FCD5BA] max-w-[904px] w-full  overflow-hidden  group h-[200x] flex items-center justify-between rounded-[6px] shadow-md cursor-pointer px-[15px] py-[7px] sm:py-[15px] sm:px-[31.75px]">
                         <div>
                             <h3 class="text-[18px] sm:text-[24px] font-bold whi">${el.title}</h3>

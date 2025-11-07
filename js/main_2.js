@@ -17,8 +17,24 @@ let profileTitle = document.getElementById("profile-title")
 let profileObj = JSON.parse(localStorage.getItem("profile") || "{}")
 let deletProfile = document.getElementById("delet-profile")
 
-profileImg.src = profileObj.urlPhoto;
-profileTitle.textContent = profileObj.name
+if (!profileObj || Object.keys(profileObj).length === 0) {
+    profileImg.src = "../assets/single/Profile-PNG-File.png";
+    localStorage.setItem("profile", JSON.stringify(profileObj));
+} else {
+    profileImg.src = profileObj.urlPhoto;
+}
+if (!profileObj || Object.keys(profileObj).length === 0) {
+    profileTitle.textContent = "Профиль"
+    localStorage.setItem("profile", JSON.stringify(profileObj));
+} else {
+    profileTitle.textContent = profileObj.name
+}
+deletProfile.addEventListener("click", () => {
+    profileImg.src = "../assets/single/Profile-PNG-File.png";
+    profileTitle.textContent = "Профиль"
+    profileObj = {}
+    localStorage.setItem("profile", JSON.stringify(profileObj));
+})
 
 
 profile.addEventListener("click", () => {
@@ -33,11 +49,12 @@ innerModal.addEventListener("click", (e) => {
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    profileObj.urlPhoto = e.target[0].value;
-    profileObj.name = e.target[1].value;
+    profileObj.urlPhoto = e.target[0].value || "./assets/single/Profile-PNG-File.png";
+    profileObj.name = e.target[1].value || "Профиль";
     profileObj.phone = e.target[2].value;
-    profileImg.src = e.target[0].value;
-    profileTitle.textContent = e.target[1].value
+
+    profileImg.src = profileObj.urlPhoto;
+    profileTitle.textContent = profileObj.name
     console.log(profileObj);
     localStorage.setItem("profile", JSON.stringify(profileObj))
     formModal.classList.add("hidden")
