@@ -1,22 +1,33 @@
 let filterCards = document.querySelector(".filter-cards")
 let brand = document.getElementById("brand")
 let click = document.getElementById("click")
+let inputOne = document.getElementById("inputOne")
+let inputTwo = document.getElementById("inputTwo")
+let town = document.getElementById("town")
 let sort = document.getElementById("sort")
 click.addEventListener("click", () => {
     sort.classList.toggle("translate-y-[0%]")
 })
 
 let uniqueBrands = [...new Set(products.map((el) => el.brand))];
+brand.innerHTML = `<option value="">Все бренды</option>`;
+
 uniqueBrands.forEach((el) => {
-    brand.innerHTML += `
-    <option class="cursor-pointer">${el.brand}</option>  
-    `
-})
+    brand.innerHTML += `<option class="cursor-pointer" value="${el}">${el}</option>`;
+});
+
+let uniqueTown = [...new Set(products.map((el) => el.origin))];
+town.innerHTML = `<option value="">Все бренды</option>`;
+
+uniqueTown.forEach((el) => {
+    town.innerHTML += `<option class="cursor-pointer" value="${el}">${el}</option>`;
+});
 
 
 
 function filterProducts(content, data) {
-    data.map((el) => {
+    content.innerHTML = ""
+    data.forEach((el) => {
         content.innerHTML += `
         <div
                         class="max-w-[302px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl">
@@ -148,3 +159,42 @@ function filterProducts(content, data) {
     })
 }
 filterProducts(filterCards, products)
+
+brand.addEventListener("change", (e) => {
+    let selectedBrand = e.target.value;
+    if (selectedBrand === "") {
+        filterProducts(filterCards, products);
+    } else {
+        let filtered = products.filter((el) => el.brand === selectedBrand);
+        filterProducts(filterCards, filtered);
+    }
+});
+
+town.addEventListener("change", (e) => {
+    let selectedTown = e.target.value;
+    if (selectedTown === "") {
+        filterProducts(filterProducts, products)
+    } else {
+        let filteredTown = products.filter((el) => el.origin === selectedTown)
+        filterProducts(filterCards, filteredTown)
+    }
+})
+inputOne.addEventListener("input", (e) => {
+    let inputPrice = Number(e.target.value);
+    if (!inputPrice) {
+        filterProducts(filterProducts, products)
+    } else {
+        let filteredPrice = products.filter((el) => el.price - (el.price * el.discount / 100) >= inputPrice)
+        filterProducts(filterCards, filteredPrice)
+    }
+})
+inputOne.addEventListener("input", (e) => {
+    let inputPrices = Number(e.target.value);
+    if (!inputPrices) {
+        filterProducts(filterProducts, products)
+    } else {
+        let filteredPrices = products.filter((el) => el.price - (el.price * el.discount / 100) <= inputPrices)
+        filterProducts(filterCards, filteredPrices)
+    }
+})
+

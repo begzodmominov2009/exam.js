@@ -275,28 +275,35 @@
         <section>
             <div
                 class="container mx-auto pt-[200px] px-[20px] pb-[40px] sm:pb-[80px] 2xl:px-[127px]  flex items-start justify-between gap-[40px]">
-                <div
-                    class="max-w-[302px] max-h-[450px] overflow-y-scroll overflow-hidden w-full fixed bg-[white]  w-[30%]">
+                <div class="max-w-[302px] h-[450px] w-full fixed">
                     <div id="click"
-                        class="bg-[#F3F2F1] flex items-center justify-center py-[10px] px-[10px] rounded-[5px] cursor-pointer">
+                        class="bg-[#ffff] flex items-center relative justify-center py-[10px] px-[10px] rounded-[5px] cursor-pointer">
                         <!-- <img src="../assets/home/filter.svg" alt="filter"> -->
                         <h1 class="font-bold text-[20px]">Фильтр</h1>
                     </div>
-                    <div id="sort" class="translate-y-[-170%] px-[10px] py-[7px]">
+                    <div id="sort" class="translate-y-[-170%] bg-[#ffff] absolute max-h-auto top-10 px-[10px] py-[7px]">
                         <label class="text-[18px] font-bold">Цена</label> <br>
                         <div class="flex items-center gap-[20px] mt-[8px]">
-                            <input class="border-[1px] px-[10px] text-[14px] py-[5px] outline-none w-full rounded-[5px]"
+                            <input id="inputOne" class="border-[1px] cursor-pointer px-[10px] text-[14px] py-[5px] outline-none w-full rounded-[5px]"
                                 type="number" placeholder="то 3000">
-                            <input class="border-[1px] px-[10px] text-[14px] py-[5px] outline-none w-full rounded-[5px]"
+                            <input id="inputTwo" class="border-[1px] cursor-pointer px-[10px] text-[14px] py-[5px] outline-none w-full rounded-[5px]"
                                 type="number" placeholder="до 30000">
                         </div>
-                        <label class="block mt-[10px] mb-2 text-[18px] font-bold">Бренд продукта</label>
-                        <select id="brand" class="border border-gray-300 outline-none pr-[5px] cursor-pointer rounded-lg p-2 w-64 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                         
+                        <label class="block mt-[15px] mb-2 text-[18px] font-bold">Бренд продукта</label>
+                        <select id="brand"
+                            class="border border-gray-300 w-full outline-none pr-[5px] cursor-pointer rounded-lg p-2 w-64 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
                         </select>
-                   
+                        <label class="block mt-[15px] mb-2 text-[18px] font-bold">Город производства</label>
+                        <select id="town"
+                            class="border border-gray-300 w-full outline-none pr-[5px] cursor-pointer rounded-lg p-2 w-64 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                        </select>
+
                     </div>
-                    <div class="ml-[35%] w-[65%]">
+                </div>
+                <div>
+                    <div class="ml-[31.7%] w-full">
                         <div
                             class="filter-cards grid grid-cols-2 md:grid-cols-3 gap-[10px] sm:gap-[40px] pt-[20px] sm:pt-[40px]">
 

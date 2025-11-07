@@ -73,7 +73,7 @@ function allSingle() {
                             </div>
                             <div class="flex flex-col gap-[0px]">
                                 <p class="text-[26px] sm:text-[36px] font-bold">${(el.price - (el.price * 43.4 / 100)).toFixed(2)}₽</p>
-                                <div class="flex items-center gap-[7px]">
+                                <div class="flex items-center relative gap-[7px]">
                                     <p class="text-[10px] sm:text-[12px] text-[#BFBFBF]">С картой Северяночки</p>
                                     <svg class="w-[17px] sm:w-[20px] h-[17px] sm:h-[20px]" viewBox="0 0 24 24"
                                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +87,6 @@ function allSingle() {
                                             d="M13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7C12.5523 7 13 7.44772 13 8Z"
                                             fill="#414141" />
                                     </svg>
-
                                 </div>
                             </div>
                         </div>
@@ -130,8 +129,8 @@ function allSingle() {
                                 <p class="text-[12px]">Упаковка</p>
                                 <p class="text-[12px] font-bold">180 г</p>
                             </div>
-                        </div>
-    `
+                        </div>               
+    `    
         miniDesc.innerHTML += `
      <a class="whitespace-nowrap" href="./single.html">
                             <p class="text-[#8F8F8F] text-[12px]">${el.description}</p>
@@ -270,6 +269,7 @@ function allSingle() {
                     </div>
     `
     })
+    
 }
 allSingle()
 

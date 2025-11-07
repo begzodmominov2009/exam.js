@@ -17,24 +17,7 @@ let profileTitle = document.getElementById("profile-title")
 let profileObj = JSON.parse(localStorage.getItem("profile") || "{}")
 let deletProfile = document.getElementById("delet-profile")
 
-if (!profileObj || Object.keys(profileObj).length === 0) {
-    profileImg.src = "../assets/single/Profile-PNG-File.png";
-    localStorage.setItem("profile", JSON.stringify(profileObj));
-} else {
-    profileImg.src = profileObj.urlPhoto;
-}
-if (!profileObj || Object.keys(profileObj).length === 0) {
-    profileTitle.textContent = "Профиль"
-    localStorage.setItem("profile", JSON.stringify(profileObj));
-} else {
-    profileTitle.textContent = profileObj.name
-}
-deletProfile.addEventListener("click", () => {
-    profileImg.src = "../assets/single/Profile-PNG-File.png";
-    profileTitle.textContent = "Профиль"
-    profileObj = {}
-    localStorage.setItem("profile", JSON.stringify(profileObj));
-})
+
 
 
 profile.addEventListener("click", () => {
@@ -78,6 +61,25 @@ menus_category_close.addEventListener("click", () => {
 close.addEventListener("click", () => {
     menus.classList.remove("menus-view")
     menus.classList.add("close-transition")
+})
+
+if (!profileObj || Object.keys(profileObj).length === 0) {
+    profileImg.src = "../assets/single/Profile-PNG-File.png";
+    localStorage.setItem("profile", JSON.stringify(profileObj));
+} else {
+    profileImg.src = profileObj.urlPhoto;
+}
+if (!profileObj || Object.keys(profileObj).length === 0) {
+    profileTitle.textContent = "Профиль"
+    localStorage.setItem("profile", JSON.stringify(profileObj));
+} else {
+    profileTitle.textContent = profileObj.name
+}
+deletProfile.addEventListener("click", () => {
+    profileImg.src = "../assets/single/Profile-PNG-File.png";
+    profileTitle.textContent = "Профиль"
+    profileObj = {}
+    localStorage.setItem("profile", JSON.stringify(profileObj));
 })
 
 
