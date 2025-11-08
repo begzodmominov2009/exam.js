@@ -7,10 +7,17 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="../css/stayle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <div id="loading" class="fixed z-1500 w-full h-full bg-[white] flex items-center justify-center    ">
+    <!-- <div id="loading" class="fixed z-1500 w-full h-full bg-[white] flex items-center justify-center    ">
         <div class="relative">
             <img src="../assets/loading/loading.svg" alt="loading">
             <div>
@@ -18,7 +25,7 @@
             </div>
         </div>
 
-    </div>
+    </div> -->
 
     <header class="py-[16px] bg-[white] fixed z-[100] w-full shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
         <div class="container mx-auto px-[20px] gap-[40px] 2xl:px-[127px] flex items-center justify-between">
@@ -40,7 +47,7 @@
             </div>
             <div class="flex items-start cursor-pointer gap-[20px]">
                 <div id="menus-category"
-                    class="flex hidden sm:flex w-[140px]  rounded-[5px] h-[40px] justfiy-between pl-[8px] pr-[15px] gap-[20px] items-center bg-[#70C05B]">
+                    class="flex hidden md:flex w-[140px]  rounded-[5px] h-[40px] justfiy-between pl-[8px] pr-[15px] gap-[20px] items-center bg-[#70C05B]">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
                         fill="#ffff">
                         <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
@@ -48,7 +55,7 @@
                     <p class="text-[white]">Каталог</p>
                 </div>
                 <div id="menus-category-close"
-                    class="category-close flex hidden sm:flex w-[140px]  rounded-[5px] h-[40px] justfiy-between pl-[8px] pr-[15px] gap-[20px] items-center bg-[#70C05B]">
+                    class="category-close flex hidden md:flex w-[140px]  rounded-[5px] h-[40px] justfiy-between pl-[8px] pr-[15px] gap-[20px] items-center bg-[#70C05B]">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
                         fill="#ffff">
                         <path
@@ -56,7 +63,7 @@
                     </svg>
                     <p class="text-[white]">Каталог</p>
                 </div>
-                <div class="flex sm:hidden gap-[7px] items-center">
+                <div class="flex md:hidden gap-[7px] items-center">
                     <a href="./search.html">
                         <img src="../assets/header/search2.svg" alt="search">
                     </a>
@@ -76,15 +83,13 @@
                 </div>
             </div>
             <div class="hidden xl:flex flex items-center gap-[24px] text-[12px]">
-                <div class="flex cursor-pointer items-center flex-col gap-[7px]">
-                    <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M11.6577 1.75827C12.783 0.632497 14.3095 0 15.9013 0C17.493 0 19.0195 0.632466 20.1448 1.75819C21.2705 2.88347 21.9031 4.41012 21.9031 6.00183C21.9031 7.59357 21.2706 9.12009 20.1448 10.2454C20.1448 10.2454 20.1449 10.2454 20.1448 10.2454L11.3048 19.0854C11.1096 19.2806 10.793 19.2806 10.5977 19.0854L1.75774 10.2454C-0.585912 7.90173 -0.585912 4.10192 1.75774 1.75827C4.10139 -0.585378 7.90119 -0.585378 10.2448 1.75827L10.9513 2.46472L11.6577 1.75827C11.6578 1.75824 11.6577 1.7583 11.6577 1.75827ZM15.9013 1C14.5748 1 13.3027 1.52711 12.3649 2.4653L11.3048 3.52538C11.2111 3.61915 11.0839 3.67183 10.9513 3.67183C10.8187 3.67183 10.6915 3.61915 10.5977 3.52538L9.53774 2.46538C7.58461 0.512254 4.41797 0.512254 2.46484 2.46538C0.511719 4.4185 0.511719 7.58515 2.46484 9.53827L10.9513 18.0247L19.4377 9.53827C20.3759 8.60052 20.9031 7.32831 20.9031 6.00183C20.9031 4.67534 20.376 3.40321 19.4378 2.46546C18.5001 1.52727 17.2278 1 15.9013 1Z"
-                            fill="#414141" />
-                    </svg>
+                <a href="./like.html" class="flex relative cursor-pointer items-center flex-col gap-[7px]">
+                    <img src="../assets/images/layk/heart-1.svg" alt="heart">
+                    <span id="like-badge-filter"
+                        class="absolute top-[-5px] left-[35px] w-[11.28px] h-[11px] bg-[#FF6633] text-white rounded-[4px] flex items-center justify-center px-[4px] py-[2px] text-[9px]">0</span>
                     <p>Избранное</p>
-                </div>
-                <a href="./products.html" class="flex cursor-pointer items-center flex-col gap-[7px]">
+                </a>
+                <a href="./category.html" class="flex cursor-pointer items-center flex-col gap-[7px]">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M11.3325 1.89776C11.3324 1.89785 11.3327 1.89767 11.3325 1.89776L3.33366 5.89721L3.33255 5.89776C2.82288 6.15102 2.50045 6.67089 2.50005 7.24V16.7635C2.49608 17.3334 2.81541 17.8563 3.32416 18.113C3.32387 18.1129 3.32445 18.1132 3.32416 18.113L11.3237 22.1128C11.7462 22.3242 12.2438 22.3243 12.6663 22.1129L20.6664 18.1128L20.6675 18.1122C21.1773 17.8589 21.4997 17.3389 21.5 16.7697V7.24026C21.4997 6.67105 21.1773 6.15106 20.6675 5.89776L20.6664 5.89721L12.6675 1.89776C12.6674 1.89767 12.6677 1.89786 12.6675 1.89776C12.2474 1.6892 11.7527 1.68919 11.3325 1.89776ZM10.8875 1.00223C11.5883 0.654 12.4118 0.654 13.1125 1.00223L13.1137 1.00278L21.1125 5.00223C21.1124 5.00215 21.1127 5.00231 21.1125 5.00223C21.9618 5.42448 22.4995 6.29123 22.5 7.23973V16.77C22.4995 17.7184 21.9624 18.5852 21.1132 19.0074C21.113 19.0075 21.1134 19.0073 21.1132 19.0074L13.1138 23.0071C13.1138 23.0072 13.1138 23.0071 13.1138 23.0071C12.4097 23.3594 11.5806 23.3595 10.8764 23.0072C10.8764 23.0072 10.8765 23.0072 10.8764 23.0072L2.87644 19.0072L2.87506 19.0065C2.02685 18.5791 1.49413 17.708 1.50005 16.7584V7.24C1.50055 6.29154 2.03772 5.4248 2.88695 5.00253C2.88675 5.00263 2.88715 5.00243 2.88695 5.00253L10.8864 1.00278L10.8875 1.00223Z"
@@ -99,51 +104,29 @@
                             d="M6.5529 3.27638C6.67639 3.02939 6.97673 2.92928 7.22372 3.05277L17.2237 8.05277C17.4707 8.17627 17.5708 8.4766 17.4473 8.72359C17.3238 8.97058 17.0235 9.0707 16.7765 8.9472L6.7765 3.9472C6.52951 3.82371 6.4294 3.52337 6.5529 3.27638Z"
                             fill="#414141" />
                     </svg>
-                    <p>продукты</p>
-                </a>
-                <a href="./category.html" class="flex cursor-pointer items-center flex-col gap-[7px]">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                        fill="#55556D">
-                        <path
-                            d="M360-240h440v-107H360v107ZM160-613h120v-107H160v107Zm0 187h120v-107H160v107Zm0 186h120v-107H160v107Zm200-186h440v-107H360v107Zm0-187h440v-107H360v107ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Z" />
-                    </svg>
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M6.5529 3.27638C6.67639 3.02939 6.97673 2.92928 7.22372 3.05277L17.2237 8.05277C17.4707 8.17627 17.5708 8.4766 17.4473 8.72359C17.3238 8.97058 17.0235 9.0707 16.7765 8.9472L6.7765 3.9472C6.52951 3.82371 6.4294 3.52337 6.5529 3.27638Z"
-                        fill="#55556D" />
-                    </svg>
                     <p>Category</p>
                 </a>
                 <a href="./cart.html">
-                    <div class="flex cursor-pointer items-center flex-col gap-[7px]">
-                        <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M5.5 25C5.5 23.6193 6.61929 22.5 8 22.5C9.38071 22.5 10.5 23.6193 10.5 25C10.5 26.3807 9.38071 27.5 8 27.5C6.61929 27.5 5.5 26.3807 5.5 25ZM8 23.5C7.17157 23.5 6.5 24.1716 6.5 25C6.5 25.8284 7.17157 26.5 8 26.5C8.82843 26.5 9.5 25.8284 9.5 25C9.5 24.1716 8.82843 23.5 8 23.5Z"
-                                fill="#414141" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M17.5 25C17.5 23.6193 18.6193 22.5 20 22.5C21.3807 22.5 22.5 23.6193 22.5 25C22.5 26.3807 21.3807 27.5 20 27.5C18.6193 27.5 17.5 26.3807 17.5 25ZM20 23.5C19.1716 23.5 18.5 24.1716 18.5 25C18.5 25.8284 19.1716 26.5 20 26.5C20.8284 26.5 21.5 25.8284 21.5 25C21.5 24.1716 20.8284 23.5 20 23.5Z"
-                                fill="#414141" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M1 4.5C0.723858 4.5 0.5 4.72386 0.5 5C0.5 5.27614 0.723858 5.5 1 5.5H4.58051C5.33783 9.79147 6.10333 14.0643 6.74931 18.3709C6.93288 19.5947 7.98416 20.5 9.22165 20.5H19.3597C20.5514 20.5 21.5774 19.6588 21.8111 18.4903L23.2503 11.2942C23.436 10.366 22.726 9.5 21.7795 9.5H7.16046C6.8575 9.5 6.57797 9.58901 6.34436 9.74093L5.49239 4.91311C5.45023 4.67418 5.24262 4.5 5 4.5H1ZM6.666 11.0742C6.62065 10.7719 6.85478 10.5 7.16046 10.5H21.7795C22.095 10.5 22.3316 10.7887 22.2698 11.0981L20.8305 18.2942C20.6903 18.9953 20.0747 19.5 19.3597 19.5H9.22165C8.47916 19.5 7.84839 18.9568 7.73825 18.2225L6.666 11.0742Z"
-                                fill="#414141" />
-                            <rect x="11.8604" width="11.28" height="11" rx="4" fill="#FF6633" />
-                            <path
-                                d="M18.3804 9C18.3137 9 18.257 8.98 18.2104 8.94C18.1704 8.89333 18.1504 8.83667 18.1504 8.77V3.17L16.4904 4.45C16.4437 4.49 16.3937 4.51 16.3404 4.51C16.2804 4.51 16.2237 4.47667 16.1704 4.41L15.9104 4.08C15.877 4.03333 15.8604 3.98667 15.8604 3.94C15.8604 3.86 15.8937 3.79667 15.9604 3.75L18.1404 2.07C18.2137 2.02333 18.3004 2 18.4004 2H18.9104C18.977 2 19.0304 2.02333 19.0704 2.07C19.117 2.11 19.1404 2.16333 19.1404 2.23V8.77C19.1404 8.83667 19.117 8.89333 19.0704 8.94C19.0304 8.98 18.977 9 18.9104 9H18.3804Z"
-                                fill="white" />
-                        </svg>
-                        <p>Корзина</p>
+                    <div class="flex cursor-pointer relative items-center flex-col gap-[7px]">
+                        <img class="w-[24px] h-[24px]" src="../assets/header/shopping-cart.svg" alt="avatar">
+                        <span id="badge-filter"
+                            class="absolute top-[-5px] left-[30px] w-[11.28px] h-[11px] bg-[#FF6633] text-white rounded-[4px] flex items-center justify-center px-[4px] py-[2px] text-[9px]">0</span>
+                        <p class="text-[11px]">Корзина</p>
                     </div>
                 </a>
-            </div>
-            <div id="register-head" class="hidden lg:flex flex items-center cursor-pointer gap-[10px]">
-                <img src="../assets/header/avatar (8).png" alt="avatar">
-                <p>Алексей</p>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M5.64645 8.64645C5.84171 8.45118 6.15829 8.45118 6.35355 8.64645L12 14.2929L17.6464 8.64645C17.8417 8.45118 18.1583 8.45118 18.3536 8.64645C18.5488 8.84171 18.5488 9.15829 18.3536 9.35355L12.3536 15.3536C12.1583 15.5488 11.8417 15.5488 11.6464 15.3536L5.64645 9.35355C5.45118 9.15829 5.45118 8.84171 5.64645 8.64645Z"
-                        fill="#414141" />
-                </svg>
+                <div id="profile" class="hidden lg:flex flex items-center cursor-pointer gap-[5px]">
+                    <img id="profile-img" class="w-[40px] h-[40px]" src="./assets/single/Profile-PNG-File.png"
+                        alt="avatar">
+                    <p id="profile-title">Профиль</p>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M5.64645 8.64645C5.84171 8.45118 6.15829 8.45118 6.35355 8.64645L12 14.2929L17.6464 8.64645C17.8417 8.45118 18.1583 8.45118 18.3536 8.64645C18.5488 8.84171 18.5488 9.15829 18.3536 9.35355L12.3536 15.3536C12.1583 15.5488 11.8417 15.5488 11.6464 15.3536L5.64645 9.35355C5.45118 9.15829 5.45118 8.84171 5.64645 8.64645Z"
+                            fill="#414141" />
+                    </svg>
+                </div>
             </div>
         </div>
+
     </header>
 
     <div id="category" class="category bg-white fixed z-[10] w-full">
@@ -217,10 +200,8 @@
     </div>
 
 
-    <div id="register"
-        class="register hidden bg-[#FCD5BACC]/80 h-full w-full z-[0] fixed flex items-center justify-center">
-        <div
-            class="max-w-[420px] rounded-[5px] h-auto w-full pb-[40px] bg-[white] relative flex items-center justify-center flex-col pt-[72px]">
+    <div id="form-modal" class="hidden bg-[#FCD5BACC]/80 h-full w-full z-[2000] fixed flex items-center justify-center">
+        <div class="max-w-[420px] rounded-[5px] w-full pb-[40px] bg-[white] relative px-[20px] pt-[72px]">
             <svg id="register-close" class="cursor-pointer absolute right-0 top-0 bg-[#F3F2F1] rounded-[4px] "
                 width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -230,28 +211,117 @@
                     d="M5.64645 5.64645C5.84171 5.45118 6.15829 5.45118 6.35355 5.64645L18.3536 17.6464C18.5488 17.8417 18.5488 18.1583 18.3536 18.3536C18.1583 18.5488 17.8417 18.5488 17.6464 18.3536L5.64645 6.35355C5.45118 6.15829 5.45118 5.84171 5.64645 5.64645Z"
                     fill="#414141" />
             </svg>
-            <h1 class="font-bold text-[24px]">Вход</h1>
-            <div class="pt-[32px]">
-                <label class="text-[#8F8F8F] text-[18px]">Телефон</label> <br>
-                <input class="border-[1px] border-[#70C05B] pl-[16px] py-[12px] rounded-[4px] text-[18px] outline-none"
-                    type="tel" placeholder="+998" name="" id="">
+            <h1 class="font-bold text-center text-[24px]">Вход</h1>
+            <div id="inner-modal" class="pt-[32px]">
+                <form id="form" class="flex flex-col gap-[10px]">
+                    <input
+                        class="border-[1px] border-[#70C05B] pl-[16px] w-full py-[12px] rounded-[4px] text-[18px] outline-none"
+                        type="text" placeholder="ссылка на фото">
+                    <input
+                        class="border-[1px] border-[#70C05B] pl-[16px] w-full py-[12px] rounded-[4px] text-[18px] outline-none"
+                        type="text" placeholder="введите своё имя">
+                    <input
+                        class="border-[1px] border-[#70C05B] pl-[16px] w-full py-[12px] rounded-[4px] text-[18px] outline-none"
+                        type="tel" placeholder="+998" name="" id="">
+                    <button type="submit"
+                        class="text-[24px] bg-[#FCD5BA] flex items-center justify-center cursor-pointer mt-[32px] rounded-[5px] py-[10px] text-[#FF6633]">
+                        <p class="">Вход</p>
+                    </button>
+                </form>
             </div>
-            <div class="bg-[#FCD5BA] cursor-pointer px-[83px] mt-[32px] rounded-[5px] py-[10px]">
-                <p class="text-[24px] text-[#FF6633]">Вход</p>
-            </div>
-            <div class="pt-[36px]">
+            <div class="pt-[36px] flex items-center justify-center">
                 <a href=""
-                    class="cursor-pointer max-w-[121px] px-[8px] text-[12px] rounded-[4px] text-[#70C05B] py-[4px] w-full border-[1px]">Регистрация</a>
+                    class="cursor-pointer flex items-center justify-center max-w-[121px] px-[8px] text-[12px] rounded-[4px] text-[#70C05B] py-[4px] w-full border-[1px]">Регистрация</a>
                 <a href=""
                     class="max-w-[121px] cursor-pointer px-[8px] text-[12px] rounded-[4px] py-[4px] w-full">Забыли
                     пароль?</a>
+            </div>
+            <div class="flex items-center justify-center mt-[-8px]">
+                <button id="delet-profile"
+                    class="flex items-center cursor-pointer gap-[5px]  text-[red] w-[230px] flex items-center justify-center py-[5px] px-[2px] rounded-[4px] mt-[15px]">
+                    <p>Удалить аккаунт</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="red">
+                        <path
+                            d="M640-520v-80h240v80H640Zm-280 40q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm80-80h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0-80Zm0 400Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id=""
+        class="filter-page fixed flex duration-300 lg:hidden w-full h-full z-[200]  top-0 bg-[white] rounded-tl-[10px] rounded-tr-[10px]">
+        <div class="relative w-full">
+            <div class="w-full">
+                <div class="py-[8px]">
+                    <h1 class="text-[20px] font-bold text-center">Фильтр</h1>
+                    <p id="" class="close absolute top-[11px] text-[16px] right-[11px]">Отменить</p>
+                </div>
+                <hr class="border-[4px] text-[#F3F2F1]">
+                <div class="flex categories items-center justify-between bg-white  py-[14px] px-[15px] cursor-pointer">
+                    <h1>Категория продукта</h1>
+                    <img src="../assets/home/Shape (Stroke).svg" alt="arrow">
+                </div>
+                <hr class="border-[2px] text-[#F3F2F1]">
+                <div class="flex items-center justify-between bg-white  py-[14px] px-[15px] cursor-pointer">
+                    <h1>Город производства</h1>
+                    <img src="../assets/home/Shape (Stroke).svg" alt="arrow">
+                </div>
+                <hr class="border-[2px] text-[#F3F2F1]">
+                <div class="px-[15px] py-[14px]">
+                    <h1 class="">Цена</h1>
+                    <div class="flex items-center gap-[20px] mb-[5px] mt-[7px]">
+                        <input id="inputOnes"
+                            class="bg-[#F3F2F1] py-[7px] cursor-pointer px-[10px] text-[14px] py-[5px] outline-none w-full rounded-[5px]"
+                            type="number" placeholder="то 3000">
+                        <input id="inputTwos"
+                            class="bg-[#F3F2F1] py-[7px] cursor-pointer px-[10px] text-[14px] py-[5px] outline-none w-full rounded-[5px]"
+                            type="number" placeholder="до 30000">
+                    </div>
+                </div>
+                <hr class="border-[2px] text-[#F3F2F1]">
+                <div class="flex items-center justify-between py-[14px] px-[15px] cursor-pointer">
+                    <h1>Скидка</h1>
+                    <img src="../assets/home/Shape (Stroke).svg" alt="arrow">
+                </div>
+                <hr class="border-[2px] text-[#F3F2F1]">
+                <div class="flex items-center justify-between py-[14px] px-[15px] cursor-pointer">
+                    <h1>Рейтинг</h1>
+                    <img src="../assets/home/Shape (Stroke).svg" alt="arrow">
+                </div>
+                <hr class="border-[2px] text-[#F3F2F1]">
+                <div class="px-[15px] fixed bottom-2 w-full z-[400]">
+                    <button
+                        class="flex items-center  justify-center w-full rounded-[10px] py-[3px] flex-col bg-[#FF6633]">
+                        <p class="text-[white]">Готово</p>
+                        <div class="flex items-center gap-[5px]">
+                            <span id="badge-filters" class="text-[12px] text-[white]">0</span>
+                            <p class="text-[12px] text-[white]">товара</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div
+                class="categories-view fixed w-full h-full translate-y-[100%] duration-300 z-[201]  top-0 bg-[white] rounded-tl-[10px] rounded-tr-[10px]">
+                <div>
+                    <h1 class="text-center py-[7px] text-[18px] font-bold">Категория продукта</h1>
+                    <hr class="border-[2px] text-[#F3F2F1]">
+                    <div id="categories-text" class="flex flex-col gap-[7px] px-[15px] mt-[20px]">
+                        <div class="flex items-center py-[5px] gap-[7px]">
+                            <input class="cursor-pointer w-[15px] h-[15px]" type="checkbox">
+                            <p>Nmadr</p>
+                        </div>
+                        <hr class="border-[1px] text-[#F3F2F1]">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <main>
-        <!-- <section>
-            <div class="container mx-auto px-[20px] pt-[85px] sm:pt-[110px] pb-[40px] sm:pb-[80px] 2xl:px-[127px]">
+        <section>
+            <div class="container mx-auto px-[20px] pt-[85px] sm:pt-[110px] 2xl:px-[127px]">
                 <div class="flex items-center  gap-[8px]">
                     <a href="../index.html">
                         Главная
@@ -265,47 +335,70 @@
                         Контакты
                     </a>
                 </div>
-                <div>
-                    <h1 class="text-[48px] font-bold pt-[14px]">Молоко, сыр, яйцо</h1>
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-[48px] font-bold">Все продукты</h1>
+                    </div>
+                    <div class=" flex lg:hidden">
+                        <svg class="filter-view" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#1f1f1f#1f1f1f#1f1f1f">
+                            <path
+                                d="M710-150q-63 0-106.5-43.5T560-300q0-63 43.5-106.5T710-450q63 0 106.5 43.5T860-300q0 63-43.5 106.5T710-150Zm0-80q29 0 49.5-20.5T780-300q0-29-20.5-49.5T710-370q-29 0-49.5 20.5T640-300q0 29 20.5 49.5T710-230Zm-550-30v-80h320v80H160Zm90-250q-63 0-106.5-43.5T100-660q0-63 43.5-106.5T250-810q63 0 106.5 43.5T400-660q0 63-43.5 106.5T250-510Zm0-80q29 0 49.5-20.5T320-660q0-29-20.5-49.5T250-730q-29 0-49.5 20.5T180-660q0 29 20.5 49.5T250-590Zm230-30v-80h320v80H480Zm230 320ZM250-660Z" />
+                        </svg>
+                    </div>
                 </div>
             </div>
 
-        </section> -->
+        </section>
 
         <section>
             <div
-                class="container mx-auto pt-[200px] px-[20px] pb-[40px] sm:pb-[80px] 2xl:px-[127px]  flex items-start justify-between gap-[40px]">
-                <div class="max-w-[302px] h-[450px] w-full fixed">
-                    <div id="click"
-                        class="bg-[#ffff] flex items-center relative justify-center py-[10px] px-[10px] rounded-[5px] cursor-pointer">
-                        <!-- <img src="../assets/home/filter.svg" alt="filter"> -->
-                        <h1 class="font-bold text-[20px]">Фильтр</h1>
-                    </div>
-                    <div id="sort" class="translate-y-[-170%] bg-[#ffff] absolute max-h-auto top-10 px-[10px] py-[7px]">
-                        <label class="text-[18px] font-bold">Цена</label> <br>
-                        <div class="flex items-center gap-[20px] mt-[8px]">
-                            <input id="inputOne" class="border-[1px] cursor-pointer px-[10px] text-[14px] py-[5px] outline-none w-full rounded-[5px]"
-                                type="number" placeholder="то 3000">
-                            <input id="inputTwo" class="border-[1px] cursor-pointer px-[10px] text-[14px] py-[5px] outline-none w-full rounded-[5px]"
-                                type="number" placeholder="до 30000">
+                class="container mx-auto px-[20px] pb-[40px] sm:pb-[80px] 2xl:px-[127px] flex pt-[40px] items-start justify-between gap-[40px]">
+                <div class="hidden lg:flex max-w-[322px] sticky top-25 z-10 p-[0px] w-full fixed h-[450px]">
+                    <div class="w-full">
+                        <div id="click"
+                            class="bg-[#ffff] flex items-center relative justify-center py-[10px] px-[10px] rounded-[5px] cursor-pointer">
+                            <!-- <img src="../assets/home/filter.svg" alt="filter"> -->
+                            <h1 class="font-bold text-[20px]">Фильтр</h1>
                         </div>
-                        <label class="block mt-[15px] mb-2 text-[18px] font-bold">Бренд продукта</label>
-                        <select id="brand"
-                            class="border border-gray-300 w-full outline-none pr-[5px] cursor-pointer rounded-lg p-2 w-64 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <div id="sort"
+                            class="translate-y-[-1070%] bg-[white] w-full absolute max-h-auto top-10 px-[10px] py-[7px]">
+                            <label class="text-[18px] font-bold">Цена</label> <br>
+                            <div class="flex items-center gap-[20px] mt-[8px]">
+                                <input id="inputOne"
+                                    class="border-[1px] cursor-pointer px-[10px] text-[14px] py-[5px] outline-none w-full rounded-[5px]"
+                                    type="number" placeholder="то 3000">
+                                <input id="inputTwo"
+                                    class="border-[1px] cursor-pointer px-[10px] text-[14px] py-[5px] outline-none w-full rounded-[5px]"
+                                    type="number" placeholder="до 30000">
+                            </div>
+                            <label class="block mt-[15px] mb-2 text-[18px] font-bold">Категория продукта</label>
+                            <select id="brand"
+                                class="border border-gray-300 w-full outline-none pr-[5px] cursor-pointer rounded-lg p-2 w-64 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
 
-                        </select>
-                        <label class="block mt-[15px] mb-2 text-[18px] font-bold">Город производства</label>
-                        <select id="town"
-                            class="border border-gray-300 w-full outline-none pr-[5px] cursor-pointer rounded-lg p-2 w-64 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </select>
+                            <label class="block mt-[15px] mb-2 text-[18px] font-bold">Город производства</label>
+                            <select id="town"
+                                class="border border-gray-300 w-full outline-none pr-[5px] cursor-pointer rounded-lg p-2 w-64 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
 
-                        </select>
+                            </select>
+                            <label class="block mt-[15px] mb-2 text-[18px] font-bold">Скидка</label>
+                            <select id="discount"
+                                class="border border-gray-300 w-full outline-none pr-[5px] cursor-pointer rounded-lg p-2 w-64 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
 
+                            </select>
+                            <label class="block mt-[15px] mb-2 text-[18px] font-bold">Рейтинг</label>
+                            <select id="rating"
+                                class="border border-gray-300 w-full outline-none pr-[5px] cursor-pointer rounded-lg p-2 w-64 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div>
-                    <div class="ml-[31.7%] w-full">
+                    <div class="w-full">
                         <div
-                            class="filter-cards grid grid-cols-2 md:grid-cols-3 gap-[10px] sm:gap-[40px] pt-[20px] sm:pt-[40px]">
+                            class="filter-cards grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-[10px] sm:gap-[20px]">
 
                         </div>
                     </div>
@@ -374,9 +467,9 @@
             </div>
         </div>
     </footer>
-
+    <!-- 
     <div
-        class="flex sm:hidden bg-[white] flex fixed h-[10vw] w-[100vw] bottom-[0px] justify-between items-center flex py-[30px] px-[20px] z-[900]">
+        class="flex sm:hidden bg-[white] flex fixed h-[10vw] w-[100vw] bottom-[0px] justify-between items-center flex py-[30px] px-[20px] z-[300]">
         <a class="flex flex-col items-center" href="../index.html">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -441,10 +534,15 @@
             <a href="./register.html">
                 <img class="w-[28px] h-[28px]" src="../assets/header/avatar (8).png" alt="avatar">
             </a>
-    </div>
+    </div> -->
 
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../products-data/products-data.js"></script>
     <script src="../js/filter.js"></script>
     <script src="../js/search-input.js"></script>

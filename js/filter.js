@@ -1,28 +1,62 @@
 let filterCards = document.querySelector(".filter-cards")
+let filterPage = document.querySelector(".filter-page")
+let filterPageClose = document.querySelector(".close")
+let filterView = document.querySelector(".filter-view")
+let badgeFilters = document.getElementById("badge-filters")
+let categoroiesView = document.querySelector(".categories-view")
+let categories = document.querySelector(".categories")
 let brand = document.getElementById("brand")
 let click = document.getElementById("click")
 let inputOne = document.getElementById("inputOne")
 let inputTwo = document.getElementById("inputTwo")
 let town = document.getElementById("town")
 let sort = document.getElementById("sort")
+let discount = document.getElementById("discount")
+let rating = document.getElementById("rating")
+badgeFilters.textContent = products.length
+let filteredProductsData = []
+let filteredProductsData2 = []
 click.addEventListener("click", () => {
     sort.classList.toggle("translate-y-[0%]")
 })
+filterView.addEventListener("click", () => {
+    filterPage.classList.remove("translate-y-[0%]")
+})
 
-let uniqueBrands = [...new Set(products.map((el) => el.brand))];
-brand.innerHTML = `<option value="">Все бренды</option>`;
+filterPageClose.addEventListener("click", () => {
+    filterPage.classList.add("translate-y-[100%]")
+})
+
+
+
+let uniqueBrands = [...new Set(products.map((el) => el.category))];
+brand.innerHTML = `<option value="">Все категория</option>`;
 
 uniqueBrands.forEach((el) => {
     brand.innerHTML += `<option class="cursor-pointer" value="${el}">${el}</option>`;
 });
 
 let uniqueTown = [...new Set(products.map((el) => el.origin))];
-town.innerHTML = `<option value="">Все бренды</option>`;
+town.innerHTML = `<option value="">Все город</option>`;
 
 uniqueTown.forEach((el) => {
-    town.innerHTML += `<option class="cursor-pointer" value="${el}">${el}</option>`;
+    town.innerHTML += `<option class="cursor-pointer" value="${el}">
+       <label for=""><input type="checkbox"></label>
+    ${el}</option>`;
 });
 
+let uniqueDiscount = [...new Set(products.map((el) => el.discount))].filter((discount) => discount > 0).sort((a, b) => a - b)
+discount.innerHTML = `<option value="">Все скидка</option>`;
+
+uniqueDiscount.forEach((el) => {
+    discount.innerHTML += `<option class="cursor-pointer" value="${el}">${el}%</option>`
+})
+let uniqueRating = [...new Set(products.map((el) => el.rating))].filter((el) => el > 0.5).sort((a, b) => a - b)
+rating.innerHTML = `<option value="">Все рейтинг</option>`;
+
+uniqueRating.forEach((el) => {
+    rating.innerHTML += `<option class="cursor-pointer" value = "${el}" > ${el}</ > `
+})
 
 
 function filterProducts(content, data) {
@@ -165,7 +199,7 @@ brand.addEventListener("change", (e) => {
     if (selectedBrand === "") {
         filterProducts(filterCards, products);
     } else {
-        let filtered = products.filter((el) => el.brand === selectedBrand);
+        let filtered = products.filter((el) => el.category === selectedBrand);
         filterProducts(filterCards, filtered);
     }
 });
@@ -173,28 +207,60 @@ brand.addEventListener("change", (e) => {
 town.addEventListener("change", (e) => {
     let selectedTown = e.target.value;
     if (selectedTown === "") {
-        filterProducts(filterProducts, products)
+        filterProducts(filterCards, products)
     } else {
         let filteredTown = products.filter((el) => el.origin === selectedTown)
         filterProducts(filterCards, filteredTown)
     }
 })
+
+discount.addEventListener("change", (e) => {
+    let selectDiscount = Number(e.target.value);
+    if (!selectDiscount) {
+        filterProducts(filterCards, products)
+    } else {
+        let filteredDiscount = products.filter((el) => el.discount === selectDiscount)
+        filterProducts(filterCards, filteredDiscount)
+    }
+})
+
+rating.addEventListener("change", (e) => {
+    let selectRating = Number(e.target.value);
+    if (!selectRating) {
+        filterProducts(filterCards, products)
+    } else {
+        let filteredRating = products.filter((el) => el.rating === selectRating)
+        filterProducts(filterCards, filteredRating)
+    }
+})
+
 inputOne.addEventListener("input", (e) => {
     let inputPrice = Number(e.target.value);
     if (!inputPrice) {
-        filterProducts(filterProducts, products)
+        filteredProductsData = products
+        filterProducts(filterCards, products)
     } else {
-        let filteredPrice = products.filter((el) => el.price - (el.price * el.discount / 100) >= inputPrice)
-        filterProducts(filterCards, filteredPrice)
+        filteredProductsData = products.filter((el) => el.price - (el.price * el.discount / 100) > inputPrice)
+        filterProducts(filterCards, filteredProductsData)
     }
 })
-inputOne.addEventListener("input", (e) => {
-    let inputPrices = Number(e.target.value);
-    if (!inputPrices) {
-        filterProducts(filterProducts, products)
+inputTwo.addEventListener("input", (e) => {
+    let inputPrice = Number(e.target.value);
+    let baseData = filteredProductsData && filteredProductsData.length
+        ? filteredProductsData
+        : products;
+    if (!inputPrice) {
+        filteredProductsData2 = []
+        filterProducts(filterCards, products)
     } else {
-        let filteredPrices = products.filter((el) => el.price - (el.price * el.discount / 100) <= inputPrices)
-        filterProducts(filterCards, filteredPrices)
+        filteredProductsData2 = baseData.filter((el) => el.price - (el.price * el.discount / 100) < inputPrice)
+        filterProducts(filterCards, filteredProductsData2)
+
     }
+
 })
+
+
+
+
 
