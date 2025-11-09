@@ -14,7 +14,13 @@ let town = document.getElementById("town")
 let sort = document.getElementById("sort")
 let discount = document.getElementById("discount")
 let rating = document.getElementById("rating")
+let like = JSON.parse(localStorage.getItem("like") || "[]");
+let carts = JSON.parse(localStorage.getItem("carts") || "[]");
+let likeFilterBadge = document.getElementById("like-badge-filter")
+let filterBadge = document.getElementById("badge-filter")
 badgeFilters.textContent = products.length
+filterBadge.textContent = carts.length
+likeFilterBadge.textContent = like.length
 let filteredProductsData = []
 let filteredProductsData2 = []
 click.addEventListener("click", () => {
@@ -29,7 +35,7 @@ filterPageClose.addEventListener("click", () => {
 })
 
 categories.addEventListener("click", () => {
-    categoryText.classList.remove("translate-y-[0%]")
+    categoroiesView.classList.remove("translate-y-[0%]")
 })
 
 let uniqueCategoryText = [...new Set(products.map((el) => el.category))].sort()
@@ -42,7 +48,6 @@ uniqueCategoryText.map((el) => {
             <hr class="border-[1px] text-[#F3F2F1]">
     `
 })
-
 
 let uniqueBrands = [...new Set(products.map((el) => el.category))];
 brand.innerHTML = `<option value="">Все категория</option>`;
@@ -73,40 +78,49 @@ uniqueRating.forEach((el) => {
     rating.innerHTML += `<option class="cursor-pointer" value = "${el}" > ${el}</ > `
 })
 
-
 function filterProducts(content, data) {
     content.innerHTML = ""
-    data.forEach((el) => {
+    data.map((el) => {
         content.innerHTML += `
-        <div
-                        class="max-w-[302px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl">
-                        <a href="./single.html">
-                            <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[0]} alt="img">
-                        </a>
-                        <div class="flex items-center justify-between pt-[8px]">
-                            <div class="flex items-center justify-between w-full">
-                            <p class="font-bold text-[14px] px-[8px] sm:text-[18px]">${el.price - el.price * el.discount / 100}₽</p>
-                             ${el.discount > 0 ? (`<strike class="text-[12px] bg-[#FF6633] text-[#ffff] mr-[8px] rounded-[4px]  inline-blok px-[8px] sm:text-[14px]">${el.price}₽</strike>`)
+            <div class="max-w-[302px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl">
+            <div class="owl-carousel owl-theme relative">
+             <a href="./single.html?id=${el.id}">
+                 <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[0]} alt="img">
+               </a>
+                <a href="./Pages/single.html?id=${el.id}">
+                 <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[1]} alt="img">
+               </a>
+                <a href="./Pages/single.html?id=${el.id}">
+                 <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[2]} alt="img">
+               </a>
+                <a href="./Pages/single.html?id=${el.id}">
+                 <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[3]} alt="img">
+               </a>
+             </div>
+             <div class="flex items-center justify-between pt-[8px]">
+               <div class="flex items-center justify-between w-full">
+               <p class="font-bold text-[14px] px-[8px] sm:text-[18px]">${el.price - el.price * el.discount / 100}₽</p>
+                ${el.discount > 0 ? (`<strike class="text-[12px] bg-[#FF6633] text-[#ffff] mr-[8px] rounded-[4px]  inline-blok px-[7px] sm:px-[8px] sm:text-[14px]">${el.price}₽</strike>`)
                 : ("")
             }
-                            </div>
-                        </div>
-                            <div class="flex items-center justify-between pt-[4px]">
-                            <div>
-                                <p class="text-[14px] px-[8px] sm:text-[18px]">${el.name}</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-[2.5px] sm:gap-[8px]  pt-[4px] sm:pt-[8px] ">
-                        <p class="text-[12px] text-[#595858] sm:text-[16px] px-[8px] line-clamp-2">${el.description}</p>
-                          ${el.rating === 5 ? `
-                               <div class="flex gap-[4px] px-[8px] pt-[2px] sm:pt-[4px]">
+                </div>
+                </div>
+                <div class="flex items-center justify-between pt-[4px]">
+                <div>
+                <p class="text-[14px] px-[8px] sm:text-[18px]">${el.name}</p>
+                </div>
+                </div>
+                <div class="flex flex-col gap-[2.5px] sm:gap-[8px] pt-[4px] sm:pt-[8px] ">
+                <p class="text-[12px] text-[#595858] sm:text-[16px] px-[8px] line-clamp-2">${el.description}</p>
+                ${el.rating === 5 ? `
+                          <div class="flex gap-[4px] px-[8px] pt-[2px] sm:pt-[4px]">
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
                            </div>
-                           ` : el.rating === 4.5 ? `
+                   ` : el.rating === 4.5 ? `
                              <div class="flex gap-[4px] px-[8px] pt-[2px] sm:pt-[4px]">
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
@@ -114,7 +128,7 @@ function filterProducts(content, data) {
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/yarm.svg" alt="star" />
                            </div>
-                           `: el.rating === 4 ? `
+                   `: el.rating === 4 ? `
                              <div class="flex gap-[4px] px-[8px] pt-[2px] sm:pt-[4px]">
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
@@ -123,7 +137,7 @@ function filterProducts(content, data) {
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
                            
-                           `: el.rating === 3.5 ? `
+                   `: el.rating === 3.5 ? `
                               <div class="flex gap-[4px] px-[8px] pt-[2px] sm:pt-[4px]">
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
@@ -131,7 +145,7 @@ function filterProducts(content, data) {
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/yarm.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
-                           `: el.rating === 3 ? `
+                   `: el.rating === 3 ? `
                              <div class="flex gap-[4px] px-[8px] pt-[2px] sm:pt-[4px]">
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
@@ -139,7 +153,7 @@ function filterProducts(content, data) {
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
-                           `: el.rating === 2.5 ? `
+                   `: el.rating === 2.5 ? `
                             <div class="flex gap-[4px] px-[8px] pt-[4px]">
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
@@ -147,7 +161,7 @@ function filterProducts(content, data) {
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
-                           `: el.rating === 2 ? `
+                   `: el.rating === 2 ? `
                            <div class="flex gap-[4px] px-[8px] pt-[4px]">
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
@@ -155,7 +169,7 @@ function filterProducts(content, data) {
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
-                           `: el.rating === 1.5 ? `
+                   `: el.rating === 1.5 ? `
                             <div class="flex gap-[4px] px-[8px] pt-[4px]">
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/yarm.svg" alt="star" />
@@ -163,7 +177,7 @@ function filterProducts(content, data) {
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
-                           `: el.rating === 1 ? `
+                   `: el.rating === 1 ? `
                             <div class="flex gap-[4px] px-[8px] pt-[4px]">
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/to'liq.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
@@ -171,7 +185,7 @@ function filterProducts(content, data) {
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
-                           `: el.rating === 0.5 ? `
+                   `: el.rating === 0.5 ? `
                            <div class="flex gap-[4px] px-[8px] pt-[4px]">
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/yarm.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
@@ -179,7 +193,7 @@ function filterProducts(content, data) {
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
-                           `: el.rating === 0 ? `
+                   `: el.rating === 0 ? `
                             <div class="flex gap-[4px] px-[8px] pt-[4px]">
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
@@ -187,22 +201,37 @@ function filterProducts(content, data) {
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                             <img class="w-[12px] sm:w-[16px] h-[12px] sm:h-[16px]" src="../assets/images/stars/bo'sh.svg" alt="star" />
                            </div>
-                           `: ""
+                   `: ""
             }
-                            <div class="px-[8px]">
-                                <button
-                                    class="w-full mb-[8px] mt-[2px]  rounded-[4px] text-[#70C05B] px-[8px] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
-                                    В корзину
-                                </button>
-                            </div>
-                            <svg class="absolute top-[8px] opacity-0 group-hover:opacity-100 duration-[0.5s] right-[15px] bg-[#F3F2F1] p-[2px] rounded-[4px] width="
-                                24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M12.7046 4.25644C13.8299 3.13067 15.3564 2.49817 16.9482 2.49817C18.5399 2.49817 20.0664 3.13063 21.1916 4.25636C22.3174 5.38164 22.95 6.90829 22.95 8.49999C22.95 10.0917 22.3175 11.6183 21.1917 12.7435C21.1917 12.7436 21.1917 12.7435 21.1917 12.7435L12.3517 21.5835C12.1565 21.7788 11.8399 21.7788 11.6446 21.5835L2.80461 12.7435C0.460963 10.3999 0.460963 6.60009 2.80461 4.25644C5.14826 1.91279 8.94807 1.91279 11.2917 4.25644L11.9982 4.96289L12.7046 4.25644C12.7046 4.25641 12.7046 4.25647 12.7046 4.25644ZM16.9482 3.49817C15.6217 3.49817 14.3496 4.02528 13.4118 4.96346L12.3517 6.02355C12.258 6.11732 12.1308 6.16999 11.9982 6.16999C11.8656 6.16999 11.7384 6.11732 11.6446 6.02355L10.5846 4.96355C8.63149 3.01042 5.46484 3.01042 3.51172 4.96355C1.55859 6.91667 1.55859 10.0833 3.51172 12.0364L11.9982 20.5229L20.4846 12.0364C21.4228 11.0987 21.95 9.82648 21.95 8.49999C21.95 7.17351 21.4229 5.90138 20.4847 4.96363C19.5469 4.02544 18.2747 3.49817 16.9482 3.49817Z"
-                                    fill="#414141" />
-                            </svg>
-                        </div>
+             <div class="px-[8px]">
+                ${carts.find((cart) => cart.id === el.id) ?
+                ` <div class="w-full grid grid-cols-3 mb-[8px] mt-[2px] bg-[#d3d3d3]/30 cursor-pointer h-[35px] sm:h-[40px]">
+                   <button
+                   onClick="decraese(${el.id})"
+                   class="w-full cursor-pointer rounded-tl-[4px] rounded-bl-[4px] bg-[#FF6633] flex items-center justify-center"><img class="w-[18px] sm:w-[22px] h-[18px] sm:h-[22px]" src="../assets/header/minus.svg" alt="minus" /></button>
+                   <span class="w-full text-[black] text-[14px] sm:text-[18px] flex items-center justify-center">
+                   ${carts.find((cart) => cart.id === el.id).number}
+                   </span>
+                   <button onClick="increase(${el.id})"       
+                   class="w-full cursor-pointer rounded-br-[4px] rounded-tr-[4px] bg-[#FF6633] flex items-center justify-center"><img class="w-[14px] sm:w-[18px] h-[14px] sm:h-[18px]" src="../assets/header/plus.svg" alt="minus" /></button>
+                   </div>` :
+                `<button onClick="addToCart(${el.id})"
+                    class="w-full mb-[8px] mt-[2px]  rounded-[4px] text-[#70C05B] px-[8px] hover:text-[white] duration-[0.5s] hover:bg-[#FF6633] hover:border-none cursor-pointer h-[35px] sm:h-[40px] border-[1px] border-[#70C05B]">
+                    В корзину
+                    </button>`
+            }        
                     </div>
+                    ${like.find((item) => item.id === el.id)
+                ? `<svg 
+                       onClick="removeTolike(${el.id})" 
+                    class="absolute top-[6px] z-1 sm:top-[8px] duration-[0.5s] right-[5px] sm:right-[15px] bg-[#FF6633] p-[3px] rounded-[50%] sm:rounded-[4px]" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff">
+                    <path d="M440-501Zm0 381L313-234q-72-65-123.5-116t-85-96q-33.5-45-49-87T40-621q0-94 63-156.5T260-840q52 0 99 22t81 62q34-40 81-62t99-22q84 0 153 59t69 160q0 14-2 29.5t-6 31.5h-85q5-18 8-34t3-30q0-75-50-105.5T620-760q-51 0-88 27.5T463-660h-46q-31-45-70.5-72.5T260-760q-57 0-98.5 39.5T120-621q0 33 14 67t50 78.5q36 44.5 98 104T440-228q26-23 61-53t56-50l9 9 19.5 19.5L605-283l9 9q-22 20-56 49.5T498-172l-58 52Zm160-280v-80h320v80H600Z"/>
+                    </svg>` : `<svg
+                    onClick="addToLike(${el.id})"
+                    class="absolute top-[6px] z-1 sm:top-[8px]  duration-[0.5s] right-[5px] sm:right-[15px] bg-[#F3F2F1] p-[3px] rounded-[50%] sm:rounded-[4px]" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f#1f1f1f#1f1f1f"><path d="M440-501Zm0 381L313-234q-72-65-123.5-116t-85-96q-33.5-45-49-87T40-621q0-94 63-156.5T260-840q52 0 99 22t81 62q34-40 81-62t99-22q81 0 136 45.5T831-680h-85q-18-40-53-60t-73-20q-51 0-88 27.5T463-660h-46q-31-45-70.5-72.5T260-760q-57 0-98.5 39.5T120-621q0 33 14 67t50 78.5q36 44.5 98 104T440-228q26-23 61-53t56-50l9 9 19.5 19.5L605-283l9 9q-22 20-56 49.5T498-172l-58 52Zm280-160v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"/></svg>`
+            }
+                    </div>
+                </div>
     
     `
     })
@@ -213,9 +242,11 @@ brand.addEventListener("change", (e) => {
     let selectedBrand = e.target.value;
     if (selectedBrand === "") {
         filterProducts(filterCards, products);
+        carousel()
     } else {
         let filtered = products.filter((el) => el.category === selectedBrand);
         filterProducts(filterCards, filtered);
+        carousel()
     }
 });
 
@@ -223,9 +254,21 @@ town.addEventListener("change", (e) => {
     let selectedTown = e.target.value;
     if (selectedTown === "") {
         filterProducts(filterCards, products)
+        carousel()
+        removeTolike()
+        addToCart()
+        addToLike()
+        increase()
+        decraese()
     } else {
         let filteredTown = products.filter((el) => el.origin === selectedTown)
         filterProducts(filterCards, filteredTown)
+        carousel()
+        removeTolike()
+        addToCart()
+        addToLike()
+        increase()
+        decraese()
     }
 })
 
@@ -233,9 +276,21 @@ discount.addEventListener("change", (e) => {
     let selectDiscount = Number(e.target.value);
     if (!selectDiscount) {
         filterProducts(filterCards, products)
+        carousel()
+        removeTolike()
+        addToCart()
+        addToLike()
+        increase()
+        decraese()
     } else {
         let filteredDiscount = products.filter((el) => el.discount === selectDiscount)
         filterProducts(filterCards, filteredDiscount)
+        carousel()
+        removeTolike()
+        addToCart()
+        addToLike()
+        increase()
+        decraese()
     }
 })
 
@@ -243,9 +298,21 @@ rating.addEventListener("change", (e) => {
     let selectRating = Number(e.target.value);
     if (!selectRating) {
         filterProducts(filterCards, products)
+        carousel()
+        removeTolike()
+        addToCart()
+        addToLike()
+        increase()
+        decraese()
     } else {
         let filteredRating = products.filter((el) => el.rating === selectRating)
         filterProducts(filterCards, filteredRating)
+        carousel()
+        removeTolike()
+        addToCart()
+        addToLike()
+        increase()
+        decraese()
     }
 })
 
@@ -254,9 +321,21 @@ inputOne.addEventListener("input", (e) => {
     if (!inputPrice) {
         filteredProductsData = products
         filterProducts(filterCards, products)
+        carousel()
+        removeTolike()
+        addToCart()
+        addToLike()
+        increase()
+        decraese()
     } else {
         filteredProductsData = products.filter((el) => el.price - (el.price * el.discount / 100) > inputPrice)
         filterProducts(filterCards, filteredProductsData)
+        carousel()
+        removeTolike()
+        addToCart()
+        addToLike()
+        increase()
+        decraese()
     }
 })
 inputTwo.addEventListener("input", (e) => {
@@ -267,13 +346,107 @@ inputTwo.addEventListener("input", (e) => {
     if (!inputPrice) {
         filteredProductsData2 = []
         filterProducts(filterCards, products)
+        carousel()
+        removeTolike()
+        addToCart()
+        addToLike()
+        increase()
+        decraese()
     } else {
         filteredProductsData2 = baseData.filter((el) => el.price - (el.price * el.discount / 100) < inputPrice)
         filterProducts(filterCards, filteredProductsData2)
-
+        carousel()
+        removeTolike()
+        addToCart()
+        addToLike()
+        increase()
+        decraese()
     }
 
 })
+
+function addToCart(id) {
+    let item = products.find((el) => el.id === id)
+    item.number = 1;
+    carts.push(item)
+    filterBadge.textContent = carts.length
+    filterProducts(filterCards, products)
+    carousel()
+}
+function increase(id) {
+    carts = carts.map((el) => {
+        if (el.id === id) {
+            el.number += 1
+        }
+        return el
+    })
+    filterBadge.textContent = carts.length
+    localStorage.setItem("carts", JSON.stringify(carts));
+    filterProducts(filterCards, products)
+    carousel()
+}
+function decraese(id) {
+    let item = carts.find((el) => el.id === id)
+    carts = carts.map((el) => {
+        if (el.id === id) {
+            el.number -= 1
+        }
+        return el
+    })
+    if (item.number < 1) {
+        carts = carts.filter((el) => el.id !== id)
+    }
+    filterBadge.textContent = carts.length
+    localStorage.setItem("carts", JSON.stringify(carts));
+    filterProducts(filterCards, products)
+    carousel()
+}
+function addToLike(id) {
+    let likeitem = products.find((el) => el.id === id)
+    like.push(likeitem)
+    likeFilterBadge.textContent = like.length
+    localStorage.setItem("like", JSON.stringify(like));
+    filterProducts(filterCards, products)
+    carousel()
+}
+
+function removeTolike(id) {
+    like = like.filter((el) => el.id !== id)
+    likeFilterBadge.textContent = like.length
+    localStorage.setItem("like", JSON.stringify(like));
+    filterProducts(filterCards, products)
+    carousel()
+}
+
+
+
+function carousel() {
+    $(document).ready(function () {
+        $(".owl-carousel").owlCarousel();
+    });
+
+    $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: false,
+        dots: false,
+        autoplay: false,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 1,
+            },
+            1000: {
+                items: 1,
+            },
+        },
+    });
+}
+
+carousel()
+
 
 
 

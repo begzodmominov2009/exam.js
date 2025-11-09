@@ -25,6 +25,7 @@ function showLikeProducts(content, data) {
         `;
         return;
     }
+
     data.map((el) => {
         content.innerHTML += `
                   <div class="max-w-[302px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl">
