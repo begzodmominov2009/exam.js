@@ -35,133 +35,133 @@ const products = [
   { id: 34, name: "Chicken Alfredo", category: "Ужин", description: "Chicken Alfredo is a pasta dish made with chicken, alsjfkdlkasdfhlkjh.", price: 94, rating: 4.0, discount: 20, brand: "PastaHouse", origin: "Italy", art: 371034, images: ["../assets/images/products/34.png", "../assets/images/products/34_2.png", "../assets/images/products/34_3.png", "../assets/images/products/34_4.png"] },
   { id: 35, name: "Lasagna", category: "Ужин", description: "Lasagna is a type of pasta dish made with layers of pasta, sauce, cheese, and meat or vegetables.", price: 70, rating: 1.0, discount: 0, brand: "PastaWorld", origin: "Italy", art: 371035, images: ["../assets/images/products/35.png", "../assets/images/products/35_2.png", "../assets/images/products/35_3.png", "../assets/images/products/35_4.png"] },
   { id: 36, name: "Chocolate Chip", category: "Десерт", description: "Chocolate Chip Cookies are a type of cookie made from flour, sugar, butter, and chocolate chips.", price: 98, rating: 3.5, discount: 0, brand: "CookieTime", origin: "USA", art: 371036, images: ["../assets/images/products/36.png", "../assets/images/products/36_2.png", "../assets/images/products/36_3.png", "../assets/images/products/36_4.png"] },
-  // {
-  //   id: 37, name: "Avocado", category: "Фрукты", description: "A long, curved fruit with a yellow skin and sweet, creamy white flesh.", price: 92, rating: 4.5, discount: 10, brand: "Tropico", origin: "Mexico", art: 372037, images: [
-  //     "../assets/images/products/37_2.jpg",
-  //     "../assets/images/products/37_3.jpg",
-  //     "../assets/images/products/37_4.webp",
-  //   ]
-  // },
-  // {
-  //   id: 38, name: "Pineapple", category: "Фрукты", description: "A tropical fruit with sweet and tangy yellow flesh.", price: 85, rating: 4.5, discount: 15, brand: "Tropico", origin: "Thailand", art: 372038, images: [
-  //     "../assets/images/products/38_1.webp",
-  //     "../assets/images/products/38_2.jpg",
-  //     "../assets/images/products/38_3.webp",
-  //     "../assets/images/products/38_4.webp",
-  //   ]
-  // },
-  // {
-  //   id: 39, name: "Peach", category: "Фрукты", description: "A soft, juicy fruit with fuzzy skin and sweet taste.", price: 80, rating: 4.0, discount: 5, brand: "FreshFarm", origin: "Spain", art: 372039, images: [
-  //     "../assets/images/products/39_1.webp",
-  //     "../assets/images/products/39_2.webp",
-  //     "../assets/images/products/39_3.webp",
-  //     "../assets/images/products/39_4.jfif",
-  //   ]
-  // },
-  // {
-  //   id: 40, name: "Cucumber", category: "Овощи", description: "A refreshing green vegetable often used in salads.", price: 60, rating: 5.0, discount: 10, brand: "GreenLeaf", origin: "Turkey", art: 372040, images: [
-  //     "../assets/images/products/40_1.avif",
-  //     "../assets/images/products/40_2.webp",
-  //     "../assets/images/products/40_3.webp",
-  //     "../assets/images/products/40_4.webp",
-  //   ]
-  // },
-  // {
-  //   id: 41, name: "Tomato", category: "Овощи", description: "A juicy red vegetable used in salads, sauces and cooking.", price: 70, rating: 3.5, discount: 5, brand: "RedFarm", origin: "Italy", art: 372041, images: [
-  //     "../assets/images/products/41_1.webp",
-  //     "../assets/images/products/41_2.webp",
-  //     "../assets/images/products/41_3.webp",
-  //     "../assets/images/products/41_4.webp",
-  //   ]
-  // },
-  // {
-  //   id: 42, name: "Spinach", category: "Овощи", description: "A green leafy vegetable, rich in iron and vitamins.", price: 65, rating: 3.0, discount: 0, brand: "GreenLeaf", origin: "USA", art: 372042, images: [
-  //     "../assets/images/products/42_1.avif",
-  //     "../assets/images/products/42_2.webp",
-  //     "../assets/images/products/42_3.webp",
-  //     "../assets/images/products/42_4.webp",
-  //   ]
-  // },
-  // {
-  //   id: 43, name: "Blueberry", category: "Фрукты", description: "A small, sweet, blue-purple fruit packed with antioxidants.", price: 78, rating: 1.5, discount: 18, brand: "BerryFarm", origin: "Canada", art: 372043, images: [
-  //     "../assets/images/products/43_1.webp",
-  //     "../assets/images/products/43_2.webp",
-  //     "../assets/images/products/43_3.webp",
-  //     "../assets/images/products/43_4.webp",
-  //   ]
-  // },
-  // {
-  //   id: 44, name: "Strawberry", category: "Фрукты", description: "A red, juicy fruit that is sweet and slightly tart.", price: 80, rating: 2.5, discount: 10, brand: "BerryFarm", origin: "USA", art: 372044, images: [
-  //     "../assets/images/products/44_1.webp",
-  //     "../assets/images/products/44_2.webp",
-  //     "../assets/images/products/44_3.webp",
-  //     "../assets/images/products/44_4.webp",
-  //   ]
-  // },
-  // {
-  //   id: 45, name: "Bread", category: "Выпечка", description: "A bulb vegetable with a strong flavor, used in many dishes.", price: 55, rating: 5.0, discount: 0, brand: "RootFarm", origin: "India", art: 372045, images: [
-  //     "../assets/images/products/45_1.webp",
-  //     "../assets/images/products/45_2.avif",
-  //     "../assets/images/products/45_3.jgp",
-  //     "../assets/images/products/45_4.webp",
-  //   ]
-  // },
-  // {
-  //   id: 46, name: "Bread", category: "Выпечка", description: "A strong-flavored bulb used for cooking and seasoning.", price: 50, rating: 1.5, discount: 15, brand: "RootFarm", origin: "China", art: 372046, images: [
-  //     "../assets/images/products/46_1.webp",
-  //     "../assets/images/products/45_2.avif",
-  //     "../assets/images/products/45_3.jgp",
-  //     "../assets/images/products/45_4.webp",
-  //   ]
-  // },
-  // {
-  //   id: 47, name: "Potato", category: "Овощи", description: "A starchy tuber used in many dishes.", price: 48, rating: 4.0, discount: 0, brand: "RootFarm", origin: "USA", art: 372047, images: [
-  //     "../assets/images/products/47_1.webp",
-  //     "../assets/images/products/47_2.webp",
-  //     "../assets/images/products/47_3.webp",
-  //     "../assets/images/products/47_4.webp",
-  //   ]
-  // },
-  // {
-  //   id: 48, name: "Mushroom", category: "Овощи", description: "A fungi used in cooking, rich in flavor.", price: 60, rating: 4.5, discount: 0, brand: "FungiFarm", origin: "Poland", art: 372048, images: [
-  //     "../assets/images/products/48_1.webp",
-  //     "../assets/images/products/48_2.jpg",
-  //     "../assets/images/products/48_3.webp",
-  //     "../assets/images/products/48_4.webp",
-  //   ]
-  // },
-  // {
-  //   id: 49, name: "Bell Pepper", category: "Овощи", description: "A small, sweet fruit that grows in clusters, often used in wine-making.", price: 65, rating: 3.5, discount: 10, brand: "GreenLeaf", origin: "Italy", art: 372049, images: [
-  //     "../assets/images/products/49_1.webp",
-  //     "../assets/images/products/49_2.jpg",
-  //     "../assets/images/products/49_3.jfif",
-  //     "../assets/images/products/49_4.webp",
-  //   ]
-  // },
-  // {
-  //   id: 50, name: "Watermelon", category: "Фрукты", description: "A large, juicy fruit with green skin and red flesh.", price: 90, rating: 5.0, discount: 20, brand: "FreshFarm", origin: "Brazil", art: 372050, images: [
-  //     "../assets/images/products/50_1.webp",
-  //     "../assets/images/products/50_2.webp",
-  //     "../assets/images/products/50_3.webp",
-  //     "../assets/images/products/50_4.jfif",
-  //   ]
-  // },
-  // {
-  //   id: 51, name: "Cabbage", category: "Овощи", description: "A leafy vegetable, often used in salads and stews.", price: 55, rating: 4.0, discount: 50, brand: "GreenLeaf", origin: "Germany", art: 372051, images: [
-  //     "../assets/images/products/51_1.webp",
-  //     "../assets/images/products/51_2.webp",
-  //     "../assets/images/products/51_3.webp",
-  //     "../assets/images/products/51_4.jfif",
-  //   ]
-  // },
-  // {
-  //   id: 52, name: "Lettuce", category: "Овощи", description: "A leafy green vegetable used in salads.", price: 50, rating: 4.0, discount: 0, brand: "GreenLeaf", origin: "USA", art: 372052, images: [
-  //     "../assets/images/products/52_1.webp",
-  //     "../assets/images/products/52_2.webp",
-  //     "../assets/images/products/52_3.webp",
-  //     "../assets/images/products/52_4.jfif",
-  //   ]
-  // },
+  {
+    id: 37, name: "Avocado", category: "Фрукты", description: "A long, curved fruit with a yellow skin and sweet, creamy white flesh.", price: 92, rating: 4.5, discount: 10, brand: "Tropico", origin: "Mexico", art: 372037, images: [
+      "../assets/images/products/37_2.jpg",
+      "../assets/images/products/37_3.jpg",
+      "../assets/images/products/37_4.webp",
+    ]
+  },
+  {
+    id: 38, name: "Pineapple", category: "Фрукты", description: "A tropical fruit with sweet and tangy yellow flesh.", price: 85, rating: 4.5, discount: 15, brand: "Tropico", origin: "Thailand", art: 372038, images: [
+      "../assets/images/products/38_1.webp",
+      "../assets/images/products/38_2.jpg",
+      "../assets/images/products/38_3.webp",
+      "../assets/images/products/38_4.webp",
+    ]
+  },
+  {
+    id: 39, name: "Peach", category: "Фрукты", description: "A soft, juicy fruit with fuzzy skin and sweet taste.", price: 80, rating: 4.0, discount: 5, brand: "FreshFarm", origin: "Spain", art: 372039, images: [
+      "../assets/images/products/39_1.webp",
+      "../assets/images/products/39_2.webp",
+      "../assets/images/products/39_3.webp",
+      "../assets/images/products/39_4.jfif",
+    ]
+  },
+  {
+    id: 40, name: "Cucumber", category: "Овощи", description: "A refreshing green vegetable often used in salads.", price: 60, rating: 5.0, discount: 10, brand: "GreenLeaf", origin: "Turkey", art: 372040, images: [
+      "../assets/images/products/40_1.avif",
+      "../assets/images/products/40_2.webp",
+      "../assets/images/products/40_3.webp",
+      "../assets/images/products/40_4.webp",
+    ]
+  },
+  {
+    id: 41, name: "Tomato", category: "Овощи", description: "A juicy red vegetable used in salads, sauces and cooking.", price: 70, rating: 3.5, discount: 5, brand: "RedFarm", origin: "Italy", art: 372041, images: [
+      "../assets/images/products/41_1.webp",
+      "../assets/images/products/41_2.webp",
+      "../assets/images/products/41_3.webp",
+      "../assets/images/products/41_4.webp",
+    ]
+  },
+  {
+    id: 42, name: "Spinach", category: "Овощи", description: "A green leafy vegetable, rich in iron and vitamins.", price: 65, rating: 3.0, discount: 0, brand: "GreenLeaf", origin: "USA", art: 372042, images: [
+      "../assets/images/products/42_1.avif",
+      "../assets/images/products/42_2.webp",
+      "../assets/images/products/42_3.webp",
+      "../assets/images/products/42_4.webp",
+    ]
+  },
+  {
+    id: 43, name: "Blueberry", category: "Фрукты", description: "A small, sweet, blue-purple fruit packed with antioxidants.", price: 78, rating: 1.5, discount: 18, brand: "BerryFarm", origin: "Canada", art: 372043, images: [
+      "../assets/images/products/43_1.webp",
+      "../assets/images/products/43_2.webp",
+      "../assets/images/products/43_3.webp",
+      "../assets/images/products/43_4.webp",
+    ]
+  },
+  {
+    id: 44, name: "Strawberry", category: "Фрукты", description: "A red, juicy fruit that is sweet and slightly tart.", price: 80, rating: 2.5, discount: 10, brand: "BerryFarm", origin: "USA", art: 372044, images: [
+      "../assets/images/products/44_1.webp",
+      "../assets/images/products/44_2.webp",
+      "../assets/images/products/44_3.webp",
+      "../assets/images/products/44_4.webp",
+    ]
+  },
+  {
+    id: 45, name: "Bread", category: "Выпечка", description: "A bulb vegetable with a strong flavor, used in many dishes.", price: 55, rating: 5.0, discount: 0, brand: "RootFarm", origin: "India", art: 372045, images: [
+      "../assets/images/products/45_1.webp",
+      "../assets/images/products/45_2.avif",
+      "../assets/images/products/45_3.jgp",
+      "../assets/images/products/45_4.webp",
+    ]
+  },
+  {
+    id: 46, name: "Bread", category: "Выпечка", description: "A strong-flavored bulb used for cooking and seasoning.", price: 50, rating: 1.5, discount: 15, brand: "RootFarm", origin: "China", art: 372046, images: [
+      "../assets/images/products/46_1.webp",
+      "../assets/images/products/45_2.avif",
+      "../assets/images/products/45_3.jgp",
+      "../assets/images/products/45_4.webp",
+    ]
+  },
+  {
+    id: 47, name: "Potato", category: "Овощи", description: "A starchy tuber used in many dishes.", price: 48, rating: 4.0, discount: 0, brand: "RootFarm", origin: "USA", art: 372047, images: [
+      "../assets/images/products/47_1.webp",
+      "../assets/images/products/47_2.webp",
+      "../assets/images/products/47_3.webp",
+      "../assets/images/products/47_4.webp",
+    ]
+  },
+  {
+    id: 48, name: "Mushroom", category: "Овощи", description: "A fungi used in cooking, rich in flavor.", price: 60, rating: 4.5, discount: 0, brand: "FungiFarm", origin: "Poland", art: 372048, images: [
+      "../assets/images/products/48_1.webp",
+      "../assets/images/products/48_2.jpg",
+      "../assets/images/products/48_3.webp",
+      "../assets/images/products/48_4.webp",
+    ]
+  },
+  {
+    id: 49, name: "Bell Pepper", category: "Овощи", description: "A small, sweet fruit that grows in clusters, often used in wine-making.", price: 65, rating: 3.5, discount: 10, brand: "GreenLeaf", origin: "Italy", art: 372049, images: [
+      "../assets/images/products/49_1.webp",
+      "../assets/images/products/49_2.jpg",
+      "../assets/images/products/49_3.jfif",
+      "../assets/images/products/49_4.webp",
+    ]
+  },
+  {
+    id: 50, name: "Watermelon", category: "Фрукты", description: "A large, juicy fruit with green skin and red flesh.", price: 90, rating: 5.0, discount: 20, brand: "FreshFarm", origin: "Brazil", art: 372050, images: [
+      "../assets/images/products/50_1.webp",
+      "../assets/images/products/50_2.webp",
+      "../assets/images/products/50_3.webp",
+      "../assets/images/products/50_4.jfif",
+    ]
+  },
+  {
+    id: 51, name: "Cabbage", category: "Овощи", description: "A leafy vegetable, often used in salads and stews.", price: 55, rating: 4.0, discount: 50, brand: "GreenLeaf", origin: "Germany", art: 372051, images: [
+      "../assets/images/products/51_1.webp",
+      "../assets/images/products/51_2.webp",
+      "../assets/images/products/51_3.webp",
+      "../assets/images/products/51_4.jfif",
+    ]
+  },
+  {
+    id: 52, name: "Lettuce", category: "Овощи", description: "A leafy green vegetable used in salads.", price: 50, rating: 4.0, discount: 0, brand: "GreenLeaf", origin: "USA", art: 372052, images: [
+      "../assets/images/products/52_1.webp",
+      "../assets/images/products/52_2.webp",
+      "../assets/images/products/52_3.webp",
+      "../assets/images/products/52_4.jfif",
+    ]
+  },
 ]
 
 const descriptionProducts = [
