@@ -4,6 +4,7 @@ let filterPageClose = document.querySelector(".close")
 let filterView = document.querySelector(".filter-view")
 let badgeFilters = document.getElementById("badge-filters")
 let categoroiesView = document.querySelector(".categories-view")
+let categoryText = document.getElementById("categories-text")
 let categories = document.querySelector(".categories")
 let brand = document.getElementById("brand")
 let click = document.getElementById("click")
@@ -27,6 +28,20 @@ filterPageClose.addEventListener("click", () => {
     filterPage.classList.add("translate-y-[100%]")
 })
 
+categories.addEventListener("click", () => {
+    categoryText.classList.remove("translate-y-[0%]")
+})
+
+let uniqueCategoryText = [...new Set(products.map((el) => el.category))].sort()
+uniqueCategoryText.map((el) => {
+    categoryText.innerHTML += `
+         <div class="flex items-center py-[5px] gap-[7px]">
+            <input class="cursor-pointer w-[15px] h-[15px]" type="checkbox">
+            <p>${el}</p>
+            </div>
+            <hr class="border-[1px] text-[#F3F2F1]">
+    `
+})
 
 
 let uniqueBrands = [...new Set(products.map((el) => el.category))];
