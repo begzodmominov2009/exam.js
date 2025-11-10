@@ -15,8 +15,10 @@ search_input.addEventListener("input", function (e) {
         searchProduct.map((el) => {
             searchCards.innerHTML += `
         <div class="flex items-center px-[15px] gap-[15px] border-[1px] border-[#BFBFBF] py-[5px] rounded-[8px]">
-        <a href="./single.html?id=${el.id}">  
-        <img class="max-w-[55px] w-full h-[35px] rounded-[5px]" src=${el.images[0]} alt="img">
+        <a href="./single.html?id=${el.id}"> 
+        <div class="w-[55px] h-[35px] overflow-hidden rounded-[5px]">
+                <img class="w-full h-full" src=${el.images[0]} alt="img">
+        </div> 
         </a>
                 <div class="flex flex-col justify-between">
                     <h1 class="">${el.name}</h1>

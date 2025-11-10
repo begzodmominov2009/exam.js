@@ -9,7 +9,7 @@ function searchProducts(content, data) {
     data.map((el) => {
         content.innerHTML += `
         <div
-                        class="max-w-[130px] rounded-[4px] w-full cursor-pointer bg-[white]/70 relative group overflow-hidden">
+                        class="max-w-[230px] rounded-[4px] w-full cursor-pointer bg-[white]/70 relative group overflow-hidden">
                         <a href="./single.html?id=${el.id}">
                             <img class="w-full h-[80px] sm:h-[202px]" src=${el.images[0]} alt="img">
                         </a>

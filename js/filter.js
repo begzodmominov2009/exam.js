@@ -18,6 +18,7 @@ let like = JSON.parse(localStorage.getItem("like") || "[]");
 let carts = JSON.parse(localStorage.getItem("carts") || "[]");
 let likeFilterBadge = document.getElementById("like-badge-filter")
 let filterBadge = document.getElementById("badge-filter")
+let currentFilteredData = products
 badgeFilters.textContent = products.length
 filterBadge.textContent = carts.length
 likeFilterBadge.textContent = like.length
@@ -80,20 +81,20 @@ uniqueRating.forEach((el) => {
 
 function filterProducts(content, data) {
     content.innerHTML = ""
-    data.map((el) => {
+    currentFilteredData = data.map((el) => {
         content.innerHTML += `
             <div class="max-w-[302px] rounded-[4px] w-full cursor-pointer bg-[white] relative group overflow-hidden shadow-2xl">
             <div class="owl-carousel owl-theme relative">
              <a href="./single.html?id=${el.id}">
                  <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[0]} alt="img">
                </a>
-                <a href="./Pages/single.html?id=${el.id}">
+                <a href="./single.html?id=${el.id}">
                  <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[1]} alt="img">
                </a>
-                <a href="./Pages/single.html?id=${el.id}">
+                <a href="./single.html?id=${el.id}">
                  <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[2]} alt="img">
                </a>
-                <a href="./Pages/single.html?id=${el.id}">
+                <a href="./single.html?id=${el.id}">
                  <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[3]} alt="img">
                </a>
              </div>
@@ -235,6 +236,8 @@ function filterProducts(content, data) {
     
     `
     })
+
+      setTimeout(() => carousel(), 10);
 }
 filterProducts(filterCards, products)
 
@@ -255,20 +258,10 @@ town.addEventListener("change", (e) => {
     if (selectedTown === "") {
         filterProducts(filterCards, products)
         carousel()
-        removeTolike()
-        addToCart()
-        addToLike()
-        increase()
-        decraese()
     } else {
         let filteredTown = products.filter((el) => el.origin === selectedTown)
         filterProducts(filterCards, filteredTown)
         carousel()
-        removeTolike()
-        addToCart()
-        addToLike()
-        increase()
-        decraese()
     }
 })
 
@@ -277,20 +270,10 @@ discount.addEventListener("change", (e) => {
     if (!selectDiscount) {
         filterProducts(filterCards, products)
         carousel()
-        removeTolike()
-        addToCart()
-        addToLike()
-        increase()
-        decraese()
     } else {
         let filteredDiscount = products.filter((el) => el.discount === selectDiscount)
         filterProducts(filterCards, filteredDiscount)
         carousel()
-        removeTolike()
-        addToCart()
-        addToLike()
-        increase()
-        decraese()
     }
 })
 
@@ -299,20 +282,10 @@ rating.addEventListener("change", (e) => {
     if (!selectRating) {
         filterProducts(filterCards, products)
         carousel()
-        removeTolike()
-        addToCart()
-        addToLike()
-        increase()
-        decraese()
     } else {
         let filteredRating = products.filter((el) => el.rating === selectRating)
         filterProducts(filterCards, filteredRating)
         carousel()
-        removeTolike()
-        addToCart()
-        addToLike()
-        increase()
-        decraese()
     }
 })
 
@@ -322,20 +295,10 @@ inputOne.addEventListener("input", (e) => {
         filteredProductsData = products
         filterProducts(filterCards, products)
         carousel()
-        removeTolike()
-        addToCart()
-        addToLike()
-        increase()
-        decraese()
     } else {
         filteredProductsData = products.filter((el) => el.price - (el.price * el.discount / 100) > inputPrice)
         filterProducts(filterCards, filteredProductsData)
         carousel()
-        removeTolike()
-        addToCart()
-        addToLike()
-        increase()
-        decraese()
     }
 })
 inputTwo.addEventListener("input", (e) => {
@@ -347,20 +310,10 @@ inputTwo.addEventListener("input", (e) => {
         filteredProductsData2 = []
         filterProducts(filterCards, products)
         carousel()
-        removeTolike()
-        addToCart()
-        addToLike()
-        increase()
-        decraese()
     } else {
         filteredProductsData2 = baseData.filter((el) => el.price - (el.price * el.discount / 100) < inputPrice)
         filterProducts(filterCards, filteredProductsData2)
         carousel()
-        removeTolike()
-        addToCart()
-        addToLike()
-        increase()
-        decraese()
     }
 
 })
@@ -370,7 +323,7 @@ function addToCart(id) {
     item.number = 1;
     carts.push(item)
     filterBadge.textContent = carts.length
-    filterProducts(filterCards, products)
+    filterProducts(filterCards, currentFilteredData)
     carousel()
 }
 function increase(id) {
@@ -382,7 +335,7 @@ function increase(id) {
     })
     filterBadge.textContent = carts.length
     localStorage.setItem("carts", JSON.stringify(carts));
-    filterProducts(filterCards, products)
+    filterProducts(filterCards, currentFilteredData)
     carousel()
 }
 function decraese(id) {
@@ -398,7 +351,7 @@ function decraese(id) {
     }
     filterBadge.textContent = carts.length
     localStorage.setItem("carts", JSON.stringify(carts));
-    filterProducts(filterCards, products)
+    filterProducts(filterCards, currentFilteredData)
     carousel()
 }
 function addToLike(id) {
@@ -406,7 +359,7 @@ function addToLike(id) {
     like.push(likeitem)
     likeFilterBadge.textContent = like.length
     localStorage.setItem("like", JSON.stringify(like));
-    filterProducts(filterCards, products)
+    filterProducts(filterCards, currentFilteredData)
     carousel()
 }
 
@@ -414,36 +367,36 @@ function removeTolike(id) {
     like = like.filter((el) => el.id !== id)
     likeFilterBadge.textContent = like.length
     localStorage.setItem("like", JSON.stringify(like));
-    filterProducts(filterCards, products)
+    filterProducts(filterCards, currentFilteredData)
     carousel()
 }
 
 
 
 function carousel() {
-    $(document).ready(function () {
-        $(".owl-carousel").owlCarousel();
-    });
-
-    $(".owl-carousel").owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: false,
-        dots: false,
-        autoplay: false,
-        responsive: {
-            0: {
-                items: 1,
+    $(".owl-carousel").each(function () {
+        const $this = $(this);
+        if ($this.hasClass("owl-loaded")) {
+            $this.trigger("destroy.owl.carousel");
+            $this.removeClass("owl-loaded");
+            $this.find(".owl-stage-outer").children().unwrap();
+        }
+        $this.owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: false,
+            dots: false,
+            autoplay: false,
+            responsive: {
+                0: { items: 1 },
+                600: { items: 1 },
+                1000: { items: 1 },
             },
-            600: {
-                items: 1,
-            },
-            1000: {
-                items: 1,
-            },
-        },
+        });
     });
 }
+
+
 
 carousel()
 
