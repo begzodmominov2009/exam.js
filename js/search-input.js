@@ -11,7 +11,7 @@ search_input.addEventListener("input", function (e) {
         searchCards.innerHTML = ""
     }
     searchCards.innerHTML = ""
-    searchProduct.length > 0 ?
+    searchProduct.length > 0 ?  
         searchProduct.map((el) => {
             searchCards.innerHTML += `
         <div class="flex items-center px-[15px] gap-[15px] border-[1px] border-[#BFBFBF] py-[5px] rounded-[8px]">

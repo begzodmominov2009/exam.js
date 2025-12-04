@@ -13,9 +13,12 @@ let inputCheck = document.getElementsByClassName("input-check")
 let sumPrice = 0;
 let dicountPrice = 0;
 let PaidPrice = 0;
+let prodcutsNumber = 0;
 let allCheckedProducts = []
+let cartNumber = document.getElementById("cart-number")
 let allChecked = document.getElementById("all-checked")
 allPrice.textContent = sumPrice;
+cartNumber.textContent = prodcutsNumber
 allDiscount.textContent = dicountPrice;
 allPaind.textContent = PaidPrice;
 badge_11.textContent = carts.length;
@@ -128,16 +131,19 @@ function decraese(id) {
 function countPrices() {
     sumPrice = 0;
     dicountPrice = 0;
+    prodcutsNumber = 0;
     PaidPrice = 0;
     carts.map((el) => {
         sumPrice += el.price * el.number;
         dicountPrice += el.price * el.discount * el.number / 100;
         PaidPrice = sumPrice - dicountPrice;
+        prodcutsNumber += el.number;
     })
     localStorage.setItem("carts", JSON.stringify(carts));
     allPrice.textContent = Math.round(sumPrice)
     allDiscount.textContent = Math.round(dicountPrice)
     allPaind.textContent = Math.round(PaidPrice)
+    cartNumber.textContent = prodcutsNumber
     showCart(cartMap, carts)
 }
 countPrices()
@@ -170,7 +176,7 @@ allInput.addEventListener("click" , function() {
         }
     } else {
         for(let el of inputCheck){
-        el.checked = true;
+        el.checked === true;
     }
     carts.map((el) => {
         allCheckedProducts.push(el.id)

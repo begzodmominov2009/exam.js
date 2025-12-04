@@ -3,9 +3,11 @@ let filterPage = document.querySelector(".filter-page")
 let filterPageClose = document.querySelector(".close")
 let filterView = document.querySelector(".filter-view")
 let badgeFilters = document.getElementById("badge-filters")
-let categoroiesView = document.querySelector(".categories-view")
+let categoroiesView = document.querySelector(".categories-view ")
 let categoryText = document.getElementById("categories-text")
 let categories = document.querySelector(".categories")
+let towns = document.querySelector(".towns")
+let townView = document.querySelector(".town-view")
 let brand = document.getElementById("brand")
 let click = document.getElementById("click")
 let inputOne = document.getElementById("inputOne")
@@ -17,6 +19,7 @@ let rating = document.getElementById("rating")
 let like = JSON.parse(localStorage.getItem("like") || "[]");
 let carts = JSON.parse(localStorage.getItem("carts") || "[]");
 let likeFilterBadge = document.getElementById("like-badge-filter")
+let categoryViewClose = document.querySelector(".categories-view-close")
 let filterBadge = document.getElementById("badge-filter")
 let currentFilteredData = products
 badgeFilters.textContent = products.length
@@ -24,11 +27,20 @@ filterBadge.textContent = carts.length
 likeFilterBadge.textContent = like.length
 let filteredProductsData = []
 let filteredProductsData2 = []
+
+towns.addEventListener("click", () => {
+    townView.classList.remove("translate-y-[100%")
+})
+
+categoryViewClose.addEventListener("click", () => {
+    categoroiesView.classList.add("translate-y-[100%]")
+})
+
 click.addEventListener("click", () => {
     sort.classList.toggle("translate-y-[0%]")
 })
 filterView.addEventListener("click", () => {
-    filterPage.classList.remove("translate-y-[0%]")
+    filterPage.classList.remove("translate-y-[100%]")
 })
 
 filterPageClose.addEventListener("click", () => {
@@ -36,7 +48,7 @@ filterPageClose.addEventListener("click", () => {
 })
 
 categories.addEventListener("click", () => {
-    categoroiesView.classList.remove("translate-y-[0%]")
+    categoroiesView.classList.remove("translate-y-[100%]")
 })
 
 let uniqueCategoryText = [...new Set(products.map((el) => el.category))].sort()
@@ -237,7 +249,6 @@ function filterProducts(content, data) {
     `
     })
 
-      setTimeout(() => carousel(), 10);
 }
 filterProducts(filterCards, products)
 
