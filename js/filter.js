@@ -8,6 +8,7 @@ let categoryText = document.getElementById("categories-text")
 let categories = document.querySelector(".categories")
 let towns = document.querySelector(".towns")
 let townView = document.querySelector(".town-view")
+let filterBtn = document.getElementById("filter-btn")
 let brand = document.getElementById("brand")
 let click = document.getElementById("click")
 let inputOne = document.getElementById("inputOne")
@@ -27,6 +28,10 @@ filterBadge.textContent = carts.length
 likeFilterBadge.textContent = like.length
 let filteredProductsData = []
 let filteredProductsData2 = []
+
+filterBtn.addEventListener("click", () => {
+    filterPage.classList.add("translate-y-[100%]")
+})
 
 towns.addEventListener("click", () => {
     townView.classList.remove("translate-y-[100%")
